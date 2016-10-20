@@ -5,6 +5,8 @@ date:   2016-08-23 18:30:22 +0800
 categories: update
 ---
 
+<script src="src.js"></script>
+
 [点击查看原文](http://www.cnblogs.com/dolphinX/p/3403821.html)
 
 >最近在做网页的时候有个需求，就是浏览器窗口改变的时候需要改一些页面元素大小，于是乎很自然的想到了window的resize事件,于是乎我是这么写的
