@@ -6,7 +6,6 @@ categories: update
 ---
 
 <script src="src.js"></script>
-
 [点击查看原文](http://www.cnblogs.com/dolphinX/p/3403821.html)
 
 >最近在做网页的时候有个需求，就是浏览器窗口改变的时候需要改一些页面元素大小，于是乎很自然的想到了window的resize事件,于是乎我是这么写的
@@ -19,11 +18,11 @@ categories: update
 </head>
 <body>
     <script type="text/javascript">
-        n=0;
-        function resizehandler(){
-            console.log(new Date().getTime());
-            console.log(++n);
-        }
+        n=0;
+        function resizehandler(){
+            console.log(new Date().getTime());
+            console.log(++n);
+        }
         window.onresize=resizehandler;
     </script>
 </body>
@@ -40,8 +39,7 @@ categories: update
 其实我的本意只是窗口resize后页面做一些调整就可以，而window的resize事件并不是在resize结束后才触发的，具体则么个频率我也不知道，但却是在不停的调用，直到窗口大小不再变化。其实类似的机制还有鼠标的mousemove，都是在短时间内重复触发。
 
 在《JavaScript高级程序设计》中有专门应对此问题的函数节流
-
-{% highlight javascript %}
+```
 function throttle(method,context){
     clearTimeout(method.tId);
     method.tId=setTimeout(function(){
@@ -49,10 +47,9 @@ function throttle(method,context){
     },500);
 
 }
-{% endhighlight %}
+```
 
 原理很简单，利用定时器，让函数执行延迟500毫秒，在500毫秒内如果有函数又被调用则删除上一次调用，这次调用500毫秒后执行，如此往复。这样我刚才的代码可以改为
-
 
 
     <script type="text/javascript">
@@ -82,38 +79,36 @@ function throttle(method,context){
 
 
     function throttle(method,delay){
-        var timer=null;
-        return function(){
-            var context=this, args=arguments;
-            clearTimeout(timer);
-            timer=setTimeout(function(){
-                method.apply(context,args);
-            },delay);
-        }
-    }
-
+        var timer=null;
+        return function(){
+            var context=this, args=arguments;
+            clearTimeout(timer);
+            timer=setTimeout(function(){
+                method.apply(context,args);
+            },delay);
+        }
+    }
 
 调用一下试试，一样的效果
 
-
     <script type="text/javascript">
-        n=0;
-        function resizehandler(){
-            console.log(new Date().getTime());
-            console.log(++n);
-        }
-        function throttle(method,delay){
-            var timer=null;
-            return function(){
-                var context=this, args=arguments;
-                clearTimeout(timer);
-                timer=setTimeout(function(){
-                    method.apply(context,args);
-                },delay);
-            }
-        }
-        window.onresize=throttle(resizehandler,500);//因为返回函数句柄，不用包装函数了
-    </script>
+        n=0;
+        function resizehandler(){
+            console.log(new Date().getTime());
+            console.log(++n);
+        }
+        function throttle(method,delay){
+            var timer=null;
+            return function(){
+                var context=this, args=arguments;
+                clearTimeout(timer);
+                timer=setTimeout(function(){
+                    method.apply(context,args);
+                },delay);
+            }
+        }
+        window.onresize=throttle(resizehandler,500);//因为返回函数句柄，不用包装函数了
+    </script>
 
 
 ![图3](http://upload-images.jianshu.io/upload_images/2530160-fad95919ca2489d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -128,34 +123,28 @@ function throttle(method,context){
 
 能不能在函数节流的基础上间隔固定时间就执行一次？
 
-#### 小改动 
+#### 小改动
 在网上搜了一下我们可以根据第二种写法（第一种为函数拓展多个变量感觉有些不好）做些改动，添加一个参数作为到固定间隔必须执行
 
-
-
     function throttle(method,delay,duration){
-        var timer=null, begin=new Date();
-        return function(){
-            var context=this, args=arguments, current=new Date();;
-            clearTimeout(timer);
-            if(current-begin>=duration){
-                 method.apply(context,args);
-                 begin=current;
-            }else{
-                timer=setTimeout(function(){
-                    method.apply(context,args);
-                },delay);
-            }
-        }
+        var timer=null, begin=new Date();
+        return function(){
+            var context=this, args=arguments, current=new Date();
+            clearTimeout(timer);
+            if(current-begin>=duration){
+                method.apply(context,args);
+                begin=current;
+            }else{
+                timer=setTimeout(function(){
+                    method.apply(context,args);
+                },delay);
+            }
+        }
     }
-
-
 
 这样每次我们判断间隔了多久，要是超过设置时间则立即执行一次，以刚才例子试一试效果
 
-
     window.onresize=throttle(resizehandler,100,200);
-
 
 
 ![图4](http://upload-images.jianshu.io/upload_images/2530160-66e55fc1264a808e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -170,7 +159,6 @@ function throttle(method,context){
  下面开始试验。
 
 不知道上面的例子为什么要将this传递进去，根据下面的分析
-
 
     function EE(){console.log(this)}
     EE();       // 全局作用域
@@ -202,16 +190,13 @@ function throttle(method,context){
     hh.ff1();     // hh的局部作用域 --- 从此解开谜底
     hh.gg();     // GG的局部作用域
 
-
 从上面的分析来看我想要分析的东西已经看到了，请看此处`解开谜底`。
 执行FF()方法，返回一个方法给当前作用域里面的一个变量，也就是说改变了返回方法的作用域为当前作用域，因此才可以在当前作用域执行handler方法。
 
 *也就是说我的第一个问题已经解决完毕，可用下面实现如下方式的调用*
 
-
     var throttleOne = new throttle(handler, 200, 300);
     throttleOne("id", "name")
-
 
 *同时让`duration`等于`delay`就能解决我的第二个问题。真是多次一举。*
 
