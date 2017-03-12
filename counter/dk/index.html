@@ -1,0 +1,286 @@
+<!doctype html>
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>组合房贷计算器</title>
+
+  <!-- <link rel="stylesheet" type="text/css" href="http://rongyi.b0.upaiyun.com/fe/cms/1.2.0/bbq.min.css"> -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      /*border: 0;*/
+    }
+
+    table{
+      width: 100%;
+      border-top: 1px solid #eeeeee;
+      border-left: 1px solid #eeeeee;
+    }
+    th, td{
+      padding: 10px 0;
+      border-bottom: 1px solid #eeeeee;
+      border-right: 1px solid #eeeeee;
+    }
+    td.left{text-align: left;}
+    td{
+      text-align: right;
+    }
+    input[type="button"]{
+      width: 100px;
+      height: 36px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .title{
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+  <base href="/"></base>
+</head>
+<body ng-controller="MainCtrl" class="zhdk">
+  <h1 class="title">组合房贷计算器</h1>
+  <table>
+    <tr>
+      <th>贷款性质</th>
+      <th>贷款金额（万元）</th>
+      <th>贷款按揭年</th>
+      <th>贷款基准利率（%）</th>
+      <th>自定义利率（%）</th>
+      <th>基准利率百分比</th>
+    </tr>
+    <tr>
+      <td>{{base[0].name}}</td>
+      <td><input ng-model="base[0].money" type="text" placeholder="请输入贷款金额"></td>
+      <td><select ng-model="base[0].years" ng-options="o.id as o.name for o in years"></select></td>
+      <td><input ng-model="base[0].line" type="text" placeholder="" value="4.9"></td>
+      <td><input ng-model="base[0].p1" type="text" placeholder="请输入自定义利率"></td>
+      <td><select ng-model="base[0].p2" ng-model="p2" ng-options="o.id as o.name for o in percent"></select></td>
+    </tr>
+    <tr>
+      <td>{{base[1].name}}</td>
+      <td><input ng-model="base[1].money" type="text" placeholder="请输入贷款金额"></td>
+      <td><select ng-model="base[1].years" ng-options="o.id as o.name for o in years"></select></td>
+      <td><input ng-model="base[1].line" type="text" placeholder="" value="4.9"></td>
+      <td><input ng-model="base[1].p1" type="text" placeholder="请输入自定义利率"></td>
+      <td><select ng-model="base[1].p2" ng-model="p2" ng-options="o.id as o.name for o in percent"></select></td>
+    </tr>
+  </table>
+  <input type="button" value="计算" ng-click="run()">
+  <div>注：单位（元）</div>
+  <table>
+    <tr>
+      <th>贷款性质</th>
+      <th>还款方式</th>
+      <th>还款总额（万元）</th>
+      <th>贷款总额（万元）</th>
+      <th>支付利息（万元）</th>
+      <th>首月月供（元）</th>
+      <th>末月月供（元）</th>
+      <th>没月递减（元）</th>
+    </tr>
+    <tr>
+      <td class="left">{{base[0].name}}</td><td class="left">{{base[0].l[0].name}}</td>
+      <td>{{base[0].l[0].p1 || '--'}}</td><td>{{base[0].l[0].p2 || '--'}}</td><td>{{base[0].l[0].p3 || '--'}}</td>
+      <td>{{base[0].l[0].p4 || '--'}}</td><td>{{base[0].l[0].p5 || '--'}}</td><td>{{base[0].l[0].p6 || '--'}}</td>
+    </tr>
+    <tr>
+      <td class="left"></td><td class="left">{{base[0].l[1].name}}</td>
+      <td>{{base[0].l[1].p1 || '--'}}</td><td>{{base[0].l[1].p2 || '--'}}</td><td>{{base[0].l[1].p3 || '--'}}</td>
+      <td>{{base[0].l[1].p4 || '--'}}</td><td>{{base[0].l[1].p5 || '--'}}</td><td>{{base[0].l[1].p6 || '--'}}</td>
+    </tr>
+    <tr>
+      <td class="left">{{base[1].name}}</td><td class="left">{{base[1].l[0].name}}</td>
+      <td>{{base[1].l[0].p1 || '--'}}</td><td>{{base[1].l[0].p2 || '--'}}</td><td>{{base[1].l[0].p3 || '--'}}</td>
+      <td>{{base[1].l[0].p4 || '--'}}</td><td>{{base[1].l[0].p5 || '--'}}</td><td>{{base[1].l[0].p6 || '--'}}</td>
+    </tr>
+    <tr>
+      <td class="left"></td><td class="left">{{base[1].l[1].name}}</td>
+      <td>{{base[1].l[1].p1 || '--'}}</td><td>{{base[1].l[1].p2 || '--'}}</td><td>{{base[1].l[1].p3 || '--'}}</td>
+      <td>{{base[1].l[1].p4 || '--'}}</td><td>{{base[1].l[1].p5 || '--'}}</td><td>{{base[1].l[1].p6 || '--'}}</td>
+    </tr>
+  </table>
+  <script src="http://cdn.bootcss.com/angular.js/1.2.28/angular.min.js"></script>
+  <!-- <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script> -->
+  <script type="text/javascript">
+    function MainCtrl($scope){
+      
+      $scope.years = [
+        {id: 20, name: "20年（240期限）"},
+        {id: 30, name: "30年（360期限）"},
+      ];
+
+      $scope.percent = [
+        {id: 70, name: "70%"},
+        {id: 90, name: "90%"},
+        {id: 100, name: "100%"},
+      ];
+      
+      var base = [
+        {
+          type: 1,
+          name: "商业贷款",
+          money: 30,
+          years: 30,
+          line: 4.9,
+          p1: undefined,
+          p2: 90,
+          l: [
+            {
+              type: 0,
+              name: "等额本息",
+            },
+            {
+              type: 1,
+              name: "等额本金",
+            },
+          ]
+        },
+        {
+          type: 2,
+          name: "公积金贷款",
+          money: 110,
+          years: 30,
+          line: 3.25,
+          p1: undefined,
+          p2: 90,
+          l: [
+            {
+              type: 0,
+              name: "等额本息",
+            },
+            {
+              type: 1,
+              name: "等额本金",
+            },
+          ]
+        }
+      ];
+
+      $scope.base = base;
+
+      $scope.run = function(){
+
+        var params = angular.copy(base);
+
+        if(isMoney(params[0].money) && isPercent(params[0].line)){
+          count1(params[0], base[0].l[0]);
+          count2(params[0], base[0].l[1]);
+        }
+
+        if(isMoney(params[1].money) && isPercent(params[1].line)){
+          count1(params[1], base[1].l[0]);
+          count2(params[1], base[1].l[1]);
+        }
+      }
+    }
+
+    // 校验金额
+    function isMoney(money){
+      return !(isNaN(money-0) || money < 1);
+    }
+    // 校验贷款利率 
+    function isPercent(line){
+      
+      return !(isNaN(line - 0) || !(line > 0) || line > 100);
+    }
+
+    /**
+    * 等额本息还款
+    */
+    // 每月月供额=〔贷款本金×月利率×(1＋月利率)＾还款月数〕÷〔(1＋月利率)＾还款月数-1〕
+    // 每月应还利息=贷款本金×月利率×〔(1+月利率)^还款月数-(1+月利率)^(还款月序号-1)〕÷〔(1+月利率)^还款月数-1〕
+    // 每月应还本金=贷款本金×月利率×(1+月利率)^(还款月序号-1)÷〔(1+月利率)^还款月数-1〕
+    // 总利息=还款月数×每月月供额-贷款本金
+    function count1(params, base){
+      // 贷款本金
+      var money = params.money * 10000; 
+      // 还款月数
+      var backTime = params.years * 12; 
+      // 年利率
+      var borrowPercent = (params.p1-0) || (params.line * (params.p2 / 100)); 
+      // 月利率
+      var monthPercent = borrowPercent / 1200;
+      // 每月还款金额
+      var monthBorrow = ( money * monthPercent * powerCount( ( 1 + monthPercent ) , backTime)) / (powerCount((1 + monthPercent), backTime) - 1 );
+      // 每个月利息
+      var lixi = [0];
+      // 利息和
+      var lixiAll = 0;
+      // 本金余额
+      var monthOver = [params.money];
+      
+      for(var i = 1 ; i <= backTime ; i++ ){
+        // 每月应还利息
+        lixi[i] = money * monthPercent * ( powerCount((1 + monthPercent), backTime) - powerCount((1 + monthPercent), (i - 1)) ) / ( powerCount(1 + monthPercent, backTime) - 1 );
+        // 本月余额
+        monthOver[i] = monthOver[i-1] - (monthBorrow - lixi[i]);
+        lixiAll += lixi[i];
+      }
+      
+      base.p1 = subMoney((money + lixiAll)/10000);
+      base.p2 = subMoney((money)/10000);
+      base.p3 = subMoney((lixiAll)/10000);
+      base.p4 = subMoney(monthBorrow);
+      base.p5 = subMoney(monthBorrow);
+    }
+    
+    function powerCount(bottomNum, powerNum){
+      var temp = bottomNum;
+      bottomNum = 1;
+      for(var i = 1 ; i <= powerNum ; i++ ){
+        bottomNum = bottomNum * temp;
+      }
+      return bottomNum;
+    }
+
+    /**
+     * 等额本金还款
+     */
+    function count2(params, base){
+      // 贷款本金
+      var money = params.money * 10000;
+      // 还款月数
+      var backTime = params.years * 12;
+      // 年利率
+      var borrowPercent = (params.p1-0) || (params.line * (params.p2 / 100));
+      // 每月应还本金
+      var monthBack = money / backTime;
+      // 每月应还利息
+      var borrowLixi = [0];
+      var lixiAll = 0;
+      // 每月还款金额
+      var backMoney = [0];
+      // 本金余额
+      var monthOver = [params.money];
+      for(var i = 1 ; i <= backTime ; i++ ){
+        // 每月应还利息 
+        borrowLixi[i] = monthBack * (backTime + 1 - i) * borrowPercent / 1200;
+        // 还款金额
+        backMoney[i] = monthBack - 0 + (borrowLixi[i]-0);
+        monthOver[i] = money - monthBack * i;
+        lixiAll += borrowLixi[i];
+      }
+
+      base.p1 = subMoney((money + lixiAll)/10000);
+      base.p2 = subMoney((money)/10000);
+      base.p3 = subMoney((lixiAll)/10000);
+      base.p4 = subMoney(backMoney[1]);
+      base.p5 = subMoney(backMoney[backTime]);
+      base.p6 = subMoney(backMoney[1] - backMoney[2]);
+    }
+
+    function subMoney(money){
+      if((money+'').indexOf('.') > 0){
+        money = money.toFixed(2);
+      }else{
+        money = money + '.00';
+      }
+      return money;
+    }
+  </script>
+</body>
+</html>
