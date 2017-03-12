@@ -80,30 +80,74 @@
       <th>支付利息（万元）</th>
       <th>首月月供（元）</th>
       <th>末月月供（元）</th>
-      <th>没月递减（元）</th>
+      <th>每月递减（元）</th>
+    </tr>
+    <!-- 商业贷款 -->
+    <tr>
+      <td class="left">{{base[0].name}}</td>
+      <td class="left">{{base[0].l[0].name}}</td>
+      <td>{{base[0].l[0].p1 || '--'}}</td>
+      <td>{{base[0].l[0].p2 || '--'}}</td>
+      <td>{{base[0].l[0].p3 || '--'}}</td>
+      <td>{{base[0].l[0].p4 || '--'}}</td>
+      <td>{{base[0].l[0].p5 || '--'}}</td>
+      <td>{{base[0].l[0].p6 || '--'}}</td>
     </tr>
     <tr>
-      <td class="left">{{base[0].name}}</td><td class="left">{{base[0].l[0].name}}</td>
-      <td>{{base[0].l[0].p1 || '--'}}</td><td>{{base[0].l[0].p2 || '--'}}</td><td>{{base[0].l[0].p3 || '--'}}</td>
-      <td>{{base[0].l[0].p4 || '--'}}</td><td>{{base[0].l[0].p5 || '--'}}</td><td>{{base[0].l[0].p6 || '--'}}</td>
+      <td class="left"></td>
+      <td class="left">{{base[0].l[1].name}}</td>
+      <td>{{base[0].l[1].p1 || '--'}}</td>
+      <td>{{base[0].l[1].p2 || '--'}}</td>
+      <td>{{base[0].l[1].p3 || '--'}}</td>
+      <td>{{base[0].l[1].p4 || '--'}}</td>
+      <td>{{base[0].l[1].p5 || '--'}}</td>
+      <td>{{base[0].l[1].p6 || '--'}}</td>
+    </tr>
+    <!-- 公积金贷款 -->
+    <tr>
+      <td class="left">{{base[1].name}}</td>
+      <td class="left">{{base[1].l[0].name}}</td>
+      <td>{{base[1].l[0].p1 || '--'}}</td>
+      <td>{{base[1].l[0].p2 || '--'}}</td>
+      <td>{{base[1].l[0].p3 || '--'}}</td>
+      <td>{{base[1].l[0].p4 || '--'}}</td>
+      <td>{{base[1].l[0].p5 || '--'}}</td>
+      <td>{{base[1].l[0].p6 || '--'}}</td>
     </tr>
     <tr>
-      <td class="left"></td><td class="left">{{base[0].l[1].name}}</td>
-      <td>{{base[0].l[1].p1 || '--'}}</td><td>{{base[0].l[1].p2 || '--'}}</td><td>{{base[0].l[1].p3 || '--'}}</td>
-      <td>{{base[0].l[1].p4 || '--'}}</td><td>{{base[0].l[1].p5 || '--'}}</td><td>{{base[0].l[1].p6 || '--'}}</td>
+      <td class="left"></td>
+      <td class="left">{{base[1].l[1].name}}</td>
+      <td>{{base[1].l[1].p1 || '--'}}</td>
+      <td>{{base[1].l[1].p2 || '--'}}</td>
+      <td>{{base[1].l[1].p3 || '--'}}</td>
+      <td>{{base[1].l[1].p4 || '--'}}</td>
+      <td>{{base[1].l[1].p5 || '--'}}</td>
+      <td>{{base[1].l[1].p6 || '--'}}</td>
+    </tr>
+    <!-- 合计 -->
+    <tr>
+      <td class="left">合计</td>
+      <td class="left">{{base[1].l[0].name}}</td>
+      <td>{{base[2].l[0].p1 || '--'}}</td>
+      <td>{{base[2].l[0].p2 || '--'}}</td>
+      <td>{{base[2].l[0].p3 || '--'}}</td>
+      <td>{{base[2].l[0].p4 || '--'}}</td>
+      <td>{{base[2].l[0].p5 || '--'}}</td>
+      <td>{{base[2].l[0].p6 || '--'}}</td>
     </tr>
     <tr>
-      <td class="left">{{base[1].name}}</td><td class="left">{{base[1].l[0].name}}</td>
-      <td>{{base[1].l[0].p1 || '--'}}</td><td>{{base[1].l[0].p2 || '--'}}</td><td>{{base[1].l[0].p3 || '--'}}</td>
-      <td>{{base[1].l[0].p4 || '--'}}</td><td>{{base[1].l[0].p5 || '--'}}</td><td>{{base[1].l[0].p6 || '--'}}</td>
-    </tr>
-    <tr>
-      <td class="left"></td><td class="left">{{base[1].l[1].name}}</td>
-      <td>{{base[1].l[1].p1 || '--'}}</td><td>{{base[1].l[1].p2 || '--'}}</td><td>{{base[1].l[1].p3 || '--'}}</td>
-      <td>{{base[1].l[1].p4 || '--'}}</td><td>{{base[1].l[1].p5 || '--'}}</td><td>{{base[1].l[1].p6 || '--'}}</td>
+      <td class="left"></td>
+      <td class="left">{{base[1].l[1].name}}</td>
+      <td>{{base[2].l[1].p1 || '--'}}</td>
+      <td>{{base[2].l[1].p2 || '--'}}</td>
+      <td>{{base[2].l[1].p3 || '--'}}</td>
+      <td>{{base[2].l[1].p4 || '--'}}</td>
+      <td>{{base[2].l[1].p5 || '--'}}</td>
+      <td>{{base[2].l[1].p6 || '--'}}</td>
     </tr>
   </table>
-  <script src="../../common/angular-1.2.28.min.js"></script>
+  <script src="http://cdn.bootcss.com/angular.js/1.2.28/angular.min.js"></script>
+  <!-- <script src="../../common/angular-1.2.28.min.js"></script> -->
   <!-- <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script> -->
   <script type="text/javascript">
     function MainCtrl($scope){
@@ -157,6 +201,20 @@
               name: "等额本金",
             },
           ]
+        },
+        {
+          type: 3,
+          name: "合计",
+          l: [
+            {
+              type: 0,
+              name: "等额本息",
+            },
+            {
+              type: 1,
+              name: "等额本金",
+            },
+          ]
         }
       ];
 
@@ -175,12 +233,14 @@
           count1(params[1], base[1].l[0]);
           count2(params[1], base[1].l[1]);
         }
+
+        countAll(base);
       }
     }
 
     // 校验金额
     function isMoney(money){
-      return !(isNaN(money-0) || money < 1);
+      return !(isNaN(money-0) || money < 0);
     }
     // 校验贷款利率 
     function isPercent(line){
@@ -273,13 +333,35 @@
       base.p6 = subMoney(backMoney[1] - backMoney[2]);
     }
 
+
+
     function subMoney(money){
       if((money+'').indexOf('.') > 0){
         money = money.toFixed(2);
       }else{
-        money = money + '.00';
+        money = money;
       }
       return money;
+    }
+
+    function countAll(base){
+      var all = base[2].l,
+          p1  = base[0].l,
+          p2  = base[1].l;
+
+      all[0].p1 = subMoney(p1[0].p1 - 0 + (p2[0].p1 - 0));
+      all[0].p2 = subMoney(p1[0].p2 - 0 + (p2[0].p2 - 0));
+      all[0].p3 = subMoney(p1[0].p3 - 0 + (p2[0].p3 - 0));
+      all[0].p4 = subMoney(p1[0].p4 - 0 + (p2[0].p4 - 0));
+      all[0].p5 = subMoney(p1[0].p5 - 0 + (p2[0].p5 - 0));
+      all[0].p6 = subMoney(p1[0].p6 - 0 + (p2[0].p6 - 0));
+
+      all[1].p1 = subMoney(p1[1].p1 - 0 + (p2[1].p1 - 0));
+      all[1].p2 = subMoney(p1[1].p2 - 0 + (p2[1].p2 - 0));
+      all[1].p3 = subMoney(p1[1].p3 - 0 + (p2[1].p3 - 0));
+      all[1].p4 = subMoney(p1[1].p4 - 0 + (p2[1].p4 - 0));
+      all[1].p5 = subMoney(p1[1].p5 - 0 + (p2[1].p5 - 0));
+      all[1].p6 = subMoney(p1[1].p6 - 0 + (p2[1].p6 - 0));
     }
   </script>
 </body>
