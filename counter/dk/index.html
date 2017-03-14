@@ -43,6 +43,10 @@
 </head>
 <body ng-controller="MainCtrl" class="zhdk">
   <h1 class="title">组合房贷计算器</h1>
+  <label>购房款：<input type="text" ng-model="total">万元</label>
+  <label>首付款：{{first}}万元</label>
+  <label>中介费：{{zhongjie}}万元</label>
+  <label>房产税：{{shui}}万元</label>
   <table>
     <tr>
       <th>贷款性质</th>
@@ -151,7 +155,11 @@
   <!-- <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script> -->
   <script type="text/javascript">
     function MainCtrl($scope){
-      
+      $scope.total = 200;
+      $scope.first = 70;
+      $scope.zhongjie = 4;
+      $scope.shui = 2;
+
       $scope.years = [
         {id: 20, name: "20年（240期限）"},
         {id: 30, name: "30年（360期限）"},
@@ -167,7 +175,7 @@
         {
           type: 1,
           name: "商业贷款",
-          money: 30,
+          money: 20,
           years: 30,
           line: 4.9,
           p1: undefined,
@@ -220,7 +228,24 @@
 
       $scope.base = base;
 
+      $scope.$watch("total", function(newV){
+        $scope.first = subMoney(newV * 0.35);
+        $scope.zhongjie = subMoney(newV * 0.02);
+        $scope.shui = subMoney(newV * 0.01);
+        let temp = subMoney(newV * 0.65);
+        // base[0].money = temp > 110 ? 110
+        if(temp >= 110){
+          base[1].money = 110;
+          base[0].money = subMoney(temp - 110);
+        }else{
+          base[1].money = temp;
+          base[0].money = 0;
+        }
+      });
+
       $scope.run = function(){
+
+        // base[0].money = $scope.total * 0.65 - base[1].money;
 
         var params = angular.copy(base);
 
