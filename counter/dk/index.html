@@ -96,7 +96,7 @@
     <tr>
       <td class="left">{{base[0].name}}</td>
       <td class="left">{{base[0].l[0].name}}</td>
-      <td>{{base[0].l[0].p1 || '--'}}（{{base[0].l[0].p2 || '--'}} + {{base[0].l[0].p3 || '--'}}）</td>
+      <td>{{base[0].l[0].p1 || '--'}}（{{base[0].l[0].p2 || '--'}}<br/>{{base[0].l[0].p3 || '--'}}）</td>
       <!-- <td>{{base[0].l[0].p2 || '--'}}</td> -->
       <!-- <td>{{base[0].l[0].p3 || '--'}}</td> -->
       <td>{{base[0].l[0].p4 || '--'}}</td>
@@ -168,9 +168,20 @@
 
       $scope.years = [
         {id: 15, name: "15年"},
+        {id: 16, name: "16年"},
         {id: 17, name: "17年"},
         {id: 18, name: "18年"},
+        {id: 19, name: "19年"},
         {id: 20, name: "20年"},
+        {id: 21, name: "21年"},
+        {id: 22, name: "22年"},
+        {id: 23, name: "23年"},
+        {id: 24, name: "24年"},
+        {id: 25, name: "25年"},
+        {id: 26, name: "26年"},
+        {id: 27, name: "27年"},
+        {id: 28, name: "28年"},
+        {id: 29, name: "29年"},
         {id: 30, name: "30年"},
       ];
 
@@ -184,7 +195,7 @@
       var base = [
         {
           type: 1,
-          name: "商业贷款",
+          name: "商贷",
           money: 20,
           years: 20,
           line: 4.9,
@@ -193,17 +204,17 @@
           l: [
             {
               type: 0,
-              name: "等额本息",
+              name: "本息",
             },
             {
               type: 1,
-              name: "等额本金",
+              name: "本金",
             },
           ]
         },
         {
           type: 2,
-          name: "公积金贷款",
+          name: "公积金",
           money: 110,
           years: 20,
           line: 3.25,
@@ -212,11 +223,11 @@
           l: [
             {
               type: 0,
-              name: "等额本息",
+              name: "本息",
             },
             {
               type: 1,
-              name: "等额本金",
+              name: "本金",
             },
           ]
         },
@@ -226,11 +237,11 @@
           l: [
             {
               type: 0,
-              name: "等额本息",
+              name: "本息",
             },
             {
               type: 1,
-              name: "等额本金",
+              name: "本金",
             },
           ]
         }
