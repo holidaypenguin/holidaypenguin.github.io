@@ -223,16 +223,16 @@ auto_excerpt:
 post_meta:
   item_text: true
   created_at: true
-  updated_at: false
+  updated_at: true
   categories: true
 
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
-  totalcount: false
+  wordcount: true
+  min2read: true
+  totalcount: true
   separated_meta: true
 
 # Wechat Subscriber
@@ -534,12 +534,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: true
-  app_id: gPPYW5Ov7fB6qIfQfLIN8GYl-gzGzoHsz
-  app_key: lr1BRzbaYakHnv5Rm1bt25ry
-  security: true
-  betterPerformance: false
-
-
+  app_id: gPPYW5Ov7fB6qIfQfLIN8GYl-gzGzoHsz #<app_id>
+  app_key: lr1BRzbaYakHnv5Rm1bt25ry #<app_key>
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
