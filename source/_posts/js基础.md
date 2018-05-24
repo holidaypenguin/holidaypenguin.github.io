@@ -1,13 +1,13 @@
-
 ---
 title: js基础
-tags: js
-categories: web
+translate_title: js-foundation
+date: 2018-05-24 11:41:47
+tags:
 ---
+
 
 
 # JS
-
 
 
 ## 原始数据类型
@@ -39,7 +39,7 @@ function maskPhone(phone){
 
 function getQueryString(url){
     url.replace(/[\?\&]([^\?\&]+)=([^\?\&]+)/g, function($0, $1, $2){
-    	console.log($0, $1, $2)
+        console.log($0, $1, $2)
     });
 }
 getQueryString("http://www.rongyi.com?a=1&b=2&c");
@@ -210,7 +210,7 @@ hh.ee();      // ee的局部作用域
 hh.ff0();     // 全局作用域
 hh.ff();       // 全局作用域
 hh.ff1();     // hh的局部作用域 --- 从此解开谜底
-hh.gg();     // GG的局部作用域	
+hh.gg();     // GG的局部作用域    
 ```
 
 
@@ -328,7 +328,7 @@ html
 
 ```html
 <div class="float-wraper">
-	<div class="float-inner"></div>
+    <div class="float-inner"></div>
 </div>
 ```
 
@@ -492,7 +492,7 @@ html
 
 ```html
 <div class="float-wraper clearfix">
-	<div class="float-inner"></div>
+    <div class="float-inner"></div>
 </div>
 ```
 

@@ -15,6 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://local.rongyi.com:4001
 root: /
+# permalink: :year/:month/:day/:translate_title/  # 翻译失效
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -78,7 +79,8 @@ theme: hexo-theme-next-5.1.4
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: leancloud_counter_security_sync
+- type: leancloud_counter_security_sync
+
 
 
 leancloud_counter_security:
@@ -87,3 +89,41 @@ leancloud_counter_security:
   app_key: lr1BRzbaYakHnv5Rm1bt25ry
   username: admin
   password: admin
+
+# Hexo Beautify
+beautify:
+  types:
+    - html
+    - css
+    - js
+  exclude:
+    - '*.min.css'
+    - '*.min.js'
+  html:
+    'indent_inner_html': false
+    'indent_size': 2
+    'indent_with_tabs': false
+    # More Options (https://github.com/beautify-web/js-beautify/blob/master/README.md)
+  css:
+    'indent_size': 2
+    'newline_between_rules': true
+    'indent_with_tabs': false
+    # More Options (https://github.com/beautify-web/js-beautify/blob/master/README.md)
+  js:
+    'indent_size': 2
+    'indent_with_tabs': false
+    # More Options (https://github.com/beautify-web/js-beautify/blob/master/README.md)
+
+# translate_title:
+  # translate_way: baidu_no_appid  # google,youdao,baidu_with_appid,baidu_no_appid
+  # youdao_api_key: '' # Your youdao_api_key
+  # youdao_keyfrom: xxxx-blog # Your youdao_keyfrom
+  # is_need_proxy: false     # true | false
+  # proxy_url:  # Your proxy_url
+  # baidu_appid: '20180524000165327' # Your baidu_appid
+  # baidu_appkey: '_xIg_STanOMeoYReLXAU' # Your baidu_appkey
+
+lazyload:
+  enable: true 
+  onlypost: false
+  loadingImg: # eg /images/loading.gif
