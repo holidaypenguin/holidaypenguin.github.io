@@ -1,8 +1,9 @@
 ---
 title: hello-world
-description: <!-- more -->
+description: 该站点第一篇正式文章，为了显示其特殊性将其时间设定早一些，后续一些篇章是按照时间顺序排列的<!-- more -->
 translate_title: hello-world
-date: 2018-05-24 17:23:50
+date: 0000-00-00 00:00:00
+updated: 0000-00-00 00:00:00
 tags:
 categories:
 ---
@@ -10,7 +11,7 @@ categories:
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start 
+## Quick Start
 
 ### Create a new post
 
