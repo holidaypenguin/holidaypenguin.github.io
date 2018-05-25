@@ -2,9 +2,9 @@
 title: hello-world
 description: 该站点第一篇正式文章，为了显示其特殊性将其时间设定早一些，后续一些篇章是按照时间顺序排列的<!-- more -->
 translate_title: hello-world
-date: 0000-00-00 00:00:00
-updated: 0000-00-00 00:00:00
-tags:
+date: 1989-01-01 07:30:00
+updated: 1989-01-01 07:30:00
+tags: 杂项
 categories:
 ---
 

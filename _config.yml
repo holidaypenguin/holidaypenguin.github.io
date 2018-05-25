@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://local.rongyi.com:4001
+url: https://holidaypenguin.github.io
 root: /
 permalink: :year/:month/:day/:translate_title/
 # permalink: :year/:month/:day/:title/
