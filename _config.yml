@@ -127,3 +127,9 @@ lazyload:
   enable: true 
   onlypost: false
   loadingImg: # eg /images/loading.gif
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
