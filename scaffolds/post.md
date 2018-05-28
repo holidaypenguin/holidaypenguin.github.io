@@ -3,7 +3,7 @@ title: {{ title }}
 description: <!-- more -->
 translate_title: 
 date: {{ date }}
-updated: {{ data }}
+updated: {{ date }}
 tags: 
 categories: 
 ---
