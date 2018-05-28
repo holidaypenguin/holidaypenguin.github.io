@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[cnpm安装与启动]]></title>
+    <url>%2Fblob%2F2017-09-12-cnpm-installation-and-startup%2F</url>
+    <content type="text"><![CDATA[Node安装 安装目录：/usr/local/node安装命令：copy启动命令：环境变量指向此位置，无需 Python3安装 安装目录：/usr/local/python3环境变量执行此位置 export PATH=/usr/local/python3/bin:/usr/local/node/bin:$PATH Nginx安装 安装目录：/usr/local/nginx安装命令： 123 ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_ssl_module --with-http_sub_module --with-http_gzip_static_module --with-http_stub_status_module --with-http_realip_modulemakemake install 启动命令： 1234 #cp /usr/local/nginx/sbin #./nginx#ps -ef | grep nginx #kill -9 23325 Mysql安装 安装目录： 12345678910 [root@rhel5 ~]# find / -name mysql -print/etc/logrotate.d/mysql/etc/rc.d/init.d/mysql/var/lib/mysql/var/lib/mysql/mysql/var/lock/subsys/mysql/usr/lib/mysql/usr/include/mysql/usr/share/mysql/usr/bin/mysql 而 data默认放在：/var/lib/mysqlmysql默认安装在了：/usr/share/mysql中安装命令：rpm安装启动命令：service mysql start Cnpmjs.org安装 安装目录：/root/cnpmjs.org-2.6.2安装命令：copy启动命令：#cp /root/cnpmjs.org-2.6.2 #node dispatch.js 访问： 12 http://192.168.33.21:7001http://192.168.33.21:7002 使用npm的时候也可以加上 –verbose参数来查看更详细的日志]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>杂项</tag>
+        <tag>cnpm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Fiddler抓包https]]></title>
+    <url>%2Fblob%2F2017-08-24-fiddler-packet-https%2F</url>
+    <content type="text"><![CDATA[原文1原文2 原理 fiddler抓包原理 fiddler 调试器注册到操作系统因特网服务中，系统所有的网络请求都会走fiddler的代理，所以fiddler才能抓包。 Debug traffic from any client and browserFiddler helps you debug traffic from any browser: Internet Explorer, Chrome, Firefox, Safari, Opera, and more. Once you start Fiddler, the web debugger registers itself as the system proxy for Microsoft Windows Internet Services (WinINet), the HTTP layer used by Internet Explorer, Microsoft Office, and many other products. As the system proxy, all HTTP requests from WinINet flow through Fiddler before reaching the target web servers. Similarly, all HTTP responses flow through Fiddler before being returned to the client application.Additionally, most devices that support Wi-Fi or Ethernet can be configured to send their traffic to Fiddler; this includes iOS, Android, Windows Phone and Windows RT devices. fiddler解密https原理 其实fiddler就是中间人攻击，依次经过如下过程 fiddler接到客户端的https请求，fiddler将请求转发给服务器 服务器生成公钥证书，返回给fiddler；fiddler拦截下真的公钥证书，并生成伪造的公钥证书给客户端； 客户端使用伪造的公钥证书加密共享密钥发送给fiddler，fiddler使用伪造的私钥解密获取共享密钥 fiddler将解密后的共享密钥，使用真正的公钥加密发送给服务器端，服务器使用共享密钥与fiddler通信 fiddler使用共享密钥与客户端通信以上是fiddler抓包解密的原理，这个原理是建立在https建立连接的基础上的，请参考https建立连接过程 开始抓包 设置fiddler抓包 File—–&gt;capture traffic 设置抓https和解密https Tools—–&gt;fiddler options—–&gt;https—–&gt;capture https traffic—-&gt;decrypt https traffic—&gt;Ignore server certificate errors—-&gt;Actions—–&gt;Trust root certificate—-&gt;之后都是确定 安装根证书后，可以点击Actions—–&gt;open windows certificate manager查看安装到系统的根证书 根证书的作用：fiddler对每个域名都会生成公钥证书，浏览器会用根证书验证公钥证书的合法性，所以，根证书是https 抓包必不可少的部分效果我们那支付宝登陆界面做测试，支付宝登陆页面 常见问题 http tunnel、http connect 有一种情况，host都是tunnel to， url 后边都带着443，这是什么意思呢？ 查看，请求头会发现使用了Connect方法，Connect方法通常会建议代理(fiddler)与目标服务器建立http tunnel；尽管Connect也可以用于http，但是一般是用于SSL通信； CONNECT www.google.com:443 这句话表示，代理与服务器的443端口建立了http tunnel，在此之后，所有由客户端发送的内容，都会经由http 代理，转发给www.google.com:443端口；更多http tunnel&amp;http connect资料可以参考http tunnel&amp;connect 解密失败 有的时候，发现解密失败，这是可以查看connect的log。如图 通过查看响应，我们看到，是由于没有设置解密导致的，This is a CONNECT tunnel, through which encrypted HTTPS traffic flows.Fiddler’s HTTPS Decryption feature is enabled, but this specific tunnel was configured not to be decrypted. Settings can be found inside Tools &gt; Fiddler Options &gt; HTTPS.A SSLv3-compatible ServerHello handshake was found. Fiddler extracted the parameters below.Tools &gt; Fiddler Options &gt; HTTPS，选中解密https，选择正确的来源，解密成功。 当然，如果不想显示Connect，你也可以设置rules-----&gt;hide connects 隐藏connect；如果还是解密失败，可以查看Log标签页，错误信息都会在这里边显示。 抓不到手机微信 有网友跟我说，抓不到手机微信的数据，这是因为，微信走的http2协议，fiddler不支持http2协议，所以用wireshark抓，但http2也是加密的，所以抓到的数据看不懂。]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Fiddler</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Fiddler手机抓包]]></title>
+    <url>%2Fblob%2F2017-08-24-fiddler-handset-grab-bag%2F</url>
+    <content type="text"><![CDATA[启动Fiddler，打开菜单栏中的 Tools &gt; Fiddler Options，打开“Fiddler Options”对话框。 在Fiddler Options”对话框切换到“Connections”选项卡，然后勾选“Allow romote computers to connect”后面的复选框，然后点击“OK”按钮。 打开android设备的“设置”-&gt;“WLAN”，找到你要连接的网络，在上面长按，然后选择“修改网络”，弹出网络设置对话框，然后勾选“显示高级选项” 在“代理”后面的输入框选择“手动”，在“代理服务器主机名”后面的输入框输入电脑的ip地址，在“代理服务器端口”后面的输入框输入8888，然后点击“保存”按钮。]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Fiddler</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Fiddler断点]]></title>
+    <url>%2Fblob%2F2017-05-24-fiddler-breakpoint%2F</url>
+    <content type="text"><![CDATA[Fiddler中设置断点修改Request 第一种：打开Fiddler 点击Rules-&gt; Automatic Breakpoint -&gt;Before Requests(这种方法会中断所有的会话)如何消除命令呢？ 点击Rules-&gt; Automatic Breakpoint -&gt;Disabled 第二种: 在命令行中输入命令: bpu www.baidu.com (这种方法只会中断www.baidu.com)如何消除命令呢？ 在命令行中输入命令 bpu Fiddler 能中断这次会话，选择被中断的会话，点击Inspectors tab下的WebForms tab 修改用户名密码，然后点击Run to Completion 如下图所示。 Fiddler中设置断点修改Response 第一种：打开Fiddler 点击Rules-&gt; Automatic Breakpoint -&gt;After Response (这种方法会中断所有的会话)如何消除命令呢？ 点击Rules-&gt; Automatic Breakpoint -&gt;Disabled 第二种: 在命令行中输入命令: bpuafter www.baidu.com (这种方法只会中断www.baidu.com)如何消除命令呢？ 在命令行中输入命令 bpuafter,]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Fiddler</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Fiddler模拟POST或Get请求]]></title>
+    <url>%2Fblob%2F2017-05-24-fiddler-simulation-of-post-or-get-requests%2F</url>
+    <content type="text"><![CDATA[打开我们Fiddler2程序，开始咯(这个刚好英文版的，可以去下载汉化包) 这个要根据图片来，图中标记需要分别介绍下图标记1: 这个是请求状态和结果的显示区域图标记2: 请求的方法选择，常用的就是POST请求和GET请求方式图标记3: 请求的地址输入框图标记4: 我们提交的数据输入框图标记5: 这个是我们请求的数据头输入框图标记6: 点击这个Execute按钮，就可以提交我们的模拟请求 首先使用Fiddler2模拟GET请求1.在地址输入框里面模拟的GET请求地址(已被遮罩了，你们懂得)2.选择请求的方法，这里我们选择GET方法3.点击Execute按钮，就可以执行模拟请求4.在显示区域就可以看到我们刚刚提交的请求5.直接双击显示区域里面的请求记录，就可以看到我们的GET方法的数据 然后使用Fiddler2模拟POST请求1.在地址输入框里面模拟的POST请求地址(已被遮罩了，你们懂得)2.选择请求的方法，这里我们选择POST方法3.在提交的数据输入框里面输入我们提交的POST数据3.点击Execute按钮，就可以执行模拟请求4.在显示区域就可以看到我们刚刚提交的请求5.直接双击显示区域里面的请求记录，就可以看到我们的POST方法的数据]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Fiddler</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hello-world]]></title>
-    <url>%2F1989%2F01%2F01%2Fhello-world%2F</url>
+    <url>%2Fblob%2F1989-01-01-hello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post 1 $ hexo new "My New Post " More info: Writing Run server 1 $ hexo server More info: Server Generate static files 1 $ hexo generate More info: Generating Deploy to remote sites 1 $ hexo deploy More info: Deployment Tables Are Cool col 3 is right-aligned $1600 Front-matter Front-matter 是文件最上方以 — 分隔的区域，用于指定个别文件的变量，举例来说： 123 title: Hello Worlddate: 2013/7/13 20:46:25--- 以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。 参数 描述 默认值 layout 布局 title 标题 date 建立日期 文件建立日期 updated 更新日期 文件更新日期 comments 开启文章的评论功能 true tags 标签（不适用于分页） categories 分类（不适用于分页） permalink 覆盖文章网址 &nbsp; 分类和标签 只有文章支持分类和标签，您可以在 Front-matter 中设置。 Markdown语法的简要规则 标题 标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。会生成右侧的目录树，同时以不同的字体大小并加粗显示。 12345 # 一级标题## 二级标题### 三级标题 以此类推，总共六级标题，建议在井号后加一个空格，这是最标准的 Markdown 语法。 列表 列表的显示只需要在文字前加上 - 或 * 即可变为无序列表，有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。 无序列表 123 * 1* 2* 3 to： 1 2 3 有序列表 123 1. 12. 23. 3 to： 1 2 3 引用 如果你需要引用一小段别处的句子，那么就要用引用的格式。只需要在文本前加入 &gt; 这种尖括号（大于号）即可。 123 &gt; 这里是引用要注意符号和文本间的空格 to： 这里是引用 要注意符号和文本间的空格 图片和链接 插入链接与插入图片的语法很像，区别在一个 !号 1234567891011 图片为：![]()链接为：[]()![BURBERRY](/images/BURBERRY.png)[Baidu](https://www.baidu.com)[BURBERRY][1][1]: https://www.baidu.com to： Baidu BURBERRY 粗体与斜体 用两个 包含一段文本就是粗体的语法，用一个 包含一段文本就是斜体的语法。 12 **这里是粗体***这里是斜体* to：这里是粗体这里是斜体 表格 12345 | Tables | Are | Cool || ------------- |:-------------:| -----:|| col 3 is | right-aligned | $1600 || col 2 is | centered | $12 || zebra stripes | are neat | $1 | 这种语法生成的表格如下： Tables Are Cool col 3 is right-aligned $1600 col 2 is centered $12 zebra stripes are neat $1 代码框 程序员需要在文章中引用代码框，需要使用`把中间代码包裹起来，或者一个在代码前面加一个tab。 1234567891011 ` ``代码片段，前后各加三个注意实际使用中没用空格，为了显示才加的空格` ```代码元素，前后只有一个` let a; let b; //在前面加tab to： 1 代码片段，前后各加三个 代码元素，前后只有一个 let a; let b; //在前面加tab 分割线 1 *** to：]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
       <tags>
         <tag>杂项</tag>
       </tags>
