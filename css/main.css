@@ -1556,6 +1556,11 @@ pre .javascript .function {
   }
 }
 
+.posts-expand .post-body h1,
+.posts-expand .post-body h2 {
+  border-bottom: 1px solid #ddd;
+}
+
 .posts-expand .post-body h2,
 .posts-expand .post-body h3,
 .posts-expand .post-body h4,
@@ -2182,7 +2187,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #125eff;
+  background: #ee7fb9;
 }
 
 .links-of-blogroll {
