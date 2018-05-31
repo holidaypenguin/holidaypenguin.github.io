@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git-代码合并Merge与Rebase的选择]]></title>
+    <url>%2Fblob%2F2018-05-29-the-choice-of-git--code-merging-merge-and-rebase%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Merge</tag>
+        <tag>Rebase</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git-AoneFlow]]></title>
+    <url>%2Fblob%2F2018-05-29-git-aoneflow%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>AoneFlow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE Atom 安装]]></title>
+    <url>%2Fblob%2F2017-09-14-ide-atom-installation%2F</url>
+    <content type="text"><![CDATA[安装C/C++运行环境需要安装 python（https://www.python.org/）或者visual studio， 安装Atom下载 https://atom.io/ 设置系统环境变量管理员打开cmd 12345678 Windows temporary:set ATOM_NODE_URL=http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/distWindows permanently:setx ATOM_NODE_URL http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist /MLinuxexport ATOM_NODE_URL=http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist 开始使用]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Atom</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[cnpm安装与启动]]></title>
     <url>%2Fblob%2F2017-09-12-cnpm-installation-and-startup%2F</url>
     <content type="text"><![CDATA[Node安装 安装目录：/usr/local/node安装命令：copy启动命令：环境变量指向此位置，无需 Python3安装 安装目录：/usr/local/python3环境变量执行此位置 export PATH=/usr/local/python3/bin:/usr/local/node/bin:$PATH Nginx安装 安装目录：/usr/local/nginx安装命令： 123 ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_ssl_module --with-http_sub_module --with-http_gzip_static_module --with-http_stub_status_module --with-http_realip_modulemakemake install 启动命令： 1234 #cp /usr/local/nginx/sbin #./nginx#ps -ef | grep nginx #kill -9 23325 Mysql安装 安装目录： 12345678910 [root@rhel5 ~]# find / -name mysql -print/etc/logrotate.d/mysql/etc/rc.d/init.d/mysql/var/lib/mysql/var/lib/mysql/mysql/var/lock/subsys/mysql/usr/lib/mysql/usr/include/mysql/usr/share/mysql/usr/bin/mysql 而 data默认放在：/var/lib/mysqlmysql默认安装在了：/usr/share/mysql中安装命令：rpm安装启动命令：service mysql start Cnpmjs.org安装 安装目录：/root/cnpmjs.org-2.6.2安装命令：copy启动命令：#cp /root/cnpmjs.org-2.6.2 #node dispatch.js 访问： 12 http://192.168.33.21:7001http://192.168.33.21:7002 使用npm的时候也可以加上 –verbose参数来查看更详细的日志]]></content>
@@ -10,6 +47,7 @@
       <tags>
         <tag>杂项</tag>
         <tag>cnpm</tag>
+        <tag>自定义npm</tag>
       </tags>
   </entry>
   <entry>
@@ -58,6 +96,161 @@
       <tags>
         <tag>Fiddler</tag>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime lint-JSHint MSG]]></title>
+    <url>%2Fblob%2F2017-03-15-ide-sublime-lint-jshint-msg%2F</url>
+    <content type="text"><![CDATA[“Missing semicolon.” : “缺少分号.”,“Use the function form of \”use strict\”.” : “使用标准化定义function.”,“Unexpected space after ‘-’.” : “在’-‘后面不应出现空格.”,“Expected a JSON value.” : “请传入一个json的值.”,“Mixed spaces and tabs.”: “空格和TAB重复.”,“Unsafe character.” : “不安全的字符.”,“Line too long.”: “本行中的字符超过设定的最大长度.”,“Trailing whitespace.”: “本行末尾有过多无用空格.”,“Script URL.” : “脚本URL.”,“Unexpected {a} in ‘{b}’.” : “在 ‘{b}’ 中不该出现 {a}.”,“Unexpected ‘{a}’.” : “不该在此出现’{a}’.”,“Strings must use doublequote.” : “字符串需要用双引号”,“Unnecessary escapement.” : “不需要转义”,“Control character in string: {a}.” : “在字符串中出现了Control的字符”,“Avoid \’.” : “避免 \”,“Avoid \v.” : “避免 \v”,“Avoid \x-.” : “避免 \x-”,“Bad escapement.” : “错误的转义字符”,“Bad number ‘{a}’.” : “错误的数字 ‘{a}’”,“Missing space after ‘{a}’.” : “在’{a}’之后缺少空格”,“Don’t use extra leading zeros ‘{a}’.” : “不要再’{a}’的前面用多余的0″,“Avoid 0x-. ‘{a}’.” : “避免使用 0x-. ‘{a}’.”,“A trailing decimal point can be confused with a dot ‘{a}’.” : “在’{a}’中使用点尾随小数点”,“Unexpected comment.” : “不该在此处出现注释”,“Unescaped ‘{a}’.” : “没有转义 ‘{a}’”,“Unexpected control character in regular expression.” : “在正则表达式中出现了control字符”,“Unexpected escaped character ‘{a}’ in regular expression.” : “在正则表达式中出现了没有转义的字符 ‘{a}’”,“Expected ‘{a}’ and instead saw ‘{b}’.” : “应该用 ‘{a}’代替’{b}’”,“Spaces are hard to count. Use .” : “空格难以统计，请使用 ”,“Insecure ‘{a}’.” : “不安全的 ‘{a}’”,“Empty class.” : “空的class”,“Expected a number and instead saw ‘{a}’.”:“应该用数字代替’{a}’”,“‘{a}’ should not be greater than ‘{b}’.”:“‘{a}’不应该比’{b}’大”,“‘hasOwnProperty’ is a really bad name.”: “‘hasOwnProperty’是关键字”,“‘{a}’ was used before it was defined.”:“‘{a}’未定义就已经使用了.”,“‘{a}’ is already defined.”:“‘{a}’被重复定义”,“A dot following a number can be confused with a decimal point.”:“数字后面的一个点会被误认为是十进制的小数点”,“Confusing minusses” : “容易混淆的负数表达-”,“Confusing plusses.” : “容易混淆的正数表达+”,“Unmatched ‘{a}’.” : “无法匹配的’{a}’”,“Expected ‘{a}’ to match ‘{b}’ from line {c} and instead saw ‘{d}’.”:“在行{c}中需要用’{a}’和’{b}’匹配，用来代替’{d}’”,“Unexpected early end of program.”:“程序不可预期的提前终止”,“A leading decimal point can be confused with a dot: ‘.{a}’.”:“‘{a}’前的点容易混淆成小数点”,“Use the array literal notation [].”:“使用数组的符号 []“,“Expected an operator and instead saw ‘{a}’.”:“需要用一个符号来代替’{a}’”,“Unexpected space after ‘{a}’.”:“在’{a}’之后不能出现空格”,“Unexpected space before ‘{a}’.”:“在’{a}’之前不能出现空格”,“Bad line breaking before ‘{a}’.”:“在’{a}’之前错误的换行”,“Expected ‘{a}’ to have an indentation at {b} instead at {c}.”:“‘{a}’需要在{c}而不是{b}处缩进”,“Line breaking error ‘{a}’.”:“换行错误 ‘{a}’”,“Unexpected use of ‘{a}’.”:“此处不能用’{a}’”,“Bad operand.”:“错误的操作数”,“Use the isNaN function to compare with NaN.”:“使用isNaN来与NaN比较”,“Confusing use of ‘{a}’.”:“容易混淆的’{a}’的使用”,“Read only.”:“只读的属性”,“‘{a}’ is a function.”:“‘{a}’是一个函数”,‘Bad assignment.’:“错误的赋值”,“Do not assign to the exception parameter.”:“不要给额外的参数赋值”,“Expected an identifier in an assignment and instead saw a function invocation.”:“在赋值的语句中需要有一个标识符，而不是一个方法的调用”,“Expected an identifier and instead saw ‘{a}’ (a reserved word).”:“需要有一个标识符，而不是’{a}’(保留字符)”,“Missing name in function declaration.”:“在方法声明中缺少名称”,“Expected an identifier and instead saw ‘{a}’.”:“需要有一个标识符，而不是’{a}’”,“Inner functions should be listed at the top of the outer function.”:“内部函数的声明应该放在此函数的顶部。”,“Unreachable ‘{a}’ after ‘{b}’.”:“在’{b}’之后无法获取’{a}’”,“Unnecessary semicolon.”:“不必要的分号”,“Label ‘{a}’ on {b} statement.”:“将’{a}’放在{b}的声明中”,“Label ‘{a}’ looks like a javascript url.”:“‘{a}’看上去像一个js的链接”,“Expected an assignment or function call and instead saw an expression”:“需要一个赋值或者一个函数调用，而不是一个表达式.”,“Do not use ‘new’ for side effects.”:“不要用’new’语句.”,“Unnecessary \”use strict\”.”:“不必要的\”use strict\”.”,“Missing \”use strict\” statement.”:“缺少\”use strict\”的声明”,“Empty block.”:“空的模块”,“Unexpected /member ‘{a}’.”:“不应出现 /元素 ‘{a}’.”,“‘{a}’ is a statement label.”:“‘{a}’是一个声明”,“‘{a}’ used out of scope.”:“‘{a}’使用超出范围”,“‘{a}’ is not allowed.”:“不允许使用’{a}’”,“‘{a}’ is not defined.”:“‘{a}’没有被定义”,“Use ‘{a}’ to compare with ‘{b}’.”:“使用’{a}’与’{b}’相比”,“Variables should not be deleted.”:“变量需要被删除”,“Use the object literal notation {}.”:“使用对象的文字符号 {}”,“Do not use {a} as a constructor.”:“不要使用{a}作为一个构造对象”,“The Function constructor is eval.”:“The Function constructor is eval.”,“A constructor name should start with an uppercase letter.”:“一个构造对象的名称必须用大写字母开头.”,“Bad constructor.”:“错误的构造对象”,“Weird construction. Delete ‘new’.”:“构造对象有误，请删除’new’”,“Missing ‘()’ invoking a constructor.”:“缺少括号()”,“Avoid arguments.{a}.”:“避免参数.{a}.”,“document.write can be a form of eval.”:“document.write是eval的一种形式”,‘eval is evil.’:“尽量不要使用eval”,“Math is not a function.”:“Math不是一个函数”,“Missing ‘new’ prefix when invoking a constructor.”:“此处缺少了’new’”,“Missing radix parameter.”:“缺少参数”,“Implied eval is evil. Pass a function instead of a string.”:“传递一个函数，而不是一个字符串”,“Bad invocation.”:“错误的调用”,“[‘{a}’] is better written in dot notation.”:“[‘{a}’]最好用点.的方式”,“Extra comma.”:“多余的逗号”,“Don’t make functions within a loop.”:“不要用循环的方式创建函数”,“Unexpected parameter ‘{a}’ in get {b} function.”:“在{b}方法中不该用到参数’{a}’”,“Duplicate member ‘{a}’.”:“重复的’{a}’”,“Expected to see a statement and instead saw a block.”:“此处应该是语句声明.”,“Too many var statements.”:“过多var的声明”,“Redefinition of ‘{a}’.”:“‘{a}’被重复定义”,“It is not necessary to initialize ‘{a}’ to ‘undefined’.”:“无需将’{a}’初始化为’undefined’”,“Expected a conditional expression and instead saw an assignment.”:“此处需要一个表达式，而不是赋值语句”,“Expected a ‘break’ statement before ‘case’.”:“在’case’之前需要有’break’.”,“Expected a ‘break’ statement before ‘default’.”:“在’default’之前需要有’break’.”,“This ‘switch’ should be an ‘if’.”:“此处’switch’应该是’if’.”,“All ‘debugger’ statements should be removed.”:“请删除’debugger’的语句”,“‘{a}’ is not a statement label.”:“‘{a}’不是一个声明标签.”,“Function declarations should not be placed in blocks. Use a function expression or move the statement to the top of the outer function.”:“函数的声明不能放在类似if的块中，需要放在外部函数的顶部.”]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime lint-JSHint 配置选项]]></title>
+    <url>%2Fblob%2F2017-03-13-ide-sublime-lint-jshint-configuration-options%2F</url>
+    <content type="text"><![CDATA[JSHint选项此页面的内容源自JSHint项目存储库。如果您发现错误，请打开一个问题或（更好的）提出拉请求！ 来自官方文档 http://jshint.com/docs/options/#enforceall google翻译 强制执行选项 当设置为true时，这些选项将使JSHint产生更多关于您的代码的警告。 bitwise 此选项禁止使用按位运算符，例如^（XOR）， |（OR）和其他。位运算符在JavaScript程序中非常罕见，而且往往&amp;只是一个错误类型&amp;&amp;。 camelcase 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项允许强制所有变量名称使用camelCase样式或带下划线的UPPER_CASE。 curly 此选项要求您始终在循环和条件中的块周围放置花括号。当块仅包含一个语句时，JavaScript允许您省略花括号，例如：while (day) shuffle();然而，在某些情况下，它可能导致错误（你会认为这 sleep()是循环的一部分，而实际上它不是）：while (day) shuffle(); sleep(); enforceall 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 如果不自动选择让用户使用新功能，则无法维护该选项。这可能会导致在次要版本的JSHint之间升级时出现意外的警告/错误。此选项是JSHint版本2.6.3中提供的最严格的JSHint配置的简写。它启用所有强制执行选项并禁用在该版本中定义的所有轻松选项。 eqeqeq 此选项禁止使用==和!=支持===和 !==。前者在比较之前尝试强制值，这可能导致一些意想不到的结果。后者不做任何强制，所以他们一般更安全。如果你想更多地了解JavaScript中的类型强制，我们推荐 Angus Croll的真理，平等和JavaScript。 es3 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 请esversion: 3改用。这个选项告诉JSHint你的代码需要遵守ECMAScript 3规范。如果您需要您的程序在旧版浏览器（如Internet Explorer 6/7/8/9）和其他旧版JavaScript环境中可执行，请使用此选项。 es5 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 请esversion: 5改用。此选项启用首先在ECMAScript 5.1规范中定义的语法。这包括允许保留关键字作为对象属性。 esversion 此选项用于指定代码必须遵守的ECMAScript版本。它可以采用以下值之一：3 - 如果您需要您的程序在旧版浏览器（如Internet Explorer 6/7/8/9）和其他旧版JavaScript环境中可执行5- 启用首先在ECMAScript 5.1规范中定义的语法。这包括允许保留关键字作为对象属性。6- 告诉JSHint你的代码使用ECMAScript 6的特定语法。请注意，并非所有浏览器都实现它们。 forin 此选项需要所有for in循环过滤对象的项目。for语句允许循环遍历对象的所有属性的名称，包括通过原型链继承的那些属性的名称。此行为可能导致对象中的意外项目，因此通常更安全地筛选继承属性，如示例所示：for (key in obj) { if (obj.hasOwnProperty(key)) { // We are sure that obj[key] belongs to the object and was not inherited. }}要更深入地了解JavaScript中的for in循环，请 参阅 Angus Croll 探索JavaScript for-in循环。 freeze 这个选项禁止重写本地对象如原型 Array，Date等等。// jshint freeze:trueArray.prototype.count = function (value) { return 4; };// -&gt; Warning: Extending prototype of native object: ‘Array’. funcscope 此选项抑制关于在控制结构内声明变量的警告，同时从外部访问它们。即使JavaScript只有两个真实范围 - 全局和函数 - 这样的实践导致新的语言和难以调试的bug的人之间的混乱。这就是为什么，默认情况下，JSHint警告在预期范围之外使用的变量。function test() { if (true) { var x = 0; } x += 1; // Default: ‘x’ used out of scope. // No warning when funcscope:true} futurehostile 此选项启用有关使用在未来版本的JavaScript中定义的标识符的警告。虽然覆盖它们在没有实现的上下文中没有效果，但是当将代码库迁移到该语言的较新版本时，这种做法会引起问题。 globals 此选项可用于指定未在源代码中正式定义的全局变量的白名单。当与undef选项组合时，这是最有用的，以便抑制特定于项目的全局变量的警告。设置条目以true启用读取和写入该变量。将其设置为false将触发JSHint将该变量视为只读。另请参见“环境”选项：一组选项，用于启用在常见JavaScript环境中定义的全局变量。要globals在单个文件中配置，请参阅内联配置。 immed 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项禁止使用立即函数调用，而不将其包含在括号中。括号括号帮助您的代码的读者理解表达式是函数的结果，而不是函数本身。 indent 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项为代码设置特定的制表符宽度。 iterator 此选项禁止有关iterator属性的警告。此属性不受所有浏览器支持，因此请仔细使用它。 latedef 此选项禁止在定义变量之前使用变量。JavaScript只有函数范围，除此之外，所有的变量总是被移动或悬挂到函数的顶部。这种行为可以导致一些非常讨厌的错误，这就是为什么它是更安全的总是使用变量只有在它们被明确定义之后。将此选项设置为“nofunc”将允许忽略函数声明。为了更深入地了解JavaScript中的范围和提升，请阅读 Ben Cherry的JavaScript Scoping和Hoisting。 maxcomplexity 此选项允许您控制整个代码中的循环复杂性。环路复杂性测量通过程序源代码的线性独立路径的数量。阅读更多关于维基百科上的复杂性。 maxdepth 此选项允许您控制嵌套的嵌套方式：// jshint maxdepth:2function main(meaning) { var day = true; if (meaning === 42) { while (day) { shuffle(); if (tired) { // JSHint: Blocks are nested too deeply (3). sleep(); } } }} maxerr 此选项允许您设置JSHint将在放弃之前产生的最大警告量。默认值为50。 maxlen 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项允许您设置线的最大长度。 maxparams 此选项允许您设置每个函数允许的形式参数的最大数量：// jshint maxparams:3function login(request, onSuccess) { // …}// JSHint: Too many parameters per function (4).function logout(request, isManual, whereAmI, onSuccess) { // …} maxstatements 此选项允许您设置每个函数允许的最大语句数：// jshint maxstatements:4function main() { var i = 0; var j = 0; // Function declarations count as one statement. Their bodies // don’t get taken into account for the outer function. function inner() { var i2 = 1; var j2 = 1; return i2 + j2; } j = i + j; return j; // JSHint: Too many statements per function. (5)} newcap 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项需要大写构造函数的名称。与new操作符一起使用的大写函数只是一个约定，帮助程序员在视觉上区分构造函数和其他类型的函数，以帮助在使用时发现错误this。不这样做不会在任何浏览器或环境中破坏你的代码，但是通过阅读代码 - 如果函数应该使用或不使用新的，将更难一些。这很重要，因为当要使用的函数 new没有使用它时，this将指向全局对象而不是新对象。 noarg 此选项禁止使用arguments.caller和 arguments.callee。两者.caller并且.callee做了不少优化是不可能的，所以他们在JavaScript的未来版本中被弃用。事实上，ECMAScript 5禁止arguments.callee 在严格模式下使用。 nocomma 此选项禁止使用逗号运算符。当误用时，逗号运算符可能会掩盖语句的值，并促进错误的代码。 noempty 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项在代码中具有空块时发出警告。JSLint最初是对所有空块的警告，我们只是使其可选。没有研究报告，JavaScript中的空块以任何方式破坏您的代码。 nonbsp 此选项警告“不间断的空格”字符。这些字符可以在Mac计算机上与选项空间一起输入，并有可能中断非UTF8网页。 nonew 此选项禁止使用用于副作用的构造函数。有些人喜欢调用构造函数而不将其结果赋给任何变量：new MyConstructor();这种方法没有优势， MyConstructor因为操作符new创建的对象不在任何地方使用，所以你通常应该避免像这样的构造函数。 notypeof 此选项禁止有关无效typeof运算符值的警告。此运算符只有一组有限的可能返回值。默认情况下，JSHint警告，当您将其结果与一个无效值，通常可以是错字。// ‘fuction’ instead of ‘function’if (typeof a == “fuction”) { // Invalid typeof value ‘fuction’ // …}不要使用此选项，除非你绝对确定不需要这些检查。 predef 此选项允许您控制JSHint认为要在环境中隐式定义的变量。使用字符串值数组配置它。使用连字符（ - ）字符前缀变量名将从预定义变量的集合中删除该名称。JSHint将考虑以这种方式声明的变量是只读的。此选项不能在线指定; 它只能通过JavaScript API或外部配置文件使用。 quotmark 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项强制在您的代码中使用的引号的一致性。它接受三个值：true如果你不想强制一个特定的风格，但想要一些一致性，”single”如果你只想允许单引号，并且”double”如果你只想允许双引号。 shadow 此选项禁止关于变量阴影的警告，即声明已在外部作用域中某处声明的变量。“inner” - 检查在同一范围内定义的变量“outer” - 检查外部作用域中定义的变量false - 与inner相同true - 允许可变阴影 singleGroups 当不严格要求时，此选项禁止使用分组运算符。这种使用通常反映对一元操作符的误解，例如：// jshint singleGroups: truedelete(obj.attr); // Warning: Unnecessary grouping operator. strict 此选项要求代码在ECMAScript 5的strict模式下运行。 严格模式 是选择限制JavaScript版本的一种方式。严格模式消除了一些JavaScript错误，没有通过更改它们产生错误不会导致错误。它还修正了错误，使JavaScript引擎难以执行某些优化。“全球” - “use strict”;在全球层面必须有一个指令“隐含” - 将代码看作有”use strict”;指令false - 禁用关于严格模式的警告true - “use strict”;在函数级别必须有一个指令; this is preferable for scripts intended to be loaded in web browsers directly because enabling strict mode globally could adversely effect other scripts running on the same page undef 此选项禁止使用明确未声明的变量。此选项对于发现泄漏和错误的变量非常有用。// jshint undef:truefunction test() { var myVar = ‘Hello, World’; console.log(myvar); // Oops, typoed here. JSHint with undef will complain}如果你的变量在另一个文件中定义，你可以使用global 指令告诉JSHint它。 unused 此选项在定义和不使用变量时发出警告。这对于一般的代码清理非常有用，特别是在除了使用之外 undef。// jshint unused:truefunction test(a, b) { var c, d = 2; return a + d;}test(1, 2);// Line 3: ‘b’ was defined but never used.// Line 4: ‘c’ was defined but never used.除此之外，此选项将警告您通过该global伪指令声明的未使用的全局变量。这可以设置为vars仅检查变量，而不是函数参数，或strict检查所有变量和参数。默认（true）行为是允许未使用的参数，后跟一个使用的参数。 varstmt 当设置为true时，禁止使用VariableStatements。例如：// jshint varstmt: truevar a; // Warning: var declarations are forbidden. Use let or const instead. 放松的选择 当设置为true时，这些选项将使JSHint对您的代码产生较少的警告。 asi 此选项禁止有关缺少的分号的警告。有很多关于分号的FUD被社区中的很多人传播。常见的神话是，分号是一直需要的（他们不是），并且他们是不可靠的。JavaScript有关于分号的规则，所有浏览器都遵循这些规则，所以由您自己决定是否应该在代码中使用分号。有关JavaScript中的分号的更多信息，请参阅 Isaac Schlueter的分号和JavaScript分号插入对JavaScript领导人的公开信。 boss 此选项在预期进行比较的情况下禁止关于分配的使用的警告。通常情况下，代码if (a = 10) {}就是一个拼写错误。但是，它可以在这样的情况下有用：for (var i = 0, person; person = people[i]; i++) {}您可以通过使用括号包围该分配来按用途隐藏此错误，例如：for (var i = 0, person; (person = people[i]); i++) {} debug 此选项禁止对debugger代码中的语句的警告。elision 此选项告诉JSHint您的代码使用ES3数组elision元素，或空元素（例如，[1, , , 4, , , 7]）。 eqnull 此选项禁止有关== null比较的警告。当你想检查一个变量是null或是时，这种比较通常是有用的 undefined。 esnext 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 请esversion: 6改用。此选项告诉JSHint您的代码使用ECMAScript 6特定的语法。请注意，并非所有浏览器都实现这些功能。更多信息：ECMAScript 6规范 evil 此选项禁止有关使用的警告eval。使用是 eval不鼓励的，因为它可以使您的代码易受各种注入攻击，这使得JavaScript解释器很难做某些优化。 expr 此选项禁止有关使用通常希望看到赋值或函数调用的表达式的警告。大多数时候，这样的代码是拼写错误。但是，它不被规范禁止，这就是为什么这个警告是可选的。 globalstrict 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 使用strict: “global”。此选项禁止关于使用全局严格模式的警告。全局严格模式可以打破第三方小部件，因此不推荐使用。有关严格模式的详细信息，请参阅strict选项。 lastsemic 此选项禁止有关缺少的分号的警告，但仅在单行块中的最后一条语句省略分号时：var name = (function() { return ‘Anton’ }());这是一个非常小众的用例，只有当您使用自动JavaScript代码生成器时才有用。 laxbreak 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项抑制大多数有关代码中可能不安全的换行符的警告。它不抑制关于逗号优先编码风格的警告。要抑制那些你必须使用laxcomma（见下文）。 laxcomma 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项禁止关于逗号优先编码样式的警告：var obj = { name: ‘Anton’ , handle: ‘valueof’ , role: ‘SW Engineer’}; loopfunc 此选项禁止对循环中的函数的警告。定义循环中的函数可能会导致如下的错误：var nums = [];for (var i = 0; i &lt; 10; i++) { nums[i] = function (j) { return i + j; };}nums0; // Prints 12 instead of 2要修复上面的代码，你需要复制的值i：var nums = [];for (var i = 0; i &lt; 10; i++) { (function (i) { nums[i] = function (j) { return i + j; }; }(i));} moz 这个选项告诉JSHint你的代码使用Mozilla JavaScript扩展。除非您专门为Firefox Web浏览器开发，否则不需要此选项。更多信息：新的JavaScript 1.7 multistr 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项抑制有关多行字符串的警告。多行字符串在JavaScript中是很危险的，因为如果你不小心在转义字符（\）和一个新行之间放了一个空格，所有的地狱都会松动。请注意，即使此选项允许正确的多行字符串，它仍然警告多行字符串没有转义字符或转义字符和空格之间的任何东西。// jshint multistr:truevar text = “Hello\World”; // All good.text = “HelloWorld”; // Warning, no escape character.text = “Hello\World”; // Warning, there is a space after \ noyield 此选项抑制关于生成函数的警告，其中没有 yield语句。 plusplus 此选项禁止使用一元增量和减量运算符。有些人认为，++并–降低了他们的编码风格的质量，有编程语言，如Python，完全没有这些运算符。 proto 此选项禁止有关proto属性的警告。 scripturl 此选项会禁止关于使用以脚本为目标的网址的警告，例如javascript:…。 sub 警告此选项已被弃用，将在JSHint的下一个主要版本中删除。 JSHint将其范围限制为代码正确性的问题。如果你想强制执行有关代码风格的规则，请查看JSCS项目。此选项将禁止使用有关的警告[]符号时，它可以在点符号来表示：person[‘name’]对person.name。 supernew 此选项抑制关于“怪异”结构的警告，如 new function () { … }和new Object;。这种结构有时用于在JavaScript中产生单例：var singleton = new function() { var privateVar; this.publicMethod = function () {} this.publicMethod2 = function () {}}; validthis 当代码以严格模式运行并this在非构造函数中使用时，此选项将禁止有关可能的严重违规的警告。你应该使用这个选项 - 在一个函数范围内 - 当你肯定你的使用this在严格模式是有效的（例如，如果你调用你的函数使用 Function.call）。注意：此选项只能在函数作用域内使用。如果您尝试全局设置此选项，JSHint将失败并显示错误。 withstmt 此选项禁止有关使用语句的警告with。语句的with语义可能导致开发人员之间的混乱和全局变量的意外定义。更多信息：与声明考虑有害 环境 这些选项让JSHint知道一些预定义的全局变量。 browser 此选项定义了现代浏览器暴露全局：从好老一路document和navigator对HTML5 FileReader在浏览器世界等新的发展。注意：此选项不会公开像alert或的 变量console。有关详细信息，请参阅选项devel。 browserify 此选项定义使用Browserify工具构建项目时可用的全局变量。 couch 此选项定义由CouchDB公开的全局变量 。CouchDB是一个面向文档的数据库，可以使用JavaScript以MapReduce方式查询和索引。 devel 此选项定义通常用于记录恶意调试的全局变量：console，alert等等。通常不建议在生产环境中运行它们，因为例如console.log在Internet Explorer的旧版本中断。 dojo 此选项定义由Dojo Toolkit公开的全局变量。 jasmine 此选项定义由Jasmine单元测试框架公开的全局变量。 j query （出现未知情况，加空格解决） 此选项定义由jQuery JavaScript库公开的全局变量。 mocha 此选项定义由摩卡单元测试框架的“BDD”和“TDD”UI公开的全局变量 。 module 此选项通知JSHint输入代码描述了ECMAScript 6模块。所有模块代码都被解释为严格模式代码。 mootools 此选项定义由MooTools JavaScript框架公开的全局变量 。 node 此选项定义当代码在Node运行时环境中运行时可用的全局变量。Node.js是一个使用异步事件驱动模型的服务器端JavaScript环境。此选项还会跳过在浏览器环境中有意义的一些警告，但在节点（如文件级use strict编译指示和console.log语句）中没有意义。 nonstandard 此选项定义非标准但广泛采用的全局变量，如 escape和unescape。 phantom 此选项定义当您的核心在PhantomJS运行时环境中运行时可用的全局变量。PhantomJS 是一个使用JavaScript API的无头WebKit脚本。它支持各种Web标准的快速和本地支持：DOM处理，CSS选择器，JSON，Canvas和SVG。 prototypejs 此选项定义由Prototype JavaScript框架公开的全局变量 。 qunit 此选项定义由QUnit单元测试框架公开的全局变量。 rhino 此选项定义当代码在Rhino运行时环境中运行时可用的全局变量。Rhino 是一个完全用Java编写的JavaScript的开源实现。 shelljs 此选项定义由ShellJS库公开的全局变量。 typed 此选项为类型化数组构造函数定义全局变量。更多信息：JavaScript类型数组 worker 此选项定义当代码在Web Worker中运行时可用的全局变量。Web Workers为Web内容在后台线程中运行脚本提供了一种简单的方法。 wsh 此选项定义当代码作为Windows脚本宿主的脚本运行时可用的全局变量。 yui 此选项定义由YUI JavaScript框架公开的全局变量。]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime lint 语法校验]]></title>
+    <url>%2Fblob%2F2017-03-13-ide-sublime-lint-syntax-check%2F</url>
+    <content type="text"><![CDATA[package control install package SublimeLinter https://packagecontrol.io/packages/SublimeLinter SublimeLinter-jshint https://packagecontrol.io/packages/SublimeLinter-jshint SublimeLinter-csslint https://packagecontrol.io/packages/SublimeLinter-csslint node install npm i -g jshint npm i -g csslint 配置 可校验js代码编写过程中不规范的地方，因为有缓存不会实时显示在项目根目录下创建.jshintrc文件，文件以json格式保存，可以有哪些设置，在下面这个网站 http://jshint.com/docs/options/ http://sublimelinter.readthedocs.org/en/latest/about.html 例如： { &quot;eqeqeq&quot;: true, // true: Require triple equals (===) for comparison } 使用同一个配置，配置如下。该方法优先于项目下的配置文件 文件：SublimeLinter.sublime-settings 123456789101112131415161718 &#123; &quot;user&quot;: &#123; &quot;debug&quot;: false, &quot;delay&quot;: 0.25, &quot;error_color&quot;: &quot;D02000&quot;, &quot;gutter_theme&quot;: &quot;Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme&quot;, &quot;gutter_theme_excludes&quot;: [], &quot;lint_mode&quot;: &quot;background&quot;, &quot;linters&quot;: &#123; &quot;jshint&quot;: &#123; &quot;@disable&quot;: false, &quot;args&quot;: [ &quot;--config&quot;, &quot;D:\\config\\.jshintrc&quot; ], &quot;excludes&quot;: [] &#125;, 他人详细教程 https://gaohaoyang.github.io/2015/03/26/sublimeLinter]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime 添加鼠标右键打开]]></title>
+    <url>%2Fblob%2F2017-03-03-ide-sublime-add-the-right-mouse-button-to-open%2F</url>
+    <content type="text"><![CDATA[原文：（http://www.cnblogs.com/1314-/p/6479590.html） 方法一（推荐） 把以下代码，复制到SublimeText3的安装目录，然后重命名为：sublime_addright.inf，然后右击安装就可以了。PS：重命名文件之前，需要先在工具–文件夹选项，查看中，把隐藏已知文件类型的扩展名前边的复选框不勾选。 12345678910 [Version]Signature=&quot;$Windows NT$&quot;[DefaultInstall]AddReg=SublimeText3[SublimeText3]hkcr,&quot;\shell\SublimeText3&quot;,,,&quot;用 SublimeText3 打开&quot;hkcr,&quot;\shell\SublimeText3\command&quot;,,,&quot;&quot;&quot;%1%\sublime_text.exe&quot;&quot; &quot;&quot;%%1&quot;&quot; %%&quot;hkcr,&quot;Directory\shell\SublimeText3&quot;,,,&quot;用 SublimeText3 打开&quot;hkcr,&quot;\shell\SublimeText3&quot;,&quot;Icon&quot;,0x20000,&quot;%1%\sublime_text.exe, 0&quot;hkcr,&quot;Directory\shell\SublimeText3\command&quot;,,,&quot;&quot;&quot;%1%\sublime_text.exe&quot;&quot; &quot;&quot;%%1&quot;&quot;&quot; 方法二 把以下代码，复制到SublimeText3的安装目录，然后重命名为：sublime_addright.reg，然后双击就可以了。PS:需要把里边的Sublime的安装目录，替换成实际的Sublime安装目录。 1234567891011 Windows Registry Editor Version 5.00[HKEY_CLASSES_ROOT*\shell\SublimeText3]@=&quot;用 SublimeText3 打开&quot;&quot;Icon&quot;=&quot;D:\Program Files\Sublime Text 3\sublime_text.exe,0&quot;[HKEY_CLASSES_ROOT*\shell\SublimeText3\command]@=&quot;D:\Program Files\Sublime Text 3\sublime_text.exe %1&quot;[HKEY_CLASSES_ROOT\Directory\shell\SublimeText3]@=&quot;用 SublimeText3 打开&quot;&quot;Icon&quot;=&quot;D:\Program Files\Sublime Text 3\sublime_text.exe,0&quot;[HKEY_CLASSES_ROOT\Directory\shell\SublimeText3\command]@=&quot;D:\Program Files\Sublime Text 3\sublime_text.exe %1&quot; 如果以上方法不可行，则手动设置（测试通过，win10）项目路径： 12345 [HKEY_CLASSES_ROOT*\shell\SublimeText3] 默认字符串值：用 SublimeText3 打开 Icon字符串值：D:\Program Files\Sublime Text 3\sublime_text.exe,0 [HKEY_CLASSES_ROOT*\shell\SublimeText3\command] 默认字符串值：D:\Program Files\Sublime Text 3\sublime_text.exe %1 如图一 项目路径： 12345 [HKEY_CLASSES_ROOT\Directory\shell\SublimeText3] 默认字符串值：用 SublimeText3 打开 Icon字符串值：D:\Program Files\Sublime Text 3\sublime_text.exe,0[HKEY_CLASSES_ROOT\Directory\shell\SublimeText3\command] 默认字符串值：D:\Program Files\Sublime Text 3\sublime_text.exe %1 如图2]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GIT-Flow]]></title>
+    <url>%2Fblob%2F2016-08-17-git-flow%2F</url>
+    <content type="text"><![CDATA[git-flow 备忘清单 git-flow 备忘清单源码 历史分支 功能分支 发布分支 维护分支 获取分支方式 合并分支方式 Master 主分支 被release、hotfix分支合并 Hotfix 线上修复分支 从master拉取分支 合并到master、develop分支 Release 上线分支 从develop拉取分支 合并到master、develop分支 Develop 开发分支 初始从master拉取分支 合并到master分支 Feature 功能分支 从develop拉取分支、合并分支 合并到develop分支]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Git Flow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime Package Ctrl安装与卸载]]></title>
+    <url>%2Fblob%2F2016-07-21-ide-sublime-package-ctrl-installation-and-uninstall%2F</url>
+    <content type="text"><![CDATA[http://www.sublimetext.com/3 卸载 打开sublime，选择Preferences &gt; Browse Packages 返回到文件夹上一级，进入Installed Packages 删除 Package Control.sublime-package 重新安装package control https://packagecontrol.io/installation 安装 The simplest method of installation is through the Sublime Text console. The console is accessed via the ctrl+` shortcut or the View &gt; Show Console menu. Once open, paste the appropriate Python code for your version of Sublime Text into the console. SUBLIME TEXT 3 1 import urllib.request,os,hashlib; h = &apos;2915d1851351e5ee549c20394736b442&apos; + &apos;8bc59f460fa1548d1514676163dafc88&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GIT-合并最后的2个提交]]></title>
+    <url>%2Fblob%2F2016-05-19-git--combined-with-the-last-2-submissions%2F</url>
+    <content type="text"><![CDATA[假设要合并最后的2个提交，可以按如下命令进行： git rebase –i HEAD~2运行完该命令，会出现如下所示内容： 将第二个pick修改为squash或者s，然后输入”:wq”退出。 这时git会自动第二个提交合并到第一个中去。并提示输入新的message（就是我们常说的comments），如下： 编辑输入新的message，然后输入”:wq”退出 此时本地的（HEAD中）最后两次提交已经被合并为一个。git log可以查看。 如果需要提交到远端，运行git push –force origin master即可。]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>rebase</tag>
+        <tag>合并提交</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime 配置Node.js开发环境]]></title>
+    <url>%2Fblob%2F2016-04-01-ide-sublime-configuring-the-node.js-development-environment%2F</url>
+    <content type="text"><![CDATA[1、下载Nodejs插件，下载地址为：https://github.com/tanepiper/SublimeText-Nodejs下载zip压缩包后解压，文件名改为Nodejs 2、打开Sublime Text3，点击菜单“Perferences” =&gt;“Browse Packages”打开“Packages”文件夹，并将第1部的Nodejs文件夹剪切进来 3、打开文件“Nodejs.sublime-build”，将代码 “encoding”: “cp1252” 改为 “encoding”: “utf8” ，将代码 “cmd”: [“taskkill /F /IM node.exe &amp; node”, “$file”] 改为 “cmd”: [“node”, “$file”] ，保存文件 4、打开文件“Nodejs.sublime-settings”，将代码 “node_command”: false改为 “node_command”: “D:\Program Files\nodejs\node.exe” ，将代码 “npm_command”: false 改为 “npm_command”: “D:\Program Files\nodejs\npm.cmd” ，保存文件 5、编写一个测试文件test.js，按“ctrl+B”运行代码，运行结果如下图所示： 至此，环境配置成功！（注：本人的系统为Win10，Nodejs安装路径为E:\Program Files\nodejs）]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime Package Control]]></title>
+    <url>%2Fblob%2F2016-03-17-ide-sublime-package-control%2F</url>
+    <content type="text"><![CDATA[查看可使用的插件：https://packagecontrol.io/Ctrl + Shift + P、pcip、 代码快速生成器 emmet、emmet css snippets - - - 快速生成简单页面 !，Ctrl + E 该方法是emmet快捷键，分两步完成 ul&gt;.item$*10 &gt;：子元素选择符.item：子元素是item开头$：代表序号*10：输入10个带有class=”item123….10” 扩展，很酷 div#s.d&gt;div#e.s&gt;span.em5&gt;span.im$5 http://emmet.io/https://github.com/sergeche/emmet-sublimehttps://github.com/sergeche/emmet-sublime#tab-key-handler javascript 快速提示 javascript snippet/Completions jquery快速提示 jquery 快速生成回掉函数 `insert callback` https://packagecontrol.io/packages/Insert%20Callback Press Alt+C. If the function call’s trailing semicolon is missing, it will be filled in. A callback function snippet will then be inserted. 123 someAsyncFn(function(err, d) &#123;&#125;); 快速创建文件 advancedNewFile https://packagecontrol.io/packages/AdvancedNewFilehttps://github.com/skuroda/Sublime-AdvancedNewFilectrl+alt+n: General keymap to create new files.ctrl+shift+alt+n: In addition to creating the folders specified, new folders will also contain an init.py file. 测试请求 Http Requester https://packagecontrol.io/packages/Http%20RequesterAlt + Ctrl + R 快速访问选中文字的链接get 请求和 post请求方式不同POST http://posttestserver.com/post.phpContent-type: application/x-www-form-urlencodedPOST_BODY:variable1=avalue&amp;variable2=1234&amp;variable3=anothervalueGET http://www.google.com/search?q=test 每次编码需要公共组件，因此可以从一个公共配置中下载 Nettuts+ Fetch https://packagecontrol.io/packages/Nettuts%2B%20FetchCtrl + Shift + Pfetch: file 下载选择文件内容fetch: manage 管理配置文件类库fetch: package 添加sidebar右键功能 Side​Bar​Enhancements https://packagecontrol.io/packages/SideBarEnhancements 生成文件头部注释 FileHeaderhttps://packagecontrol.io/packages/FileHeader 添加注释代码 Doc​Blockr https://packagecontrol.io/packages/DocBlockr 语法校验 Sublime​Linter https://packagecontrol.io/packages/SublimeLinter SublimeLinter-jshint https://packagecontrol.io/packages/SublimeLinter-jshint npm i -g jshint SublimeLinter-csslint https://packagecontrol.io/packages/SublimeLinter-csslint npm i -g csslint 可校验js代码编写过程中不规范的地方，因为有缓存不会实时显示在项目根目录下创建.jshintrc文件，文件以json格式保存，可以有哪些设置，在下面这个网站http://jshint.com/docs/options/http://sublimelinter.readthedocs.org/en/latest/about.html例如： { “eqeqeq”: true, // true: Require triple equals (===) for comparison }使用同一个配置，配置如下文件：SublimeLinter.sublime-settings 123456789101112131415161718 &#123; &quot;user&quot;: &#123; &quot;debug&quot;: false, &quot;delay&quot;: 0.25, &quot;error_color&quot;: &quot;D02000&quot;, &quot;gutter_theme&quot;: &quot;Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme&quot;, &quot;gutter_theme_excludes&quot;: [], &quot;lint_mode&quot;: &quot;background&quot;, &quot;linters&quot;: &#123; &quot;jshint&quot;: &#123; &quot;@disable&quot;: false, &quot;args&quot;: [ &quot;--config&quot;, &quot;D:\\.jshintrc&quot; ], &quot;excludes&quot;: [] &#125;, 切换语言 ChineseLocalization 切换语言，帮助(H)/Language/简体中文，繁体中文，日本语，English。 HTML+CSS+JAVASCRIPT+JSON快速格式化 HTML-CSS-JS Prettify https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify Tools -&gt; Command Palette (Cmd+Shift+P or Ctrl+Shift+P) and type htmlprettify.– or –Ctrl+Shift+H (or Cmd+Shift+H if you’re on a Mac).– or –Right click in the current buffer and select HTML/CSS/JS Prettify -&gt; Prettify Code.安装完运行需要从新设置node路径 CSS2REM 安装 下载本项目，比如：git clone https://github.com/flashlizi/cssrem 进入packages目录：Sublime Text -&gt; Preferences -&gt; Browse Packages… 复制下载的cssrem目录到刚才的packges目录里。 重启Sublime Text。 配置参数 参数配置文件：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; cssrem px_to_rem - px转rem的单位比例，默认为40。 max_rem_fraction_length - px转rem的小数部分的最大长度。默认为6。 available_file_types - 启用此插件的文件类型。默认为：[“.css”, “.less”, “.sass”] 打开CMD Terminal 打开文件的终端，终端默认是CMD。ctrl+shift+t 打开文件所在文件夹，ctrl+shift+alt+t 打开文件所在项目的根目录文件夹，可以自己重新配置快捷键。也可以右键open terminal here打开。 Less Less语法高亮： pci &gt; less &gt; 重启 &gt; less语法高亮 Less2Csshttps://packagecontrol.io/packages/Less2Cssnpm install less -gdnpm install -g less-plugin-clean-cssnpm install -g less-plugin-autoprefix]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDE-Sublime 快捷键]]></title>
+    <url>%2Fblob%2F2016-03-16-ide-sublime-shortcut-key%2F</url>
+    <content type="text"><![CDATA[官网：http://www.sublimetext.com/ - - - 快速创建文本编辑区 Ctrl + N - - - 查找文件 Ctrl + P 输入文件名、文件路径、支持模糊匹配 跳转到行 Ctrl + P，： 输入: + 文件中行号 查找方法 JS、CSS Ctrl + P，@xx 输入@ + 方法名/CSS选择器 方向键上下选择 综合查找 Ctrl + P，xx@xx 输入文件名/路径 + @ + 方法名/CSS选择器 方向键上下选择 查找HTML标签 Ctrl + P，#xx - - - 多行光标 Ctrl + D 选择文字，之后没按一次 Ctrl + D可选择一个相同的内容并在其后面出现一个光标，可完成共同编辑。 Ctrl + K/Ctrl + D 取消多行游标的选择，继续Ctrl + D可继续选择 Alt + F3 选中全部 Ctrl + Shift + L 在选中区域最右边添加光标当选中区域是多行时，在每行结尾设置光标 Shift + 鼠标右键拖动 在鼠标右键拖动的时候设置光标 - - - 命令模式 Ctrl + Shift + P 启动命令面板（以下只输入命名）支持模糊匹配 选择语法格式 set syntax CSS、Javascript等， 主题安装https://packagecontrol.io/labels &gt; theme &gt; 找需要查看的主题 Spacegray snippets以模板的方式编程Ctrl + Shift + P &gt; snippet:function 设置大小写转换按键Preferences &gt; Key Bindings { “keys”: [“ctrl+shift+x”], “command”: “upper_case” }, { “keys”: [“ctrl+shift+c”], “command”: “lower_case” }, 设置tab空格数量// The number of spaces a tab is considered equal to“tab_size”: 2,// Set to true to insert spaces when tab is pressed“translate_tabs_to_spaces”: true,]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>IDE</tag>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GIT 异常]]></title>
+    <url>%2Fblob%2F2016-01-20-git-anomaly%2F</url>
+    <content type="text"><![CDATA[Couldn’t reserve space for cygwin’s heap, Win32 error 0 问题表现： 0 [main] us 0 init_cheap: VirtualAlloc pointer is null, Win32 error 487 AllocationBase 0x0, BaseAddress 0x68560000, RegionSize 0x390000, State 0x10000 C:\Program Files\Git\bin\sh.exe: *** Couldn’t reserve space for cygwin’s heap, Win32 error 0 解决办法： http://stackoverflow.com/questions/18502999/git-extensions-win32-error-487-couldnt-reserve-space-for-cygwins-heap-win32 在安装目录下X:\xxx\xxx\bin执行如下命令 rebase.exe -b 0x50000000 msys-1.0.dll]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GIT 常用记录]]></title>
+    <url>%2Fblob%2F2015-09-17-git-common-record%2F</url>
+    <content type="text"><![CDATA[命令 说明 git branch 查看所有分支情况 git log 查看当前分支日志 git branch XXXXX 创建分支XXXXX git checkout XXXXX 选择分支XXXXX git push origin myBranch:serverBranch 推送myBranch到serverBranch .gitignore 忽略提交文件的记录文件 git commit -a -m “注释写到这里” -a：为缓存也可提交 -m：添加注释 git tag 标签 git tag -a v0.1 -m “” 含附注标签 git tag v0.2 轻量级标签 git push origin v0.1 推送标签 git rebase -i HEAD~3 合并前三个提交（未push） git rebase –abort 撤销合并 git checkout master git rebase client 衍合client到master git rebase client master 同上 git pull –rebase orgin serverBranch 衍合远程分支（有待确定） git rebase –continue 添加完继续执行 git rebase –skip 第一次建立github项目，初始导入 123456 echo # test &gt;&gt; README.md LICENSE.mdgit initgit add README.mdgit commit -m &quot;first commit&quot;git remote add origin https://github.com/holidaypenguin/test.gitgit push -u origin master]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GIT 提交忽略文件]]></title>
+    <url>%2Fblob%2F2015-09-17-git-submission-to-ignore-files%2F</url>
+    <content type="text"><![CDATA[一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式。来看一个实际的例子： 123 $ cat .gitignore*.[oa]*~ 第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的，我们用不着跟踪它们的版本。第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。要养成一开始就设置好 .gitignore 文件的习惯，以免将来误提交这类无用的文件。 文件 .gitignore 的格式规范如下： 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 可以使用标准的 glob 模式匹配。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。 所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。星号（*）匹配零个或多个任意字符；[abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（?）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）。我们再看一个 .gitignore 文件的例子： 123456 # 此为注释 – 将被 Git 忽略*.a # 忽略所有 .a 结尾的文件!lib.a # 但 lib.a 除外/TODO # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODObuild/ # 忽略 build/ 目录下的所有文件doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt 在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改 .gitignore 文件的方法。这个文件每一行保存了一个匹配的规则例如： 123456 # 此为注释 – 将被 Git 忽略*.a # 忽略所有 .a 结尾的文件!lib.a # 但 lib.a 除外/TODO # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODObuild/ # 忽略 build/ 目录下的所有文件doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt 这样设置了以后 所有的 .pyc 文件都不会添加到版本库中去。另外 git 提供了一个全局的 .gitignore，你可以在你的用户目录下创建 ~/.gitignoreglobal 文件，以同样的规则来划定哪些文件是不需要版本控制的。需要执行 git config --global core.excludesfile ~/.gitignoreglobal来使得它生效。 其他的一些过滤条件 123456 * ？：代表任意的一个字符* ＊：代表任意数目的字符* &#123;!ab&#125;：必须不是此类型* &#123;ab,bb,cx&#125;：代表ab,bb,cx中任一类型即可* [abc]：代表a,b,c中任一字符即可* [ ^abc]：代表必须不是a,b,c中任一字符 由于git不会加入空目录，所以下面做法会导致tmp不会存在 1 tmp/* //忽略tmp文件夹所有文件 改下方法，在tmp下也加一个.gitignore,内容为 12 *!.gitignore 还有一种情况，就是已经commit了，再加入gitignore是无效的，所以需要删除下缓存 1 git rm -r --cached ignore_file 注意： .gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。 正确的做法是在每个clone下来的仓库中手动设置不要检查特定文件的更改情况。 1 git update-index --assume-unchanged PATH // 在PATH处输入要忽略的文件。 另外 git 还提供了另一种 exclude 的方式来做同样的事情，不同的是 .gitignore 这个文件本身会提交到版本库中去。用来保存的是公共的需要排除的文件。而 .git/info/exclude 这里设置的则是你自己本地需要排除的文件。 他不会影响到其他人。也不会提交到版本库中去。 .gitignore 还有个有意思的小功能， 一个空的 .gitignore 文件 可以当作是一个 placeholder 。当你需要为项目创建一个空的 log 目录时， 这就变的很有用。 你可以创建一个 log 目录 在里面放置一个空的 .gitignore 文件。这样当你 clone 这个 repo 的时候 git 会自动的创建好一个空的 log 目录了。]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>.gitignore</tag>
       </tags>
   </entry>
   <entry>

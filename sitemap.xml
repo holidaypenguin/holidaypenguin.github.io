@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://holidaypenguin.github.io/blob/2018-05-29-the-choice-of-git--code-merging-merge-and-rebase/</loc>
+    
+    <lastmod>2018-05-29T15:56:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2018-05-29-git-aoneflow/</loc>
+    
+    <lastmod>2018-05-29T15:55:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://holidaypenguin.github.io/sitemap/index.html</loc>
     
     <lastmod>2018-05-24T08:18:59.261Z</lastmod>
@@ -19,6 +33,20 @@
     <loc>https://holidaypenguin.github.io/categories/index.html</loc>
     
     <lastmod>2018-05-24T05:47:52.284Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2015-09-17-git-common-record/</loc>
+    
+    <lastmod>2018-01-12T08:11:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2017-09-14-ide-atom-installation/</loc>
+    
+    <lastmod>2017-09-14T02:41:57.000Z</lastmod>
     
   </url>
   
@@ -54,6 +82,90 @@
     <loc>https://holidaypenguin.github.io/blob/2017-05-24-fiddler-simulation-of-post-or-get-requests/</loc>
     
     <lastmod>2017-05-24T06:49:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2017-03-15-ide-sublime-lint-jshint-msg/</loc>
+    
+    <lastmod>2017-03-15T06:22:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2017-03-13-ide-sublime-lint-jshint-configuration-options/</loc>
+    
+    <lastmod>2017-03-13T10:05:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2017-03-13-ide-sublime-lint-syntax-check/</loc>
+    
+    <lastmod>2017-03-13T09:28:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2017-03-03-ide-sublime-add-the-right-mouse-button-to-open/</loc>
+    
+    <lastmod>2017-03-03T05:55:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2016-08-17-git-flow/</loc>
+    
+    <lastmod>2016-12-01T14:59:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2016-07-21-ide-sublime-package-ctrl-installation-and-uninstall/</loc>
+    
+    <lastmod>2016-07-21T15:46:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2016-05-19-git--combined-with-the-last-2-submissions/</loc>
+    
+    <lastmod>2016-05-19T02:14:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2016-04-01-ide-sublime-configuring-the-node.js-development-environment/</loc>
+    
+    <lastmod>2016-04-01T01:34:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2016-03-17-ide-sublime-package-control/</loc>
+    
+    <lastmod>2016-03-17T06:38:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2016-03-16-ide-sublime-shortcut-key/</loc>
+    
+    <lastmod>2016-03-16T11:21:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2016-01-20-git-anomaly/</loc>
+    
+    <lastmod>2016-01-20T01:02:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2015-09-17-git-submission-to-ignore-files/</loc>
+    
+    <lastmod>2015-09-17T02:15:02.000Z</lastmod>
     
   </url>
   
