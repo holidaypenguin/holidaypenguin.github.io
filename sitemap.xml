@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2018-05-29-the-choice-of-git--code-merging-merge-and-rebase/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2018-11-16-development-collection-of-wechat-small-procedure-plug-ins/</loc>
+    
+    <lastmod>2018-11-16T03:37:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2018-11-16-wechat-component-development-collection/</loc>
+    
+    <lastmod>2018-11-16T03:28:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2018-05-29-git-code-merge-and-rebase-selection/</loc>
     
     <lastmod>2018-05-29T15:56:58.000Z</lastmod>
     
@@ -37,14 +51,21 @@
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2015-09-17-git-common-record/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2015-09-17-git-commonly-used-records/</loc>
     
     <lastmod>2018-01-12T08:11:15.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2017-09-14-ide-atom-installation/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2017-11-27-shadow-removal-on-mobile-phone/</loc>
+    
+    <lastmod>2017-11-27T07:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://holidaypenguin.github.io/blob/2017-09-14-installation-of-ide-atom/</loc>
     
     <lastmod>2017-09-14T02:41:57.000Z</lastmod>
     
@@ -58,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2017-08-24-fiddler-packet-https/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2017-08-24-fiddler-grab-https/</loc>
     
     <lastmod>2017-08-24T02:47:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2017-08-24-fiddler-handset-grab-bag/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2017-08-24-fiddler-mobile-phone-grab/</loc>
     
     <lastmod>2017-08-24T02:30:31.000Z</lastmod>
     
@@ -79,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2017-05-24-fiddler-simulation-of-post-or-get-requests/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2017-05-24-fiddler-simulates-post-or-get-requests/</loc>
     
     <lastmod>2017-05-24T06:49:04.000Z</lastmod>
     
@@ -107,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2017-03-03-ide-sublime-add-the-right-mouse-button-to-open/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2017-03-03-ide-sublime-add-mouse-right-click-open/</loc>
     
     <lastmod>2017-03-03T05:55:45.000Z</lastmod>
     
@@ -121,21 +142,21 @@
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2016-07-21-ide-sublime-package-ctrl-installation-and-uninstall/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2016-07-21-installation-and-unloading-of-ide-sublime-package-ctrl/</loc>
     
     <lastmod>2016-07-21T15:46:07.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2016-05-19-git--combined-with-the-last-2-submissions/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2016-05-19-git---merge-the-last-two-submissions/</loc>
     
     <lastmod>2016-05-19T02:14:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2016-04-01-ide-sublime-configuring-the-node.js-development-environment/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2016-04-01-ide-sublime-configuration-node.js-development-environment/</loc>
     
     <lastmod>2016-04-01T01:34:48.000Z</lastmod>
     
@@ -163,7 +184,7 @@
   </url>
   
   <url>
-    <loc>https://holidaypenguin.github.io/blob/2015-09-17-git-submission-to-ignore-files/</loc>
+    <loc>https://holidaypenguin.github.io/blob/2015-09-17-git-submits-ignored-files/</loc>
     
     <lastmod>2015-09-17T02:15:02.000Z</lastmod>
     
