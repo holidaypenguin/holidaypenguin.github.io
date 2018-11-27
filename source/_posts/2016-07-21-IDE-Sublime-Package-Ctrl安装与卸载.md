@@ -1,14 +1,14 @@
 ---
 title: IDE-Sublime Package Ctrl安装与卸载
 description: <!-- more -->
-translate_title: ide-sublime-package-ctrl-installation-and-uninstall
+translate_title: installation-and-unloading-of-ide-sublime-package-ctrl
+tags:
+  - IDE
+  - Sublime
+categories:
+  - 工具
 date: 2016-07-21 23:46:07
 updated: 2016-07-21 23:46:07
-tags:
-    - IDE
-    - Sublime
-categories:
-    - 工具
 ---
 
 

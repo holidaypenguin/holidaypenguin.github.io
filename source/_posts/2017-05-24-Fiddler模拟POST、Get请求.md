@@ -1,14 +1,14 @@
 ---
 title: Fiddler模拟POST或Get请求
 description: <!-- more -->
-translate_title: fiddler-simulation-of-post-or-get-requests
+translate_title: fiddler-simulates-post-or-get-requests
+tags:
+  - Fiddler
+  - 工具
+categories:
+  - 工具
 date: 2017-05-24 14:49:04
 updated: 2017-05-24 14:49:04
-tags:
-    - Fiddler
-    - 工具
-categories:
-    - 工具
 ---
 
 

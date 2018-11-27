@@ -1,14 +1,14 @@
 ---
 title: IDE-Sublime 添加鼠标右键打开
 description: sublime text3添加鼠标右键打开文件文件夹的操作<!-- more -->
-translate_title: ide-sublime-add-the-right-mouse-button-to-open
+translate_title: ide-sublime-add-mouse-right-click-open
+tags:
+  - IDE
+  - Sublime
+categories:
+  - 工具
 date: 2017-03-03 13:55:45
 updated: 2017-03-03 13:55:45
-tags:
-    - IDE
-    - Sublime
-categories:
-    - 工具
 ---
 
 原文：（http://www.cnblogs.com/1314-/p/6479590.html）

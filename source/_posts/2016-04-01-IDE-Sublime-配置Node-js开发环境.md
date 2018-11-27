@@ -1,7 +1,7 @@
 ---
 title: IDE-Sublime 配置Node.js开发环境
 description: <!-- more -->
-translate_title: ide-sublime-configuring-the-node.js-development-environment
+translate_title: ide-sublime-configuration-node.js-development-environment
 tags:
   - IDE
   - Sublime
