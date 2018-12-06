@@ -39,6 +39,10 @@
   {% set js_vendors.canvas_ribbon  = 'canvas-ribbon/canvas-ribbon.js' %}
 {% endif %}
 
+{% if theme.love %}
+  {% set js_vendors.love  = 'love.js' %}
+{% endif %}
+
 {% for name, internal in js_vendors %}
   {% set internal_script = url_for(theme.vendors._internal) + '/' + internal %}
   {% if name == 'canvas_ribbon' %}
