@@ -2206,7 +2206,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7de5ff;
+  background: #fffeff;
 }
 
 .links-of-blogroll {
@@ -3395,7 +3395,10 @@ hr {
 }
 
 .posts-expand .post {
-  margin-top: 120px;
+  margin-top: 50px;
+  -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(202, 203, 204, 0.5);
+  padding: 1px 20px 20px 20px;
 }
 
 .posts-expand .post:first-child {
