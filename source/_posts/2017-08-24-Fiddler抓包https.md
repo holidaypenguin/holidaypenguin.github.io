@@ -1,12 +1,12 @@
 ---
 title: Fiddler抓包https
 description: <!-- more -->
-translate_title: fiddler-grab-https
+translate_title: fiddler-grab-pack-https
 tags:
   - Fiddler
   - 工具
 categories:
-  - 工具
+  - Fiddler
 date: 2017-08-24 10:47:13
 updated: 2017-08-24 10:47:13
 ---

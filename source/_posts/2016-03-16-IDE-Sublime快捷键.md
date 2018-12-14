@@ -7,8 +7,9 @@ updated: 2016-03-16 19:21:37
 tags:
     - IDE
     - Sublime
-categories:
     - 工具
+categories:
+    - IDE
 ---
 
 官网：http://www.sublimetext.com/

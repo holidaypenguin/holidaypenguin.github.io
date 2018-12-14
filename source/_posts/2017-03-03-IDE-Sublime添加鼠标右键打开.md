@@ -5,8 +5,9 @@ translate_title: ide-sublime-add-mouse-right-click-open
 tags:
   - IDE
   - Sublime
-categories:
   - 工具
+categories:
+  - IDE
 date: 2017-03-03 13:55:45
 updated: 2017-03-03 13:55:45
 ---

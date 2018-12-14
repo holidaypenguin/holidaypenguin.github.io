@@ -5,8 +5,9 @@ translate_title: ide-sublime-lint-syntax-check
 tags:
   - IDE
   - Sublime
-categories:
   - 工具
+categories:
+  - IDE
 date: 2017-03-13 17:28:18
 updated: 2017-03-13 17:28:18
 ---

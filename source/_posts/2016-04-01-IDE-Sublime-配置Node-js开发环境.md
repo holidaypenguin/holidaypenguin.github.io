@@ -5,8 +5,9 @@ translate_title: ide-sublime-configuration-node.js-development-environment
 tags:
   - IDE
   - Sublime
-categories:
   - 工具
+categories:
+  - IDE
 date: 2016-04-01 09:34:48
 updated: 2016-04-01 09:34:48
 ---

@@ -5,8 +5,9 @@ translate_title: installation-and-unloading-of-ide-sublime-package-ctrl
 tags:
   - IDE
   - Sublime
-categories:
   - 工具
+categories:
+  - IDE
 date: 2016-07-21 23:46:07
 updated: 2016-07-21 23:46:07
 ---

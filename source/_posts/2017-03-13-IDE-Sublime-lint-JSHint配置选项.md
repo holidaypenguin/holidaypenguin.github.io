@@ -7,8 +7,9 @@ updated: 2017-03-13 18:05:58
 tags:
     - IDE
     - Sublime
-categories:
     - 工具
+categories:
+    - IDE
 ---
 
 

@@ -7,8 +7,9 @@ updated: 2017-03-15 14:22:03
 tags:
     - IDE
     - Sublime
-categories:
     - 工具
+categories:
+    - IDE
 ---
 “Missing semicolon.” : “缺少分号.”,
 “Use the function form of \”use strict\”.” : “使用标准化定义function.”,
