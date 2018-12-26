@@ -47,6 +47,12 @@ Merge 好在它是一个安全的操作。现有的分支不会被更改，避�
 
 另一方面，这同样意味着每次合并上游更改时 feature 分支都会引入一个外来的合并提交。如果 master 非常活跃的话，这或多或少会污染你的分支历史。虽然高级的 git log 选项可以减轻这个问题，但对于开发者来说，还是会增加理解项目历史的难度。
 
+merge 前
+![20](/images/git/20.png)
+
+merge 后
+![17](/images/git/17.png)
+
 # Rebase
 作为 merge 的替代选择，你可以像下面这样将 feature 分支并入 master 分支：
 ```
@@ -58,6 +64,12 @@ git rebase master
 rebase最大的好处是你的项目历史会非常整洁。首先，它不像 git merge 那样引入不必要的合并提交。其次，如上图所示，rebase 导致最后的项目历史呈现出完美的线性——你可以从项目终点到起点浏览而不需要任何的 fork。这让你更容易使用 git log、git bisect 和 gitk 来查看项目历史。
 
 不过，这种简单的提交历史会带来两个后果：安全性和可跟踪性。如果你违反了 rebase 黄金法则，重写项目历史可能会给你的协作工作流带来灾难性的影响。此外，rebase 不会有合并提交中附带的信息——你看不到 feature 分支中并入了上游的哪些更改。
+
+Rebase 前
+![18](/images/git/18.png)
+
+Rebase 后
+![18](/images/git/19.png)
 
 # Rebase 的黄金法则（有点懵懂）
 当你理解 rebase 是什么的时候，最重要的就是什么时候 不能 用 rebase。git rebase 的黄金法则便是，绝不要在公共的分支上使用它。
@@ -89,12 +101,11 @@ git rebase --continue # 继续衍合
 
 rebase 部分体现在sourcetree上经过如下步骤
 - 获取
+![13](/images/git/13.png)
 - 拉取（勾选用衍合代替合并）
+![14](/images/git/14.png)
 - 处理冲突
 - 暂存所有文件
-- 再次点击拉取选择继续变基
-
-![13](/images/git/13.png)
-![14](/images/git/14.png)
 ![15](/images/git/15.png)
+- 再次点击拉取选择继续变基
 ![16](/images/git/16.png)
