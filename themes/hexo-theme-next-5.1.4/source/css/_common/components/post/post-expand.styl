@@ -54,7 +54,12 @@
     }
   }
 
-  ul li { list-style: circle; }
+  ul {padding-left: 2em;}
+  test ul li { list-style: disc; }
+  test ul > li > ul > li { list-style: circle; }
+  test ul > li > ul > li > ul > li { list-style: disc; }
+  test ul > li > ul > li > ul > li > ul > li { list-style: circle; }
+  test ul > li > ul > li > ul > li > ul > li > ul > li { list-style: disc; }
 
   img {
     box-sizing: border-box;
