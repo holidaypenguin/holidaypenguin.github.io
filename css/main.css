@@ -1616,8 +1616,28 @@ pre .javascript .function {
   visibility: visible;
 }
 
-.posts-expand .post-body ul li {
+.posts-expand .post-body ul {
+  padding-left: 2em;
+}
+
+.posts-expand .post-body test ul li {
+  list-style: disc;
+}
+
+.posts-expand .post-body test ul>li>ul>li {
   list-style: circle;
+}
+
+.posts-expand .post-body test ul>li>ul>li>ul>li {
+  list-style: disc;
+}
+
+.posts-expand .post-body test ul>li>ul>li>ul>li>ul>li {
+  list-style: circle;
+}
+
+.posts-expand .post-body test ul>li>ul>li>ul>li>ul>li>ul>li {
+  list-style: disc;
 }
 
 .posts-expand .post-body img {
@@ -2206,7 +2226,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffeff;
+  background: #6b2b50;
 }
 
 .links-of-blogroll {
