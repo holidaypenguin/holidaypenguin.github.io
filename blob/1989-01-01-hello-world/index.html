@@ -396,16 +396,6 @@
 
 
 
-                      <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                      <a href="/blob/1989-01-01-hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/blob/1989-01-01-hello-world/" itemprop="commentsCount"></span>
-                </a>
-                      </span>
-
 
 
 
@@ -435,7 +425,7 @@
                         <span class="post-meta-item-text">字数统计&#58;</span>
 
                         <span title="字数统计">
-                  872 字
+                  918 字
                 </span>
 
 
@@ -816,6 +806,10 @@ let b;
                     </figure>
                     <p>to：</p>
                     <hr>
+                    <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                    <p>解决gitment无法登陆评论问题（Object ProgressEvent）<br><a href="https://blog.csdn.net/wardseptember/article/details/82828391" target="_blank" rel="noopener">https://blog.csdn.net/wardseptember/article/details/82828391</a></p>
+                    <p>Gitment：使用 GitHub Issues 搭建评论系统<br><a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="noopener">https://imsun.net/posts/gitment-introduction/</a><br><a href="https://github.com/settings/applications/new" target="_blank"
+                        rel="noopener">https://github.com/settings/applications/new</a></p>
 
                   </div>
 
@@ -1041,7 +1035,8 @@ let b;
                       </ol>
                     </li>
                   </ol>
-                </div>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
 
 
               </div>
@@ -1075,7 +1070,7 @@ let b;
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">49.1k</span>
+          <span title="网站字数总数">49.2k</span>
 
         </div>
 
@@ -1250,8 +1245,8 @@ let b;
   <!-- LOCAL: You can save these files to your site and update links -->
 
 
-  <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-  <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+  <link rel="stylesheet" href="https://holidaypenguin.github.io/plugins/gitment/gitment.css">
+  <script src="https://holidaypenguin.github.io/plugins/gitment/gitment.js"></script>
 
   <!-- END LOCAL -->
 
@@ -1260,12 +1255,10 @@ let b;
 
   <script type="text/javascript">
     function renderGitment() {
-      var gitment = new Gitmint({
+      var gitment = new Gitment({
         id: window.location.pathname,
         owner: 'holidaypenguin',
         repo: 'holidaypenguin.github.io',
-
-        lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
 
         oauth: {
 
