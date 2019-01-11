@@ -913,6 +913,43 @@
 
 
 
+  <!-- LOCAL: You can save these files to your site and update links -->
+
+
+  <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+  <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+
+  <!-- END LOCAL -->
+
+
+
+
+  <script type="text/javascript">
+    function renderGitment() {
+      var gitment = new Gitmint({
+        id: window.location.pathname,
+        owner: 'holidaypenguin',
+        repo: 'holidaypenguin.github.io',
+
+        lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+
+        oauth: {
+
+
+          client_secret: '3c8287f40cc5e8ed10dbf7410e4a3df7cd3dde63',
+
+          client_id: 'b5124f471fd0b349342f'
+        }
+      });
+      gitment.render('gitment-container');
+    }
+
+
+    renderGitment();
+  </script>
+
+
+
 
 
 
