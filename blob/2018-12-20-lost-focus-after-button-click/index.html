@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="js,button,焦点,失去焦点,JavaScript," />
+  <meta name="keywords" content="js,JavaScript,button,焦点,失去焦点," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 
-  <meta name="keywords" content="js,button,焦点,失去焦点,JavaScript">
+  <meta name="keywords" content="js,JavaScript,button,焦点,失去焦点">
   <meta property="og:type" content="article">
   <meta property="og:title" content="button 点击后失去获得的焦点">
   <meta property="og:url" content="https://holidaypenguin.github.io/blob/2018-12-20-lost-focus-after-button-click/index.html">
@@ -397,7 +397,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                       <a href="/blob/2018-12-20-lost-focus-after-button-click/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blob/2018-12-20-lost-focus-after-button-click/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/blob/2018-12-20-lost-focus-after-button-click/" itemprop="commentsCount"></span>
                 </a>
                       </span>
 
@@ -504,13 +504,13 @@
 
                       <a href="/tags/js/" rel="tag"># js</a>
 
+                      <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+
                       <a href="/tags/button/" rel="tag"># button</a>
 
                       <a href="/tags/焦点/" rel="tag"># 焦点</a>
 
                       <a href="/tags/失去焦点/" rel="tag"># 失去焦点</a>
-
-                      <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
 
                     </div>
 
@@ -566,7 +566,11 @@
 
 
           <div class="comments" id="comments">
+
+            <div id="gitment-container"></div>
+
           </div>
+
 
 
 
@@ -606,7 +610,7 @@
 
                     <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
                   </div>
@@ -617,7 +621,7 @@
 
                   <div class="site-state-item site-state-categories">
                     <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
                   </div>
@@ -628,7 +632,7 @@
 
                   <div class="site-state-item site-state-tags">
                     <a href="/tags/index.html">
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
                   </div>
@@ -695,7 +699,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">47.0k</span>
+          <span title="网站字数总数">49.1k</span>
 
         </div>
 
@@ -869,28 +873,6 @@
 
 
 
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-  <script type="text/javascript">
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.indexOf(item) > -1;
-    });
-    new Valine({
-      el: '#comments',
-      verify: false,
-      notify: false,
-      appId: 'gPPYW5Ov7fB6qIfQfLIN8GYl-gzGzoHsz',
-      appKey: 'lr1BRzbaYakHnv5Rm1bt25ry',
-      placeholder: '你想说点啥',
-      avatar: 'mm',
-      guest_info: guest,
-      pageSize: '10' || 10,
-    });
-  </script>
 
 
 

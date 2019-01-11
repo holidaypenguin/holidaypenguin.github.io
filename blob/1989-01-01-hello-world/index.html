@@ -402,7 +402,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                       <a href="/blob/1989-01-01-hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blob/1989-01-01-hello-world/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/blob/1989-01-01-hello-world/" itemprop="commentsCount"></span>
                 </a>
                       </span>
 
@@ -884,7 +884,11 @@ let b;
 
 
           <div class="comments" id="comments">
+
+            <div id="gitment-container"></div>
+
           </div>
+
 
 
 
@@ -933,7 +937,7 @@ let b;
 
                     <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
                   </div>
@@ -944,7 +948,7 @@ let b;
 
                   <div class="site-state-item site-state-categories">
                     <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
                   </div>
@@ -955,7 +959,7 @@ let b;
 
                   <div class="site-state-item site-state-tags">
                     <a href="/tags/index.html">
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
                   </div>
@@ -1071,7 +1075,7 @@ let b;
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">47.0k</span>
+          <span title="网站字数总数">49.1k</span>
 
         </div>
 
@@ -1245,28 +1249,6 @@ let b;
 
 
 
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-  <script type="text/javascript">
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.indexOf(item) > -1;
-    });
-    new Valine({
-      el: '#comments',
-      verify: false,
-      notify: false,
-      appId: 'gPPYW5Ov7fB6qIfQfLIN8GYl-gzGzoHsz',
-      appKey: 'lr1BRzbaYakHnv5Rm1bt25ry',
-      placeholder: '你想说点啥',
-      avatar: 'mm',
-      guest_info: guest,
-      pageSize: '10' || 10,
-    });
-  </script>
 
 
 
