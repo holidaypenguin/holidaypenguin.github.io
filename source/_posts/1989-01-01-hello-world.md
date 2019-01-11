@@ -245,3 +245,12 @@ to：
 ```
 to：
 ***
+
+
+# 参考
+解决gitment无法登陆评论问题（Object ProgressEvent）
+https://blog.csdn.net/wardseptember/article/details/82828391
+
+Gitment：使用 GitHub Issues 搭建评论系统
+https://imsun.net/posts/gitment-introduction/
+https://github.com/settings/applications/new
