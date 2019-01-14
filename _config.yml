@@ -78,9 +78,13 @@ theme: hexo-theme-next-5.1.4
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+#deploy:
+#- type: leancloud_counter_security_sync
 deploy:
-- type: leancloud_counter_security_sync
-
+  type: git
+  repo: https://github.com/holidaypenguin/holidaypenguin.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: master #published
+  message: 
 
 
 leancloud_counter_security:

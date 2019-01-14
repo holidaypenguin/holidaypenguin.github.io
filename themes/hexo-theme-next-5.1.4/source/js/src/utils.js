@@ -324,7 +324,7 @@ $(document).ready(function () {
         $('.site-overview').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
       }
       if ($('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-        $('.post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
+        // $('.post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
       }
 
     // Initialize Sidebar & TOC Height.
