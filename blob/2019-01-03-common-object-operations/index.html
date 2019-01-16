@@ -708,7 +708,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">49.6k</span>
+          <span title="网站字数总数">50.7k</span>
 
         </div>
 
@@ -885,6 +885,7 @@
 
   <link rel="stylesheet" href="https://holidaypenguin.github.io/plugins/gitment/gitment.css">
   <script src="https://holidaypenguin.github.io/plugins/gitment/gitment.js"></script>
+  <script src="https://holidaypenguin.github.io/plugins/MD5/MD5.js"></script>
 
   <!-- END LOCAL -->
 
@@ -894,7 +895,8 @@
   <script type="text/javascript">
     function renderGitment() {
       var gitment = new Gitment({
-        id: window.location.pathname,
+        // id: window.location.pathname,
+        id: MD5.hexMD5(window.location.pathname), // 防止重复和超长
         owner: 'holidaypenguin',
         repo: 'holidaypenguin.github.io',
 

@@ -426,7 +426,7 @@
                         <span class="post-meta-item-text">字数统计&#58;</span>
 
                         <span title="字数统计">
-                  1,661 字
+                  1,674 字
                 </span>
 
 
@@ -572,7 +572,7 @@
                       <li>display为inline-block,table-cell,table-caption,flex,inline-flex
                         <ul>
                           <li>inline-block 转化为行内块元素后需要指定宽度，如果两个inline-block在同一行，会有元素之间有空隙、元素上浮无法对齐的问题</li>
-                          <li>table-cell</li>
+                          <li>table-cell 在父元素使用</li>
                           <li>table-caption 作为一个表格标题显示后需要指定宽度</li>
                           <li>flex 在父元素使用，可能需要<code>flex-direction: column</code>配合来使用</li>
                           <li>inlin-flex 转化为行内伸缩容器后需要指定宽度</li>
@@ -636,7 +636,10 @@
                         <p>父元素添加 display: flex（推荐）</p>
                       </li>
                       <li>
-                        <p>父元素加前置内容生成。（推荐）</p>
+                        <p>父元素添加 display: table-cell</p>
+                      </li>
+                      <li>
+                        <p>父元素加前置内容生成。</p>
                       </li>
                     </ol>
                     <figure class="highlight css">
@@ -910,7 +913,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">49.6k</span>
+          <span title="网站字数总数">50.7k</span>
 
         </div>
 
@@ -1087,6 +1090,7 @@
 
   <link rel="stylesheet" href="https://holidaypenguin.github.io/plugins/gitment/gitment.css">
   <script src="https://holidaypenguin.github.io/plugins/gitment/gitment.js"></script>
+  <script src="https://holidaypenguin.github.io/plugins/MD5/MD5.js"></script>
 
   <!-- END LOCAL -->
 
@@ -1096,7 +1100,8 @@
   <script type="text/javascript">
     function renderGitment() {
       var gitment = new Gitment({
-        id: window.location.pathname,
+        // id: window.location.pathname,
+        id: MD5.hexMD5(window.location.pathname), // 防止重复和超长
         owner: 'holidaypenguin',
         repo: 'holidaypenguin.github.io',
 

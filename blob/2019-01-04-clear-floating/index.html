@@ -420,7 +420,7 @@
                         <span class="post-meta-item-text">字数统计&#58;</span>
 
                         <span title="字数统计">
-                  847 字
+                  1,066 字
                 </span>
 
 
@@ -436,7 +436,7 @@
                         <span class="post-meta-item-text">阅读时长 &asymp;</span>
 
                         <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
 
                       </div>
@@ -461,7 +461,10 @@
 
 
 
-                    <h1 id="父级元素使用高度"><a href="#父级元素使用高度" class="headerlink" title="父级元素使用高度"></a>父级元素使用高度</h1>
+                    <blockquote>
+                      <p>浮动有四个属性值可以设置 left | right | inherit | none<br>浮动元素会脱离文档流，不会继续停留在其父元素内。如果一个父元素只有一个子元素，那么它将会塌陷，就像是空的一样。</p>
+                    </blockquote>
+                    <h2 id="父级元素使用高度"><a href="#父级元素使用高度" class="headerlink" title="父级元素使用高度"></a>父级元素使用高度</h2>
                     <p>因为浮动导致父元素高度塌陷，所以给父元素添加高度。</p>
                     <p>优点：简单、代码少、容易掌握</p>
                     <p>缺点：高度固定，如果两则皆不是固定高度，该方法不可用</p>
@@ -492,7 +495,7 @@
                         </tr>
                       </table>
                     </figure>
-                    <h1 id="父级元素使用overflow-hidden"><a href="#父级元素使用overflow-hidden" class="headerlink" title="父级元素使用overflow:hidden"></a>父级元素使用overflow:hidden</h1>
+                    <h2 id="父级元素使用-overflow-hidden"><a href="#父级元素使用-overflow-hidden" class="headerlink" title="父级元素使用 overflow:hidden"></a>父级元素使用 overflow:hidden</h2>
                     <p>使用时浏览器会自动检测浮动区域的高度，如果父元素本身有高度，且子元素高度超出父元素高度，则超出部分被隐藏。<em>同时使用使用width或者zoom:1 来兼容IE6 IE7。</em></p>
                     <p>优点：简单、代码少、浏览器支持好</p>
                     <p>缺点：和子元素使用position、父元素使用height配合时，小心子元素超出部分被隐藏；用于body不生效</p>
@@ -523,7 +526,7 @@
                         </tr>
                       </table>
                     </figure>
-                    <h1 id="父级元素使用-overflow-auto"><a href="#父级元素使用-overflow-auto" class="headerlink" title="父级元素使用 overflow:auto"></a>父级元素使用 overflow:auto</h1>
+                    <h2 id="父级元素使用-overflow-auto"><a href="#父级元素使用-overflow-auto" class="headerlink" title="父级元素使用 overflow:auto"></a>父级元素使用 overflow:auto</h2>
                     <p>使用方法同上。</p>
                     <p>css</p>
                     <figure class="highlight css">
@@ -552,10 +555,10 @@
                       </table>
                     </figure>
                     <blockquote>
-                      <p>Tips：这两种方法统计为：使用overflow属性，把它设置为非默认值visible的值。</p>
+                      <p>Tips：这两种方法统计为：使用overflow属性，把它设置为非默认值visible的值（auto、hidden、overlay、scroll）。</p>
                     </blockquote>
                     <p><code>overflow</code>之所以能够有效是因为当它的值是非<code>visible</code>时会创建一个<code>BFC</code>，而<code>BFC</code>的一个特性就是包裹浮动元素。</p>
-                    <h1 id="父级元素使用-display-table"><a href="#父级元素使用-display-table" class="headerlink" title="父级元素使用 display:table"></a>父级元素使用 display:table</h1>
+                    <h2 id="父级元素使用-display-table"><a href="#父级元素使用-display-table" class="headerlink" title="父级元素使用 display:table"></a>父级元素使用 display:table</h2>
                     <p>将<code>div</code> 的<code>display</code>变成<code>table</code>，使父元素高度不会塌陷。</p>
                     <p>css</p>
                     <figure class="highlight css">
@@ -584,7 +587,7 @@
                       </table>
                     </figure>
                     <p>建议：不建议使用</p>
-                    <h1 id="父级元素使用-display-inlin-block"><a href="#父级元素使用-display-inlin-block" class="headerlink" title="父级元素使用 display:inlin-block"></a>父级元素使用 display:inlin-block</h1>
+                    <h2 id="父级元素使用-display-inlin-block"><a href="#父级元素使用-display-inlin-block" class="headerlink" title="父级元素使用 display:inlin-block"></a>父级元素使用 display:inlin-block</h2>
                     <p>将<code>div</code> 的<code>display</code>变成<code>inlin-block</code>，变成行内块元素后父元素高度不会塌陷。</p>
                     <p><code>*display</code> 和<code>*zoom</code>为了兼容IE6 IE7</p>
                     <p>css</p>
@@ -614,7 +617,7 @@
                       </table>
                     </figure>
                     <p>缺点：无法使用<code>margin: 0 auto;</code>居中</p>
-                    <h1 id="父级元素也使用浮动"><a href="#父级元素也使用浮动" class="headerlink" title="父级元素也使用浮动"></a>父级元素也使用浮动</h1>
+                    <h2 id="父级元素也使用浮动"><a href="#父级元素也使用浮动" class="headerlink" title="父级元素也使用浮动"></a>父级元素也使用浮动</h2>
                     <p>css</p>
                     <figure class="highlight css">
                       <table>
@@ -643,7 +646,7 @@
                     </figure>
                     <p>缺点：会产生新的浮动，要一直浮动到body</p>
                     <p>建议：只作为了解</p>
-                    <h1 id="结尾处添加空元素clear-both"><a href="#结尾处添加空元素clear-both" class="headerlink" title="结尾处添加空元素clear: both"></a>结尾处添加空元素clear: both</h1>
+                    <h2 id="结尾处添加空元素clear-both"><a href="#结尾处添加空元素clear-both" class="headerlink" title="结尾处添加空元素clear: both"></a>结尾处添加空元素clear: both</h2>
                     <p>在结尾处清除浮动</p>
                     <p>css</p>
                     <figure class="highlight css">
@@ -672,7 +675,7 @@
                       </table>
                     </figure>
                     <p>缺点：此方法需要在结尾添加一个节点，不够友好</p>
-                    <h1 id="结尾处添加br元素-clear-”both”"><a href="#结尾处添加br元素-clear-”both”" class="headerlink" title="结尾处添加br元素 clear=”both”"></a>结尾处添加br元素 clear=”both”</h1>
+                    <h2 id="结尾处添加br元素-clear-”both”"><a href="#结尾处添加br元素-clear-”both”" class="headerlink" title="结尾处添加br元素 clear=”both”"></a>结尾处添加br元素 clear=”both”</h2>
                     <p>br标签自带clear属性，原理和上一个方法一样，在结尾处清除浮动</p>
                     <p>css</p>
                     <figure class="highlight css">
@@ -701,7 +704,7 @@
                       </table>
                     </figure>
                     <p>缺点：此方法需要在结尾添加一个节点，不够友好</p>
-                    <h1 id="父级元素添加after和zoom-主流"><a href="#父级元素添加after和zoom-主流" class="headerlink" title="父级元素添加after和zoom-(主流)"></a>父级元素添加after和zoom-(主流)</h1>
+                    <h2 id="父级元素添加after和zoom-主流"><a href="#父级元素添加after和zoom-主流" class="headerlink" title="父级元素添加after和zoom-(主流)"></a>父级元素添加after和zoom-(主流)</h2>
                     <p>添加一个有内容的伪元素，设置成块级元素，清除尾部的浮动，同时设置成不可见，保证不占用位置。</p>
                     <p>为了兼容IE6 IE7使用zoom，IE8以上和非IE浏览器才支持::after</p>
                     <p>css</p>
@@ -731,6 +734,52 @@
                       </table>
                     </figure>
                     <p>优点：浏览器支持好、不容易出现怪问题</p>
+                    <h2 id="父级元素使用-display-flow-root"><a href="#父级元素使用-display-flow-root" class="headerlink" title="父级元素使用 display:flow-root"></a>父级元素使用 display:flow-root</h2>
+                    <p>原理同<code>overflow!=visible</code>，生成一个块元素框，用于建立新的块格式化上下文。</p>
+                    <p>缺点：兼容浏览器Firefox 53+、Chrome 58+、Opera 45+</p>
+                    <p>css</p>
+                    <figure class="highlight css">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="selector-class">.flow-root-wraper</span>&#123;<span class="attribute">display</span>: flow-root;&#125;</span><br><span class="line"><span class="selector-class">.flow-root-inner</span>&#123;<span class="attribute">float</span>:left; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>; <span class="attribute">background</span>: <span class="number">#e2e2e2</span>;&#125;</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p>html</p>
+                    <figure class="highlight html">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flow-root-wraper"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flow-root-inner"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p>可以通过<code>@supports</code>条件判断兼容Edge</p>
+                    <p>css<br>
+                      <figure class="highlight css">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span class="selector-class">.flow-root-inner</span>&#123;<span class="attribute">float</span>:left; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>; <span class="attribute">background</span>: <span class="number">#e2e2e2</span>;&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flow-root;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">supports</span> not (display:flow-root) &#123; </span><br><span class="line">  <span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;<span class="attribute">content</span>:<span class="string">" "</span>; <span class="attribute">display</span>:block; <span class="attribute">clear</span>:both; <span class="attribute">visibility</span>:hidden; <span class="attribute">height</span>:<span class="number">0</span>&#125; </span><br><span class="line">  <span class="selector-class">.clearfix</span>&#123;<span class="attribute">zoom</span>:<span class="number">1</span>&#125; </span><br><span class="line">&#125;</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </p>
+                    <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                    <p><a href="https://www.w3cplus.com/css/how-floating-works.html" target="_blank" rel="noopener">https://www.w3cplus.com/css/how-floating-works.html</a></p>
 
                   </div>
 
@@ -933,17 +982,19 @@
 
                 <div class="post-toc-content">
                   <ol class="nav">
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#父级元素使用高度"><span class="nav-number">1.</span> <span class="nav-text">父级元素使用高度</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#父级元素使用overflow-hidden"><span class="nav-number">2.</span> <span class="nav-text">父级元素使用overflow:hidden</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#父级元素使用-overflow-auto"><span class="nav-number">3.</span> <span class="nav-text">父级元素使用 overflow:auto</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#父级元素使用-display-table"><span class="nav-number">4.</span> <span class="nav-text">父级元素使用 display:table</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#父级元素使用-display-inlin-block"><span class="nav-number">5.</span> <span class="nav-text">父级元素使用 display:inlin-block</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#父级元素也使用浮动"><span class="nav-number">6.</span> <span class="nav-text">父级元素也使用浮动</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#结尾处添加空元素clear-both"><span class="nav-number">7.</span> <span class="nav-text">结尾处添加空元素clear: both</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#结尾处添加br元素-clear-”both”"><span class="nav-number">8.</span> <span class="nav-text">结尾处添加br元素 clear=”both”</span></a></li>
-                    <li class="nav-item nav-level-1"><a class="nav-link" href="#父级元素添加after和zoom-主流"><span class="nav-number">9.</span> <span class="nav-text">父级元素添加after和zoom-(主流)</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素使用高度"><span class="nav-number">1.</span> <span class="nav-text">父级元素使用高度</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素使用-overflow-hidden"><span class="nav-number">2.</span> <span class="nav-text">父级元素使用 overflow:hidden</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素使用-overflow-auto"><span class="nav-number">3.</span> <span class="nav-text">父级元素使用 overflow:auto</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素使用-display-table"><span class="nav-number">4.</span> <span class="nav-text">父级元素使用 display:table</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素使用-display-inlin-block"><span class="nav-number">5.</span> <span class="nav-text">父级元素使用 display:inlin-block</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素也使用浮动"><span class="nav-number">6.</span> <span class="nav-text">父级元素也使用浮动</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#结尾处添加空元素clear-both"><span class="nav-number">7.</span> <span class="nav-text">结尾处添加空元素clear: both</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#结尾处添加br元素-clear-”both”"><span class="nav-number">8.</span> <span class="nav-text">结尾处添加br元素 clear=”both”</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素添加after和zoom-主流"><span class="nav-number">9.</span> <span class="nav-text">父级元素添加after和zoom-(主流)</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#父级元素使用-display-flow-root"><span class="nav-number">10.</span> <span class="nav-text">父级元素使用 display:flow-root</span></a></li>
                   </ol>
-                </div>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
 
 
               </div>
@@ -977,7 +1028,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">49.6k</span>
+          <span title="网站字数总数">50.7k</span>
 
         </div>
 
@@ -1154,6 +1205,7 @@
 
   <link rel="stylesheet" href="https://holidaypenguin.github.io/plugins/gitment/gitment.css">
   <script src="https://holidaypenguin.github.io/plugins/gitment/gitment.js"></script>
+  <script src="https://holidaypenguin.github.io/plugins/MD5/MD5.js"></script>
 
   <!-- END LOCAL -->
 
@@ -1163,7 +1215,8 @@
   <script type="text/javascript">
     function renderGitment() {
       var gitment = new Gitment({
-        id: window.location.pathname,
+        // id: window.location.pathname,
+        id: MD5.hexMD5(window.location.pathname), // 防止重复和超长
         owner: 'holidaypenguin',
         repo: 'holidaypenguin.github.io',
 
