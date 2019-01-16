@@ -9,6 +9,7 @@
         {% set CommentsClass = "Gitment" %}
         <link rel="stylesheet" href="https://holidaypenguin.github.io/plugins/gitment/gitment.css">
         <script src="https://holidaypenguin.github.io/plugins/gitment/gitment.js"></script>
+        <script src="https://holidaypenguin.github.io/plugins/MD5/MD5.js"></script>
     {% endif %}
 <!-- END LOCAL -->
 
@@ -23,7 +24,8 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new {{CommentsClass}}({
-            id: window.location.pathname,
+            // id: window.location.pathname,
+            id: MD5.hexMD5(window.location.pathname),// 防止重复和超长
             owner: '{{ theme.gitment.github_user }}',
             repo: '{{ theme.gitment.github_repo }}',
             {% if theme.gitment.mint %}
