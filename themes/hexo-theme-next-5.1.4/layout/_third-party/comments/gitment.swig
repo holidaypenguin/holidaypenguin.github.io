@@ -7,9 +7,9 @@
         <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
     {% else %}
         {% set CommentsClass = "Gitment" %}
-        <link rel="stylesheet" href="https://holidaypenguin.github.io/plugins/gitment/gitment.css">
-        <script src="https://holidaypenguin.github.io/plugins/gitment/gitment.js"></script>
-        <script src="https://holidaypenguin.github.io/plugins/MD5/MD5.js"></script>
+        <link rel="stylesheet" href="/plugins/gitment/gitment.css">
+        <script src="/plugins/gitment/gitment.js"></script>
+        <script src="/plugins/MD5/MD5.js"></script>
     {% endif %}
 <!-- END LOCAL -->
 
