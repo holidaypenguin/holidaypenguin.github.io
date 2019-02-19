@@ -645,6 +645,7 @@ code {
   background: #eee;
   border-radius: 3px;
   font-size: 13px;
+  margin: 0 4px;
 }
 
 pre {
@@ -2226,7 +2227,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cc0e5d;
+  background: #fffede;
 }
 
 .links-of-blogroll {
