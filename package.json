@@ -10,7 +10,6 @@
     "build": "hexo clean && hexo generate --deploy",
     "test:absolute": "npm run test:move && npm run test:absolute:build"
   },
-  
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-beautify": "^1.0.2",
@@ -31,5 +30,8 @@
     "hexo-translate-title": "^1.0.9",
     "hexo-wordcount": "^3.0.2",
     "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "extend": "^3.0.2"
   }
 }
