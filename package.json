@@ -32,6 +32,7 @@
     "request": "^2.87.0"
   },
   "devDependencies": {
-    "extend": "^3.0.2"
+    "extend": "^3.0.2",
+    "lodash": "^4.17.10"
   }
 }
