@@ -112,6 +112,9 @@ server {
 输出编译后文件到项目根目录下的output/app_static目录下。当然因为多个项目，每个项目的名称肯定不同。
 
 在此处`webpack`的配置中`moduleName`作为当前项目的名称.
+
+编译后引用的资源文件路径前缀是`/app_static/xxx/xxx.xx`
+
 ``` js
 const path = require('path');
 const projectRoot = process.cwd();
@@ -143,6 +146,7 @@ module.exports = {
 }
 ```
 ### vue-router的配置
+路由前缀为`/app/xxx/xxx`
 ``` js
 var router = new VueRouter({
   mode: 'history',
@@ -220,6 +224,8 @@ server {
 ### 访问地址
 http://localhost/app/home
 http://localhost/music/home
+
+**注意** history路由使用`app`前缀，资源文件路径使用`app_static`前缀，是为了更好的区分两种访问的url。
 
 ## 多页配置
 上面说的仅仅是单页应用的nginx配置，对于多页的还会有所不同，此处略，等实践之后再来补齐。

@@ -1,15 +1,16 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "holidaypenguin",
+  "version": "1.0.0",
   "private": true,
   "hexo": {
     "version": "3.7.1"
   },
   "scripts": {
     "local": "hexo clean && hexo server -p 4001",
-    "build": "hexo clean && hexo generate",
+    "build": "hexo clean && hexo generate --deploy",
     "test:absolute": "npm run test:move && npm run test:absolute:build"
   },
+  
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-beautify": "^1.0.2",
