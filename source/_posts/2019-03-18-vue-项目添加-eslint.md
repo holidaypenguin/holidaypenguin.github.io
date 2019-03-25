@@ -4,8 +4,10 @@ description: <!-- more -->
 translate_title: vue-project-add-eslint
 tags:
   - Vue
+  - Eslint
+  - standard
 categories:
-  - eslint
+  - Vue
 date: 2019-03-18 14:42:59
 updated: 2019-03-18 14:42:59
 ---

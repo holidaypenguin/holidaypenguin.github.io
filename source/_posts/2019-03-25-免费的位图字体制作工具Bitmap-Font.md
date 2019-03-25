@@ -5,7 +5,9 @@ translate_title: free-bitmap-font
 date: 2019-03-25 16:28:24
 updated: 2019-03-25 16:28:24
 tags:
+  - BitmapFont
 categories:
+  - FrontEnd
 ---
 ## 导读
 
