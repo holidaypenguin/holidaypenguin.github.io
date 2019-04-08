@@ -23,7 +23,7 @@ document.title = title
 const body = document.querySelector('body')
 
 // hack在微信等webview中无法修改document.title的情况
-const iframe = document.createElement('iframe')
+let iframe = document.createElement('iframe')
 
 iframe.src = '/favicon.ico'
 
@@ -31,12 +31,35 @@ const setTitle = () => {
   setTimeout(function () {
     iframe.removeEventListener('load', setTitle, false)
     body.removeChild(iframe)
+    iframe = undefined
   }, 0)
 }
 
 iframe.addEventListener('load', setTitle, false)
 
 body.appendChild(iframe)
+```
+
+
+## 原生js版本
+此为在网上找到的版本，比我自己写的简单明了
+
+``` js
+setTimeout(function () {
+// 利用iframe的onload事件刷新页面
+  document.title = title
+  let iframe = document.createElement('iframe')
+  iframe.style.visibility = 'hidden'
+  iframe.style.width = '1px'
+  iframe.style.height = '1px'
+  iframe.onload = function () {
+    setTimeout(function () {
+      document.body.removeChild(iframe)
+      iframe = undefined
+    }, 0)
+  }
+  document.body.appendChild(iframe)
+}, 0)
 ```
 
 

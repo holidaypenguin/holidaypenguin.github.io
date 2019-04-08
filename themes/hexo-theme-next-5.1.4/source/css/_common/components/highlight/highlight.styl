@@ -40,12 +40,35 @@ pre {
 
 .highlight {
   @extend $code-block;
-  border-radius: 1px
+  border-radius: 1px;
+  position: relative;
+
+  &::after{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: hsla(0,0%,100%,.4);
+  }
+
+  &.js::after{content: 'js'}
+  &.javascript::after{content: 'javascript'}
+  &.html::after{content: 'html'}
+  &.css::after{content: 'css'}
+  &.bash::after{content: 'bash'}
+  &.json::after{content: 'json'}
+  &.yml::after{content: 'yml'}
+  &.java::after{content: 'java'}
+  &.c::after{content: 'c'}
+  &.c++::after{content: 'c++'}
+  &.php::after{content: 'php'}
+  &.python::after{content: 'python'}
+  &.xml::after{content: 'xml'}
+  &.vue::after{content: 'vue'}
 
   pre {
     border: none;
     margin: 0;
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   table {
