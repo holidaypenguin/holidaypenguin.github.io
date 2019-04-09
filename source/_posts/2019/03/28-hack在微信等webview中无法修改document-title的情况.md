@@ -9,7 +9,7 @@ tags:
   - 微信
   - hack
 categories:
-  -JavaScript
+  - JavaScript
 ---
 
 今天使用了很久以前发现的一个在IOS中动态设置document.title无效的问题，本打算直接去使用上一个记录的内容，发现因为没有引入JQuery无法使用，而且网上还没有原生js的方法，所以在此记录一下，其原理都是利用iframe的加载可以局部刷新页面，从而使<title\>被重新渲染。。
