@@ -8,7 +8,7 @@ tags:
   - nginx配置
   - 资源缓存
 categories:
-  - VUE
+  - Vue
 date: 2019-02-18 18:29:49
 updated: 2019-02-18 18:29:49
 ---
