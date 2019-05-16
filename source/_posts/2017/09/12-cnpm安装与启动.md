@@ -1,7 +1,7 @@
 ---
 title: cnpm安装与启动
 description: cnpm的安装简要过程<!-- more -->
-translate_title: cnpm-installation-and-start-up
+translate_title: installation-and-startup-of-cnpm
 tags:
   - cnpm
   - 杂项

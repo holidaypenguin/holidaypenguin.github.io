@@ -119,13 +119,13 @@ beautify:
     # More Options (https://github.com/beautify-web/js-beautify/blob/master/README.md)
 
 translate_title:
-  translate_way: baidu_no_appid  # google,youdao,baidu_with_appid,baidu_no_appid
+  translate_way: baidu_with_appid  # google,youdao,baidu_with_appid,baidu_no_appid
   # youdao_api_key: '' # Your youdao_api_key
   # youdao_keyfrom: xxxx-blog # Your youdao_keyfrom
   # is_need_proxy: false     # true | false
   # proxy_url:  # Your proxy_url
-  # baidu_appid: '20180524000165327' # Your baidu_appid
-  # baidu_appkey: '_xIg_STanOMeoYReLXAU' # Your baidu_appkey
+  baidu_appid: '20180524000165327' # Your baidu_appid
+  baidu_appkey: '_xIg_STanOMeoYReLXAU' # Your baidu_appkey
 
 lazyload:
   enable: true 

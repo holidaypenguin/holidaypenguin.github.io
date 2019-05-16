@@ -969,3 +969,9 @@ github：https://github.com/verdaccio/verdaccio
 
 相当于把npm内容下载到本地，同时也可以在本地发布
 
+# npm 下载量统计
+
+https://npm-stat.com/api/download-counts?package=miniprogram-keyboard-num&from=2018-01-01&until=2019-12-31
+
+该接口查看一段时间内每天的下载量，可以自己根据需要做统计
+
