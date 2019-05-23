@@ -1,5 +1,5 @@
 ---
-title: 'iOS Safari浏览器上overflow: scroll元素无法滑动'
+title: 'iOS Safari浏览器上 overflow scroll 元素无法滑动'
 description: <!-- more -->
 translate_title: 'overflow:-scroll-element-cannot-slide-on-ios-safari-browser'
 tags:
