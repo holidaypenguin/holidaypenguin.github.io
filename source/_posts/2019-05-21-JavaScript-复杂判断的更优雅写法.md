@@ -1,25 +1,25 @@
 ---
 title: JavaScript 复杂判断的更优雅写法
 description: <!-- more -->
-date: 2019-05-21 20:28:41
-updated: 2019-05-21 20:28:41
-translate_title:
+translate_title: more-elegant-writing-of-javascript-complex-judgments
 tags:
   - 复杂判断
   - JavaScript
 categories:
   - JavaScript
+date: 2019-05-21 20:28:41
+updated: 2019-05-21 20:28:41
 ---
 
 本文系转载（https://juejin.im/post/5bdfef86e51d453bf8051bf8）
 
-## 前提
+**前提**
 
 我们编写js代码时经常遇到复杂逻辑判断的情况，通常大家可以用if/else或者switch来实现多个条件判断，但这样会有个问题，随着逻辑复杂度的增加，代码中的if/else/switch会变得越来越臃肿，越来越看不懂，那么如何更优雅的写判断逻辑，本文带你试一下。
 
-## 举个例子
+下面就举例说明
 
-### if/else
+## if/else
 先看一段代码
 
 ```js
@@ -52,7 +52,7 @@ const onButtonClick = (status)=>{
 
 通过代码可以看到这个按钮的点击逻辑：根据不同活动状态做两件事情，发送日志埋点和跳转到对应页面，
 
-### switch
+## switch
 
 大家可以很轻易的提出这段代码的改写方案，switch出场：
 
@@ -90,7 +90,7 @@ const onButtonClick = (status)=>{
 
 嗯，这样看起来比if/else清晰多了，细心的同学也发现了小技巧，case 2和case 3逻辑一样的时候，可以省去执行语句和break，则case 2的情况自动执行case 3的逻辑。
 
-### 一元判断时：存到Object里
+## 一元判断时：存到Object里
 
 这时有同学会说，还有更简单的写法：
 
@@ -118,7 +118,7 @@ const onButtonClick = (status)=>{
 
 上面代码确实看起来更清爽了，这种方法的聪明之处在于：将判断条件作为对象的属性名，将处理逻辑作为对象的属性值，在按钮点击的时候，通过对象属性查找的方式来进行逻辑判断，这种写法特别适合一元条件判断的情况。
 
-### 一元判断时：存到Map里
+## 一元判断时：存到Map里
 
 是不是还有其他写法呢？有的：
 
@@ -148,7 +148,7 @@ const onButtonClick = (status)=>{
 2. 一个对象的键只能是字符串或者Symbols，但一个Map的键可以是任意值。
 3. 你可以通过size属性很容易地得到一个Map的键值对个数，而对象的键值对个数只能手动确认。
 
-### 多元判断时：将condition拼接成字符串存到Map里
+## 多元判断时：将condition拼接成字符串存到Map里
 
 我们需要把问题升级一下，以前按钮点击时候只需要判断status，现在还需要判断用户的身份：
 
@@ -225,7 +225,7 @@ const onButtonClick = (identity,status)=>{
 
 上述代码核心逻辑是：把两个条件拼接成字符串，并通过以条件拼接字符串作为键，以处理函数作为值的Map对象进行查找并执行，这种写法在多元条件判断时候尤其好用。
 
-### 多元判断时：将condition拼接成字符串存到Object里
+## 多元判断时：将condition拼接成字符串存到Object里
 
 当然上述代码如果用Object对象来实现也是类似的：
 
@@ -242,7 +242,7 @@ const onButtonClick = (identity,status)=>{
 }
 ```
 
-### 多元判断时：将condition存为Object存到Map里
+## 多元判断时：将condition存为Object存到Map里
 
 如果有些同学觉得把查询条件拼成字符串有点别扭，那还有一种方案，就是用Map对象，以Object对象作为key：
 
@@ -263,7 +263,7 @@ const onButtonClick = (identity,status)=>{
 
 这里也看出来Map与Object的区别，Map可以用任何类型的数据作为key。
 
-### 多元判断时：将condition写作正则存到Map里
+## 多元判断时：将condition写作正则存到Map里
 
 我们现在再将难度升级一点点，假如guest情况下，status1-4的处理逻辑都一样怎么办，最差的情况是这样：
 
