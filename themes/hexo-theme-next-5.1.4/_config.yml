@@ -225,7 +225,7 @@ post_meta:
   created_at: true
   updated_at: true
   categories: true
-# display_updated: true
+  # display_updated: true
 
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
