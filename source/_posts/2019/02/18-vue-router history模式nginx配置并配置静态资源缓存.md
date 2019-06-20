@@ -5,8 +5,9 @@ translate_title: >-
   vue-router-history-mode-nginx-configuration-and-configuration-of-static-resource-cache
 tags:
   - history模式
-  - nginx配置
+  - Nginx
   - 资源缓存
+  - revving
 categories:
   - Vue
 date: 2019-02-18 18:29:49
