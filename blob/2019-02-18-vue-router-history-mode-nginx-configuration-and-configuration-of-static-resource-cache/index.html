@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="history模式,nginx配置,资源缓存," />
+  <meta name="keywords" content="Nginx,history模式,资源缓存,revving," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 
-  <meta name="keywords" content="history模式,nginx配置,资源缓存">
+  <meta name="keywords" content="Nginx,history模式,资源缓存,revving">
   <meta property="og:type" content="article">
   <meta property="og:title" content="vue-router history模式nginx配置并配置静态资源缓存">
   <meta property="og:url" content="https://www.holidaypenguin.com/blob/2019-02-18-vue-router-history-mode-nginx-configuration-and-configuration-of-static-resource-cache/index.html">
@@ -378,8 +378,8 @@
 
 
                       <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                       </a>
                       </span>
 
@@ -420,7 +420,7 @@
                         <span class="post-meta-item-text">字数统计&#58;</span>
 
                         <span title="字数统计">
-                  1,017 字
+                  1,329 字
                 </span>
 
 
@@ -436,7 +436,7 @@
                         <span class="post-meta-item-text">阅读时长 &asymp;</span>
 
                         <span title="阅读时长">
-                  5 分钟
+                  6 分钟
                 </span>
 
                       </div>
@@ -497,6 +497,9 @@
                     <h2 id="history模式升级版"><a href="#history模式升级版" class="headerlink" title="history模式升级版"></a>history模式升级版</h2>
                     <p>在实际生产活动中，每一次上线都希望发布的的内容不需要用户强制刷新即可呈现在用户的眼前。</p>
                     <p>因此根据history模式的实际情况，首先对指定了具体文件格式的静态文件设定30天的有效期；<br>其次路由访问的index.html设置为不缓存。</p>
+                    <p><strong>注意：</strong></p>
+                    <p>这个配置针对具有hash值的静态文件，先设置强制缓存，再设置协商缓存；如果存在没有hash值的静态文件，建议不设置强制缓存，仅通过协商缓存判断是否需要使用缓存。</p>
+                    <p>因此当前配置仅指定index.html无强制缓存，其他具有hash的静态文件有强制缓存。</p>
                     <figure class="highlight bash">
                       <table>
                         <tr>
@@ -513,33 +516,35 @@
                     <p>上面使用的配置皆是在一个域名下面只有一套静态页面，此次解决同一个域名多套静态页面，共用一个服务端接口。</p>
                     <h3 id="webpack的配置"><a href="#webpack的配置" class="headerlink" title="webpack的配置"></a>webpack的配置</h3>
                     <p>输出编译后文件到项目根目录下的output/app_static目录下。当然因为多个项目，每个项目的名称肯定不同。</p>
-                    <p>在此处<code>webpack</code>的配置中<code>moduleName</code>作为当前项目的名称.<br>
+                    <p>在此处<code>webpack</code>的配置中<code>moduleName</code>作为当前项目的名称.</p>
+                    <p>编译后引用的资源文件路径前缀是<code>/app_static/xxx/xxx.xx</code></p>
+                    <figure class="highlight js">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> projectRoot = process.cwd();</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> moduleName = <span class="string">'app'</span>;</span><br><span class="line"><span class="keyword">let</span> staticName = <span class="string">`<span class="subst">$&#123;moduleName&#125;</span>_static`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./public/main/app.js"</span>,</span><br><span class="line"></span><br><span class="line">  output: &#123;</span><br><span class="line">    libraryTarget: <span class="string">'var'</span>,</span><br><span class="line">    path: path.resolve(projectRoot, <span class="string">'./output/'</span> + staticName + <span class="string">'/'</span>),</span><br><span class="line">    publicPath: <span class="string">'/'</span> + staticName + <span class="string">'/'</span>,</span><br><span class="line">    filename: <span class="string">'[name]_[hash:8].js'</span>,</span><br><span class="line">    chunkFilename: <span class="string">'[name]_[hash:8].js'</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      ENV: <span class="built_in">JSON</span>.stringify(<span class="string">'online'</span>),</span><br><span class="line">      MODULE_NAME: <span class="built_in">JSON</span>.stringify(moduleName)</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="comment">// ......</span></span><br><span class="line">&#125;</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <h3 id="vue-router的配置"><a href="#vue-router的配置" class="headerlink" title="vue-router的配置"></a>vue-router的配置</h3>
+                    <p>路由前缀为<code>/app/xxx/xxx</code><br>
                       <figure class="highlight js">
                         <table>
                           <tr>
                             <td class="gutter">
-                              <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre>
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre>
                             </td>
                             <td class="code">
-                              <pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> projectRoot = process.cwd();</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> moduleName = <span class="string">'app'</span>;</span><br><span class="line"><span class="keyword">let</span> staticName = <span class="string">`<span class="subst">$&#123;moduleName&#125;</span>_static`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./public/main/app.js"</span>,</span><br><span class="line"></span><br><span class="line">  output: &#123;</span><br><span class="line">    libraryTarget: <span class="string">'var'</span>,</span><br><span class="line">    path: path.resolve(projectRoot, <span class="string">'./output/'</span> + staticName + <span class="string">'/'</span>),</span><br><span class="line">    publicPath: <span class="string">'/'</span> + staticName + <span class="string">'/'</span>,</span><br><span class="line">    filename: <span class="string">'[name]_[hash:8].js'</span>,</span><br><span class="line">    chunkFilename: <span class="string">'[name]_[hash:8].js'</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      ENV: <span class="built_in">JSON</span>.stringify(<span class="string">'online'</span>),</span><br><span class="line">      MODULE_NAME: <span class="built_in">JSON</span>.stringify(moduleName)</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="comment">// ......</span></span><br><span class="line">&#125;</span><br></pre>
+                              <pre><span class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">'history'</span>,</span><br><span class="line">  base: <span class="string">`/<span class="subst">$&#123;MODULE_NAME&#125;</span>/`</span>,</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">''</span>,</span><br><span class="line">      name: <span class="string">`/<span class="subst">$&#123;MODULE_NAME&#125;</span>`</span>,</span><br><span class="line">      redirect: &#123; <span class="attr">name</span>: <span class="string">'home'</span> &#125;,</span><br><span class="line">      component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'business'</span>], resolve),</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          path: <span class="string">'home'</span>,</span><br><span class="line">          name: <span class="string">'home'</span>,</span><br><span class="line">          component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'business/home'</span>], resolve)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// ......</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; </span><br><span class="line">      path: <span class="string">'*'</span>, </span><br><span class="line">      redirect: &#123; <span class="attr">name</span>: <span class="string">'home'</span> &#125;,</span><br><span class="line">      component: Vue.extend(&#123;</span><br><span class="line">        template: <span class="string">'&lt;router-view transition="fade" transition-mode="out-in"&gt;&lt;/router-view&gt;'</span></span><br><span class="line">      &#125;) </span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br></pre>
                             </td>
                           </tr>
                         </table>
                       </figure>
                     </p>
-                    <h3 id="vue-router的配置"><a href="#vue-router的配置" class="headerlink" title="vue-router的配置"></a>vue-router的配置</h3>
-                    <figure class="highlight js">
-                      <table>
-                        <tr>
-                          <td class="gutter">
-                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre>
-                          </td>
-                          <td class="code">
-                            <pre><span class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">'history'</span>,</span><br><span class="line">  base: <span class="string">`/<span class="subst">$&#123;MODULE_NAME&#125;</span>/`</span>,</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">''</span>,</span><br><span class="line">      name: <span class="string">`/<span class="subst">$&#123;MODULE_NAME&#125;</span>`</span>,</span><br><span class="line">      redirect: &#123; <span class="attr">name</span>: <span class="string">'home'</span> &#125;,</span><br><span class="line">      component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'business'</span>], resolve),</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          path: <span class="string">'home'</span>,</span><br><span class="line">          name: <span class="string">'home'</span>,</span><br><span class="line">          component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'business/home'</span>], resolve)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// ......</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; </span><br><span class="line">      path: <span class="string">'*'</span>, </span><br><span class="line">      redirect: &#123; <span class="attr">name</span>: <span class="string">'home'</span> &#125;,</span><br><span class="line">      component: Vue.extend(&#123;</span><br><span class="line">        template: <span class="string">'&lt;router-view transition="fade" transition-mode="out-in"&gt;&lt;/router-view&gt;'</span></span><br><span class="line">      &#125;) </span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br></pre>
-                          </td>
-                        </tr>
-                      </table>
-                    </figure>
                     <h3 id="nginx根目录的文件结构"><a href="#nginx根目录的文件结构" class="headerlink" title="nginx根目录的文件结构"></a>nginx根目录的文件结构</h3>
                     <p>nginx根目录下面存在多个项目的静态文件<br>
                       <figure class="highlight plain">
@@ -570,8 +575,39 @@
                     </figure>
                     <h3 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h3>
                     <p><a href="http://localhost/app/home" target="_blank" rel="noopener">http://localhost/app/home</a><br><a href="http://localhost/music/home" target="_blank" rel="noopener">http://localhost/music/home</a></p>
+                    <p><strong>注意</strong> history路由使用<code>app</code>前缀，资源文件路径使用<code>app_static</code>前缀，是为了更好的区分两种访问的url。</p>
                     <h2 id="多页配置"><a href="#多页配置" class="headerlink" title="多页配置"></a>多页配置</h2>
-                    <p>上面说的仅仅是单页应用的nginx配置，对于多页的还会有所不同，此处略，等实践之后再来补齐。</p>
+                    <p>上面说的仅仅是单页应用的nginx配置，对于多页的还会有所不同。</p>
+                    <figure class="highlight bash">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="comment"># 路由配置页面无缓存</span></span><br><span class="line">location ~ ^/app/module/ &#123;</span><br><span class="line">    root /xxx/dist;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">    expires -1;</span><br><span class="line">    add_header Cache-Control no-cache;</span><br><span class="line">    try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ @rewrites;</span><br><span class="line">&#125;</span><br><span class="line">location @rewrites &#123;</span><br><span class="line">    rewrite ^/(app)\/module\/(index|about)/ /<span class="variable">$1_static</span>/module/<span class="variable">$2</span>.html <span class="built_in">break</span>;</span><br><span class="line">&#125;</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p>rewrites也可以使用最原始的方式，但是我认为这是最简洁的方式，因为需要支持module后面多个路径（定义为二级页面）。</p>
+                    <figure class="highlight bash">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line">location @rewrites &#123;</span><br><span class="line">    rewrite ^/app/module/index /app_static/module/index.html <span class="built_in">break</span>;</span><br><span class="line">    rewrite ^/app/module/about /app_static/module/about.html <span class="built_in">break</span>;</span><br><span class="line">    <span class="comment"># 二级页面配置</span></span><br><span class="line">    rewrite ^/app/module/sale/sale_info /app_static/module/sale/sale_info.html <span class="built_in">break</span>;</span><br><span class="line">&#125;</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <h3 id="访问地址-1"><a href="#访问地址-1" class="headerlink" title="访问地址"></a>访问地址</h3>
+                    <p><a href="http://localhost/app/module/index" target="_blank" rel="noopener">http://localhost/app/module/index</a><br><a href="http://localhost/app/module/about" target="_blank" rel="noopener">http://localhost/app/module/about</a><br>
+                      <a
+                        href="http://localhost/app/module/sale/sale_info" target="_blank" rel="noopener">http://localhost/app/module/sale/sale_info</a>
+                    </p>
                     <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
                     <p><a href="https://www.cnblogs.com/bigberg/p/7644192.html" target="_blank" rel="noopener">https://www.cnblogs.com/bigberg/p/7644192.html</a><br><a href="https://blog.csdn.net/fay462298322/article/details/54666636/" target="_blank" rel="noopener">https://blog.csdn.net/fay462298322/article/details/54666636/</a><br>
                       <a href="https://segmentfault.com/a/1190000002797606" target="_blank" rel="noopener">https://segmentfault.com/a/1190000002797606</a>
@@ -592,11 +628,13 @@
 
                     <div class="post-tags">
 
+                      <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+
                       <a href="/tags/history模式/" rel="tag"># history模式</a>
 
-                      <a href="/tags/nginx配置/" rel="tag"># nginx配置</a>
-
                       <a href="/tags/资源缓存/" rel="tag"># 资源缓存</a>
+
+                      <a href="/tags/revving/" rel="tag"># revving</a>
 
                     </div>
 
@@ -618,6 +656,10 @@
                       <span class="post-nav-divider"></span>
 
                       <div class="post-nav-prev post-nav-item">
+
+                        <a href="/blob/2019-03-18-vue-project-add-eslint/" rel="prev" title="vue 项目添加 eslint">
+                vue 项目添加 eslint <i class="fa fa-chevron-right"></i>
+              </a>
 
                       </div>
                     </div>
@@ -701,7 +743,7 @@
 
                     <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
                   </div>
@@ -712,7 +754,7 @@
 
                   <div class="site-state-item site-state-categories">
                     <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
                   </div>
@@ -723,7 +765,7 @@
 
                   <div class="site-state-item site-state-tags">
                     <a href="/tags/index.html">
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">135</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
                   </div>
@@ -787,7 +829,11 @@
                         <li class="nav-item nav-level-3"><a class="nav-link" href="#访问地址"><span class="nav-number">5.5.</span> <span class="nav-text">访问地址</span></a></li>
                       </ol>
                     </li>
-                    <li class="nav-item nav-level-2"><a class="nav-link" href="#多页配置"><span class="nav-number">6.</span> <span class="nav-text">多页配置</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#多页配置"><span class="nav-number">6.</span> <span class="nav-text">多页配置</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#访问地址-1"><span class="nav-number">6.1.</span> <span class="nav-text">访问地址</span></a></li>
+                      </ol>
+                    </li>
                   </ol>
                   </li>
                   <li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
@@ -824,7 +870,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">53.3k</span>
+          <span title="网站字数总数">109.3k</span>
 
         </div>
 
@@ -999,9 +1045,9 @@
   <!-- LOCAL: You can save these files to your site and update links -->
 
 
-  <link rel="stylesheet" href="/plugins/gitment/gitment.css">
-  <script src="/plugins/gitment/gitment.js"></script>
-  <script src="/plugins/MD5/MD5.js"></script>
+  <link rel="stylesheet" href="https://www.holidaypenguin.com/plugins/common/lib/Gitment/gitment.css">
+  <script src="https://www.holidaypenguin.com/plugins/common/lib/Gitment/gitment.js"></script>
+  <script src="https://www.holidaypenguin.com/plugins/common/lib/MD5/MD5.js"></script>
 
   <!-- END LOCAL -->
 

@@ -661,12 +661,76 @@ pre code {
 
 .highlight {
   border-radius: 1px;
+  position: relative;
+}
+
+.highlight::after {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.highlight.js::after {
+  content: 'js';
+}
+
+.highlight.javascript::after {
+  content: 'javascript';
+}
+
+.highlight.html::after {
+  content: 'html';
+}
+
+.highlight.css::after {
+  content: 'css';
+}
+
+.highlight.bash::after {
+  content: 'bash';
+}
+
+.highlight.json::after {
+  content: 'json';
+}
+
+.highlight.yml::after {
+  content: 'yml';
+}
+
+.highlight.java::after {
+  content: 'java';
+}
+
+.highlight.c::after {
+  content: 'c';
+}
+
+.highlight.c++::after {
+  content: 'c++';
+}
+
+.highlight.php::after {
+  content: 'php';
+}
+
+.highlight.python::after {
+  content: 'python';
+}
+
+.highlight.xml::after {
+  content: 'xml';
+}
+
+.highlight.vue::after {
+  content: 'vue';
 }
 
 .highlight pre {
   border: none;
   margin: 0;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .highlight table {
@@ -2227,7 +2291,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4a85c9;
+  background: #f133ff;
 }
 
 .links-of-blogroll {
