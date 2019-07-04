@@ -126,6 +126,7 @@ translate_title:
   # proxy_url:  # Your proxy_url
   baidu_appid: '20180524000165327' # Your baidu_appid
   baidu_appkey: '_xIg_STanOMeoYReLXAU' # Your baidu_appkey
+  rewrite: false
 
 lazyload:
   enable: true 
