@@ -6,4 +6,5 @@ date: {{ date }}
 updated: {{ date }}
 tags: 
 categories: 
+typora-root-url: ..
 ---
