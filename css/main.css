@@ -628,8 +628,8 @@ pre,
   margin: 20px 0;
   padding: 0;
   font-size: 13px;
-  color: #ccc;
-  background: #2d2d2d;
+  color: #fff;
+  background: #002451;
   line-height: 1.6;
 }
 
@@ -654,7 +654,7 @@ pre {
 
 pre code {
   padding: 0;
-  color: #ccc;
+  color: #fff;
   background: none;
   text-shadow: none;
 }
@@ -746,7 +746,7 @@ pre code {
 
 .highlight figcaption {
   font-size: 1em;
-  color: #ccc;
+  color: #fff;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -763,26 +763,26 @@ pre code {
 
 .highlight figcaption a {
   float: right;
-  color: #ccc;
+  color: #fff;
 }
 
 .highlight figcaption a:hover {
-  border-bottom-color: #ccc;
+  border-bottom-color: #fff;
 }
 
 .highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
-  color: #999;
+  color: #7285b7;
   text-align: right;
-  background-color: #1b1b1b;
+  background-color: #000e20;
 }
 
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #2d2d2d;
+  background-color: #002451;
 }
 
 .highlight .line {
@@ -813,11 +813,11 @@ pre .addition {
 }
 
 pre .meta {
-  color: #c9c;
+  color: #ebbbff;
 }
 
 pre .comment {
-  color: #999;
+  color: #7285b7;
 }
 
 pre .variable,
@@ -832,7 +832,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #f2777a;
+  color: #ff9da4;
 }
 
 pre .number,
@@ -842,7 +842,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #f99157;
+  color: #ffc58f;
 }
 
 pre .ruby .class .title,
@@ -856,12 +856,12 @@ pre .xml .cdata,
 pre .special,
 pre .number,
 pre .formula {
-  color: #9c9;
+  color: #d1f1a9;
 }
 
 pre .title,
 pre .css .hexcolor {
-  color: #6cc;
+  color: #9ff;
 }
 
 pre .function,
@@ -872,12 +872,12 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #69c;
+  color: #bbdaff;
 }
 
 pre .keyword,
 pre .javascript .function {
-  color: #c9c;
+  color: #ebbbff;
 }
 
 .full-image.full-image.full-image.full-image {
@@ -2291,7 +2291,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b93067;
+  background: #56f;
 }
 
 .links-of-blogroll {

@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.holidaypenguin.com/tags/index.html</loc>
+    
+    <lastmod>2019-07-04T07:23:23.190Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.holidaypenguin.com/sitemap/index.html</loc>
+    
+    <lastmod>2019-07-04T06:19:09.882Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.holidaypenguin.com/categories/index.html</loc>
+    
+    <lastmod>2019-07-04T06:19:09.881Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.holidaypenguin.com/blob/2019-07-03-vary-and-content-negotiation/</loc>
+    
+    <lastmod>2019-07-03T12:14:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.holidaypenguin.com/blob/2019-07-03-let-wechat-applet-support-async-await/</loc>
+    
+    <lastmod>2019-07-03T09:38:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.holidaypenguin.com/blob/2019-06-28-forbid-page-back-off/</loc>
     
     <lastmod>2019-06-28T07:16:57.000Z</lastmod>
@@ -222,27 +257,6 @@
     <loc>https://www.holidaypenguin.com/blob/2019-03-18-vue-project-add-eslint/</loc>
     
     <lastmod>2019-03-18T06:42:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.holidaypenguin.com/tags/index.html</loc>
-    
-    <lastmod>2019-02-19T07:15:39.944Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.holidaypenguin.com/sitemap/index.html</loc>
-    
-    <lastmod>2019-02-19T07:15:39.944Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.holidaypenguin.com/categories/index.html</loc>
-    
-    <lastmod>2019-02-19T07:15:39.719Z</lastmod>
     
   </url>
   

@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="Nginx,Cache,缓存,Expires,Cache-control,Last-Modified,Etag," />
+  <meta name="keywords" content="Cache,缓存,Expires,Cache-control,Last-Modified,Etag,Nginx," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 
-  <meta name="keywords" content="Nginx,Cache,缓存,Expires,Cache-control,Last-Modified,Etag">
+  <meta name="keywords" content="Cache,缓存,Expires,Cache-control,Last-Modified,Etag,Nginx">
   <meta property="og:type" content="article">
   <meta property="og:title" content="理解浏览器的缓存机制">
   <meta property="og:url" content="https://www.holidaypenguin.com/blob/2019-06-04-understanding-browser-caching-mechanism/index.html">
@@ -126,7 +126,7 @@
       tabs: true,
       motion: {
         "enable": true,
-        "async": false,
+        "async": true,
         "transition": {
           "post_block": "fadeIn",
           "post_header": "slideDownIn",
@@ -429,7 +429,7 @@
                         <span class="post-meta-item-text">字数统计&#58;</span>
 
                         <span title="字数统计">
-                  4,401 字
+                  4,431 字
                 </span>
 
 
@@ -666,6 +666,8 @@
                     <h2 id="Manifest"><a href="#Manifest" class="headerlink" title="Manifest"></a>Manifest</h2>
                     <p>Manifest 作为 PWA 离线缓存的一部分，具体使用方法查看下相关文档</p>
                     <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Manifest" target="_blank" rel="noopener">Web App Manifest</a><br><a href="https://www.runoob.com/html/html5-app-cache.html" target="_blank" rel="noopener">HTML5 Cache Manifest</a></p>
+                    <h2 id="Vary与内容协商"><a href="#Vary与内容协商" class="headerlink" title="Vary与内容协商"></a>Vary与内容协商</h2>
+                    <p>说了这么多缓存，我们也应该知道<code>Vary</code>，请移步<a href="/blob/2019-07-03-vary-and-content-negotiation/">Vary与内容协商</a></p>
                     <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
                     <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ" target="_blank" rel="noopener">HTTP 缓存</a><br><a href="https://github.com/easonyq/easonyq.github.io/blob/master/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/others/cache.md"
                         target="_blank" rel="noopener">一文读懂前端缓存</a><br><a href="https://zhuanlan.zhihu.com/p/44789005" target="_blank" rel="noopener">一文读懂前端缓存</a><br>
@@ -695,8 +697,6 @@
 
                     <div class="post-tags">
 
-                      <a href="/tags/Nginx/" rel="tag"># Nginx</a>
-
                       <a href="/tags/Cache/" rel="tag"># Cache</a>
 
                       <a href="/tags/缓存/" rel="tag"># 缓存</a>
@@ -708,6 +708,8 @@
                       <a href="/tags/Last-Modified/" rel="tag"># Last-Modified</a>
 
                       <a href="/tags/Etag/" rel="tag"># Etag</a>
+
+                      <a href="/tags/Nginx/" rel="tag"># Nginx</a>
 
                     </div>
 
@@ -816,7 +818,7 @@
 
                     <a href="/archives/">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
                   </div>
@@ -914,6 +916,7 @@
                     <li class="nav-item nav-level-2"><a class="nav-link" href="#在实际项目中使用缓存"><span class="nav-number">6.</span> <span class="nav-text">在实际项目中使用缓存</span></a></li>
                     <li class="nav-item nav-level-2"><a class="nav-link" href="#一些案例"><span class="nav-number">7.</span> <span class="nav-text">一些案例</span></a></li>
                     <li class="nav-item nav-level-2"><a class="nav-link" href="#Manifest"><span class="nav-number">8.</span> <span class="nav-text">Manifest</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#Vary与内容协商"><span class="nav-number">9.</span> <span class="nav-text">Vary与内容协商</span></a></li>
                   </ol>
                   </li>
                   <li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
@@ -950,7 +953,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">109.3k</span>
+          <span title="网站字数总数">109.7k</span>
 
         </div>
 
