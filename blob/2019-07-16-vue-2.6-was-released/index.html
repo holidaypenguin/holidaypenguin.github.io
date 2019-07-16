@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+  <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HolidayPenguin" />
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vue 2.6 发布了">
+  <meta property="og:url" content="https://www.holidaypenguin.com/blob/2019-07-16-vue-2.6-was-released/index.html">
+  <meta property="og:site_name" content="HolidayPenguin">
+  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==">
+  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==">
+  <meta property="og:updated_time" content="2019-07-16T12:05:53.947Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vue 2.6 发布了">
+  <meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==">
+
+
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      version: '5.1.4',
+      sidebar: {
+        "position": "left",
+        "display": "always",
+        "offset": 12,
+        "b2t": false,
+        "scrollpercent": false,
+        "onmobile": false
+      },
+      fancybox: true,
+      tabs: true,
+      motion: {
+        "enable": true,
+        "async": true,
+        "transition": {
+          "post_block": "fadeIn",
+          "post_header": "slideDownIn",
+          "post_body": "slideDownIn",
+          "coll_header": "slideLeftIn",
+          "sidebar": "slideUpIn"
+        }
+      },
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
+  </script>
+
+
+
+  <link rel="canonical" href="https://www.holidaypenguin.com/blob/2019-07-16-vue-2.6-was-released/" />
+
+
+
+
+
+  <title>Vue 2.6 发布了 | HolidayPenguin</title>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+
+
+
+
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
+
+
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HolidayPenguin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+            </div>
+
+            <h1 class="site-subtitle" itemprop="description"></h1>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+
+
+          <ul id="menu" class="menu">
+
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+            </li>
+
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+            </li>
+
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+            </li>
+
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+            </li>
+
+
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+            </li>
+
+          </ul>
+
+
+
+          <div class="site-search">
+
+            <div class="popup search-popup local-search-popup">
+              <div class="local-search-header clearfix">
+                <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+                <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+                <div class="local-search-input-wrapper">
+                  <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+                </div>
+              </div>
+              <div id="local-search-result"></div>
+            </div>
+
+
+
+          </div>
+
+        </nav>
+
+
+
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+
+            <div id="posts" class="posts-expand">
+
+
+
+
+
+
+
+
+              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+
+                <div class="post-block">
+                  <link itemprop="mainEntityOfPage" href="https://www.holidaypenguin.com/blob/2019-07-16-vue-2.6-was-released/">
+
+                  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="holidaypenguin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+                  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HolidayPenguin">
+    </span>
+
+
+                  <header class="post-header">
+
+
+
+                    <h2 class="post-title" itemprop="name headline">Vue 2.6 发布了</h2>
+
+
+                    <div class="post-meta">
+                      <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-16T19:03:13+08:00">
+                2019-07-16
+              </time>
+
+
+
+                      <span class="post-meta-divider">|</span>
+
+
+
+                      <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+
+                      <span class="post-meta-item-text">更新于&#58;</span>
+
+                      <time title="更新于" itemprop="dateModified" datetime="2019-07-16T20:05:53+08:00">
+                2019-07-16
+              </time>
+
+                      </span>
+
+
+                      <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                      </a>
+                      </span>
+
+
+
+
+                      </span>
+
+
+
+
+
+
+
+
+                      <span id="/blob/2019-07-16-vue-2.6-was-released/" class="leancloud_visitors" data-flag-title="Vue 2.6 发布了">
+               <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+
+                      <span class="post-meta-item-text">阅读次数&#58;</span>
+
+                      <span class="leancloud-visitors-count"></span>
+                      </span>
+
+
+
+
+
+                      <div class="post-wordcount">
+
+
+                        <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+
+                        <span class="post-meta-item-text">字数统计&#58;</span>
+
+                        <span title="字数统计">
+                  2,585 字
+                </span>
+
+
+
+                        <span class="post-meta-divider">|</span>
+
+
+
+                        <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+
+                        <span class="post-meta-item-text">阅读时长 &asymp;</span>
+
+                        <span title="阅读时长">
+                  10 分钟
+                </span>
+
+                      </div>
+
+
+
+                      <div class="post-description">
+                        <!-- more -->
+                      </div>
+
+
+                    </div>
+                  </header>
+
+
+
+
+
+                  <div class="post-body" itemprop="articleBody">
+
+
+
+
+
+                    <p><a href="https://github.com/jwenjian/visitor-count-badge" target="_blank" rel="noopener"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=www.holidaypenguin.com" alt="总访客数量"></a></p>
+                    <blockquote>
+                      <p>vue 2.6 版本发布已经很久了，赶在3.0发布之前熟悉并使用新版内容，为了3.0做准备<br>该文章为转发<a href="https://www.zhihu.com/people/evanyou" target="_blank" rel="noopener">尤雨溪</a>大神的<a href="https://zhuanlan.zhihu.com/p/56260917" target="_blank" rel="noopener">Vue 2.6 发布了</a></p>
+                    </blockquote>
+                    <p>英文原文：<a href="https://link.zhihu.com/?target=https%3A//medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e" target="_blank" rel="noopener">https://medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e</a></p>
+                    <p>昨天刚刚庆祝了 Vue 发布五周年，今天我们趁热打铁在年三十发布了 Vue 2.6 “Macross”，祝大家新春快乐！</p>
+                    <p>在过去一年里面我们花了大量的精力在新版的 CLI 和 3.0 的设计/原型调研上，因此 Vue 2.x 相对地已经很久没有重大更新了。差不多是时候了！这次的 2.6 包含了一些相当有份量的更新，我们在这里会讨论一些亮点——具体细节还请移步完整的 <a href="https://link.zhihu.com/?target=https%3A//github.com/vuejs/vue/releases/tag/v2.6.0" target="_blank"
+                        rel="noopener">release note</a>。</p>
+                    <h2 id="Slots：新语法，性能优化，准备接轨-3-0"><a href="#Slots：新语法，性能优化，准备接轨-3-0" class="headerlink" title="Slots：新语法，性能优化，准备接轨 3.0"></a><strong>Slots：新语法，性能优化，准备接轨 3.0</strong></h2>
+                    <p>Slot /插槽 是 Vue 组件的一个重要机制，因为它使得完全解耦的组件之间可以灵活地被组合。在 3.0 的原型开发过程中，我们发现了一些可以进一步改善现有的 slot 机制的方法。这里面有些可能会需要少量破坏性的改动，但也有一些可以以完全向后兼容的方式被引入 2.x。对于那些需要破坏性改动的改进，我们也尽量通过在 2.x 中引入完全兼容的改动来渐进地跟 3.0 的 API 接轨。</p>
+                    <p><strong>新语法</strong></p>
+                    <p>首先，我们为 slot 引入了一套全新的模版语法。语法改动是我们很少做的事情（这也是 3.0 唯一计划改的语法），所以我们尝试了多种不同的设计，并且进行了大量的讨论。最终我们敲定了基于新的 v-slot 指令的语法（具体设计细节见 <a href="https://link.zhihu.com/?target=https%3A//github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md"
+                        target="_blank" rel="noopener">RFC</a>）。这里是两个简略的例子：</p>
+                    <p><strong>默认作用域插槽 (default scoped slot)</strong></p>
+                    <figure class="highlight html">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-slot</span>=<span class="string">"&#123; msg &#125;"</span>&gt;</span></span><br><span class="line">  &#123;&#123; msg &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p><strong>具名插槽 (named slots)</strong></p>
+                    <figure class="highlight html">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Header<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:item</span>=<span class="string">"&#123; data &#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; data.title &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; data.text &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Footer<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p>新语法将普通的插槽 (slot) 和作用域插槽 (scoped slot) 统一在一个指令语法下，并在整体上强调明确性 (explicitness) 和一致性 (consistency)。同时，由于新语法和旧语法完全兼容，这使得我们可以在 2.6 中发布它。</p>
+                    <p>如果你已经熟悉现有的 slot 语法并且英语过关，我们建议你完整地阅读 <a href="https://link.zhihu.com/?target=https%3A//github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a> 来更好地理解新语法为什么这样设计。如果你对于 slot 并不熟悉，那么建议你直接看
+                      <a
+                        href="https://link.zhihu.com/?target=https%3A//vuejs.org/v2/guide/components-slots.html" target="_blank" rel="noopener">更新过的文档</a>（或是等勾股更新中文翻译）。</p>
+                    <p><strong>下面的例子是个人比较喜欢的一种方式</strong>（个人看法）</p>
+                    <figure class="highlight html">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Header<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">default</span>=<span class="string">"&#123; data &#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; data.title &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; data.text &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Footer<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p><strong>性能优化</strong></p>
+                    <p>在 3.0 中我们希望实现的另一个关于 slot 的改进就是统一 slot 和 scoped slot 的内部实现，从而获得更好的性能优化。普通的 slot 是在父组件的渲染函数中被生成的，因此当一个普通的 slot 所依赖的数据发生变化时，首先触发的是父组件的更新，然后新的 slot 内容被传到子组件，触发子组件更新。相比之下，scoped slot 在编译时生成的是一个函数，这个函数被传入子组件之后会在子组件的渲染函数中被调用。这意味着 scoped slot
+                      的依赖会被子组件收集，那么当依赖变动时就只会直接触发子组件更新了。2.6 中我们又引入了另一个优化：如果子组件只使用了 scoped slot，那么父组件自身依赖变动时，不会再强制子组件更新。这个优化使得父子组件之间的依赖即使在存在 slot 的情况下依然完全解耦，从而保证最优的整体更新效率。（对比之下 React 使用 render props 时绝大部分情况下都会触发父子组件一起更新）</p>
+                    <p>除此之外：</p>
+                    <ul>
+                      <li>所有使用新的 v-slot 语法的 slot 都会被编译为 scoped slot。这意味着所有使用新语法的 slot 代码都会获得上述的性能优化；</li>
+                      <li>所有的非 scoped slot 现在也被以函数的形式暴露在 this.$scopedSlots 上。如果你是直接用 render 函数的用户，你现在可以完全抛弃 this.$slots 而全部用 this.$scopedSlots 来处理所有的 slots 了。（3.0 中 this.$slots 将会直接暴露函数，取代 this.$scopedSlots)</li>
+                    </ul>
+                    <p>3.0 中将不再有普通 slot 和 scoped slot 的区分——所有的 slot 都使用统一的语法，使用统一的内部实现，获得同样的性能优化。</p>
+                    <h2 id="异步错误处理"><a href="#异步错误处理" class="headerlink" title="异步错误处理"></a><strong>异步错误处理</strong></h2>
+                    <p>Vue 的内置错误处理机制（组件中的 errorCaptured 钩子和全局的 errorHandler 配置项）现在也会处理 v-on 侦听函数中抛出的错误了。另外，如果你组件的生命周期钩子或是实践侦听函数中有异步操作，那么可以通过返回一个 Promise 的方式来让 Vue 处理可能存在的异步错误。如果你用了 async/await，那么就更简单了，因为 async 函数默认返回 Promise：</p>
+                    <figure class="highlight js">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="keyword">async</span> mounted() &#123;</span><br><span class="line">    <span class="comment">// 这里抛出的异步错误会被 errorCaptured 或是</span></span><br><span class="line">    <span class="comment">// Vue.config.errorHandler 钩子捕获到</span></span><br><span class="line">    <span class="keyword">this</span>.posts = <span class="keyword">await</span> api.getPosts()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <h2 id="动态指令参数"><a href="#动态指令参数" class="headerlink" title="动态指令参数"></a><strong>动态指令参数</strong></h2>
+                    <p>指令的参数现在可以接受动态的 JavaScript 表达式：</p>
+                    <figure class="highlight html">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:</span>[<span class="attr">attr</span>]=<span class="string">"value"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:</span>[<span class="attr">attr</span>]=<span class="string">"value"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:</span>[<span class="attr">event</span>]=<span class="string">"handler"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @[<span class="attr">event</span>]=<span class="string">"handler"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:</span>[<span class="attr">slotName</span>]&gt;</span></span><br><span class="line">    Dynamic slot name</span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p>更多细节参见 <a href="https://link.zhihu.com/?target=https%3A//github.com/vuejs/rfcs/blob/master/active-rfcs/0003-dynamic-directive-arguments.md" target="_blank" rel="noopener">RFC</a>。该语法一个方便的特性是如果表达式的值是 null 则绑定/侦听器会被移除。</p>
+                    <blockquote>
+                      <p>组件库的作者需要注意：该语法需要 2.6 以上版本的 runtime 的配合。如果你发布的是预编译过的组件，并且想要保持跟 2.6 之前版本的兼容，不要使用此功能。</p>
+                    </blockquote>
+                    <h2 id="编译警告位置信息"><a href="#编译警告位置信息" class="headerlink" title="编译警告位置信息"></a><strong>编译警告位置信息</strong></h2>
+                    <p>2.6 开始，所有的编译器警告都包含了源码位置信息。这使得我们可以生成更有用的警告信息：</p>
+                    <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg=="
+                        data-original="/images/vue/0001.jpg" alt="0001"></p>
+                    <h2 id="显式创建响应式对象"><a href="#显式创建响应式对象" class="headerlink" title="显式创建响应式对象"></a><strong>显式创建响应式对象</strong></h2>
+                    <p>2.6 引入了一个新的全局 API，可以用来显式地创建响应式对象：</p>
+                    <figure class="highlight js">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="keyword">const</span> reactiveState = Vue.observable(&#123;</span><br><span class="line">  count: <span class="number">0</span></span><br><span class="line">&#125;)</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <p>生成的对象可以直接用在计算属性 (computed property) 和 render 函数中，并会在被改动时触发相应的更新。</p>
+                    <h2 id="SSR-数据预抓取"><a href="#SSR-数据预抓取" class="headerlink" title="SSR 数据预抓取"></a><strong>SSR 数据预抓取</strong></h2>
+                    <p>新的 <a href="https://link.zhihu.com/?target=https%3A//ssr.vuejs.org/api/%23serverprefetch" target="_blank" rel="noopener">serverPrefetch 钩子</a> 使得任意组件都可以在服务端渲染时请求异步的数据（不再限制于路由组件）。这使得整体的数据预抓取方案可以更为灵活，并且可以和路由解耦。Nuxt 和 vue-apollo 等项目已经计划使用此特性来简化其内部实现以及提供新的能力。</p>
+                    <h2 id="可直接在浏览器中引入的-ES-Modules-构建文件"><a href="#可直接在浏览器中引入的-ES-Modules-构建文件" class="headerlink" title="可直接在浏览器中引入的 ES Modules 构建文件"></a><strong>可直接在浏览器中引入的 ES Modules 构建文件</strong></h2>
+                    <p>Vue 之前版本的 ES Modules 构建文件是针对打包工具的，因此里面包含了一些需要在构建时替换掉的环境变量，从而导致无法直接在浏览器中使用。2.6 包含了一个可以直接在浏览器导入的版本：</p>
+                    <figure class="highlight html">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'https://unpkg.com/vue/dist/vue.esm.browser.js'</span></span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="javascript"><span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// ...</span></span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <h2 id="重要的内部改动"><a href="#重要的内部改动" class="headerlink" title="重要的内部改动"></a><strong>重要的内部改动</strong></h2>
+                    <p><strong>nextTick 重新调整为全部使用 Microtask</strong></p>
+                    <p>在 2.5 当中我们引入了一个改动，使得当一个 v-on DOM 事件侦听器触发更新时，会使用 Macrotask 而不是 Microtask 来进行异步缓冲。这原本是为了修正一类浏览器的特殊边际情况导致的 bug 才引入的，但这个改动本身却导致了更多其它的问题。在 2.6 里面我们对于原本的边际情况找到了更简单的 fix，因此这个 Macrotask 的改动也就没有必要了。现在 nextTick 将会统一全部使用 Microtask。如果你对具体的细节感兴趣，可以看
+                      <a
+                        href="https://link.zhihu.com/?target=https%3A//gist.github.com/yyx990803/d1a0eaac052654f93a1ccaab072076dd" target="_blank" rel="noopener">这里</a>。</p>
+                    <p><strong>this.$scopedSlots 函数统一返回数组</strong></p>
+                    <p>（此改动只影响使用 render 函数的用户）在 render 函数中，传入的 scoped slot 以函数的形式被暴露在 this.$scopedSlots 上面。在之前的版本中，这些函数会基于父组件传入的内容不同而返回单个 VNode 或是一个 VNode 的数组。这是当初实现时的一个疏漏，导致了 scoped slot 函数的返回值类型是不确定的。2.6 当中，所有的 scoped slot 函数都只会返回 VNode 数组或是 undefined。如果你的现有代码中使用了
+                      this.$scopedSlots 并且没有处理可能返回数组的情况，那么可能会需要进行相应的修正。更多细节参见
+                      <a href="https://link.zhihu.com/?target=https%3A//gist.github.com/yyx990803/f5cba7711ab57b5d0dd1f8261ebee278" target="_blank" rel="noopener">这里</a>。</p>
+                    <h2 id="个人在实际使用中的差别与亮点"><a href="#个人在实际使用中的差别与亮点" class="headerlink" title="个人在实际使用中的差别与亮点"></a>个人在实际使用中的差别与亮点</h2>
+                    <p>因为个人原因，有些功能之前是没使用到的，这里提出使用用法，方便记忆。</p>
+                    <p><strong>slot 默认显示</strong><br>在2.6之前是没有默认值的，需要使用<code>v-if</code>进行判断（好久之前的事情，因为当初使用的v-if，所以这样说），现在可把<code>v-if</code>中的内容使用<code>&lt;slot&gt;...&lt;/slot&gt;</code>包裹起来。</p>
+                    <p><strong>替换所有$slots</strong><br>$slots 在当前版本是一个废弃的api但仍可以使用，为了与文档接口，可以使用$scopedSlots进行替换。</p>
+                    <p><strong>$scopedSlots 返回的是一个方法</strong></p>
+                    <p>在2.6版本之前获取插槽内容的dom节点可以这样 <code>this.$slots.menu[0].elm</code>；</p>
+                    <p>需要这样使用<code>const vnode = this.$scopedSlots.menu()[0]</code>，因为<code>this.$scopedSlots.menu</code>返回的是一个方法，而且要在<code>render</code>函数中使用且只能使用一次并返回vnode，</p>
+                    <p><strong>$scopedSlots 绑定事件</strong></p>
+                    <p>上面使用dom节点是为了添加事件，可以直接在 <code>vnode.on</code> 对象中添加事件</p>
+
+                  </div>
+
+
+
+
+
+
+
+
+
+
+                  <footer class="post-footer">
+
+
+
+
+
+
+
+                    <div class="post-nav">
+                      <div class="post-nav-next post-nav-item">
+
+                        <a href="/blob/2019-07-11-transfer-encoding,-content-length,-content-encoding,-accept-encoding/" rel="next" title="Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding">
+                <i class="fa fa-chevron-left"></i> Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding
+              </a>
+
+                      </div>
+
+                      <span class="post-nav-divider"></span>
+
+                      <div class="post-nav-prev post-nav-item">
+
+                      </div>
+                    </div>
+
+
+
+
+                  </footer>
+                </div>
+
+
+
+              </article>
+
+
+
+              <div class="post-spread">
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+          <div class="comments" id="comments">
+
+            <div id="gitment-container"></div>
+
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+
+          <div class="sidebar-inner">
+
+
+
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                站点概览
+              </li>
+            </ul>
+
+
+            <section class="site-overview-wrap sidebar-panel">
+              <div class="site-overview">
+                <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                  <p class="site-author-name" itemprop="name">holidaypenguin</p>
+                  <p class="site-description motion-element" itemprop="description"></p>
+                </div>
+
+                <nav class="site-state motion-element">
+
+
+                  <div class="site-state-item site-state-posts">
+
+                    <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+                  </div>
+
+
+
+
+
+                  <div class="site-state-item site-state-categories">
+                    <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+                  </div>
+
+
+
+
+
+                  <div class="site-state-item site-state-tags">
+                    <a href="/tags/index.html">
+                  <span class="site-state-item-count">142</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+                  </div>
+
+
+                </nav>
+
+
+
+
+                <div class="links-of-author motion-element">
+
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/holidaypenguin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+
+                  <span class="links-of-author-item">
+                    <a href="mailto:songshipeng2016@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </section>
+
+
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
+
+
+
+
+
+
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#Slots：新语法，性能优化，准备接轨-3-0"><span class="nav-number">1.</span> <span class="nav-text">Slots：新语法，性能优化，准备接轨 3.0</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#异步错误处理"><span class="nav-number">2.</span> <span class="nav-text">异步错误处理</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#动态指令参数"><span class="nav-number">3.</span> <span class="nav-text">动态指令参数</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#编译警告位置信息"><span class="nav-number">4.</span> <span class="nav-text">编译警告位置信息</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#显式创建响应式对象"><span class="nav-number">5.</span> <span class="nav-text">显式创建响应式对象</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#SSR-数据预抓取"><span class="nav-number">6.</span> <span class="nav-text">SSR 数据预抓取</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#可直接在浏览器中引入的-ES-Modules-构建文件"><span class="nav-number">7.</span> <span class="nav-text">可直接在浏览器中引入的 ES Modules 构建文件</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#重要的内部改动"><span class="nav-number">8.</span> <span class="nav-text">重要的内部改动</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#个人在实际使用中的差别与亮点"><span class="nav-number">9.</span> <span class="nav-text">个人在实际使用中的差别与亮点</span></a></li>
+                  </ol>
+                </div>
+
+
+              </div>
+            </section>
+            <!--/noindex-->
+
+
+
+
+          </div>
+        </aside>
+
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+          <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+          <span class="author" itemprop="copyrightHolder">ss</span>
+
+
+          <span class="post-meta-divider">|</span>
+          <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+
+          <span class="post-meta-item-text">网站字数总数&#58;</span>
+
+          <span title="网站字数总数">115.0k</span>
+
+        </div>
+
+
+        <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
+
+
+
+    <div id="needsharebutton-float">
+      <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+    </div>
+
+
+  </div>
+
+
+
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/love.js"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/development.js"></script>
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- LOCAL: You can save these files to your site and update links -->
+
+
+  <link rel="stylesheet" href="https://www.holidaypenguin.com/plugins/common/lib/Gitment/gitment.css">
+  <script src="https://www.holidaypenguin.com/plugins/common/lib/Gitment/gitment.js"></script>
+  <script src="https://www.holidaypenguin.com/plugins/common/lib/MD5/MD5.js"></script>
+
+  <!-- END LOCAL -->
+
+
+
+
+  <script type="text/javascript">
+    function renderGitment() {
+      var gitment = new Gitment({
+        // id: window.location.pathname,
+        id: MD5.hexMD5(window.location.pathname), // 防止重复和超长
+        owner: 'holidaypenguin',
+        repo: 'holidaypenguin.github.io',
+
+        oauth: {
+
+
+          client_secret: 'e61bf276aa2dfa200c98ee3684c7997622e0b8ae',
+
+          client_id: 'b5124f471fd0b349342f'
+        }
+      });
+      gitment.render('gitment-container');
+    }
+
+
+    renderGitment();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function(e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if (title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0,
+                        position = [],
+                        index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({
+                          position: position,
+                          word: word
+                        });
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function(index) {
+                    index.sort(function(itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({
+                        position: position,
+                        length: word.length
+                      });
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if (start < 0) {
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if (end > content.length) {
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function(sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function(hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function(slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function(resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function(result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function(event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function(event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>
+    AV.initialize("gPPYW5Ov7fB6qIfQfLIN8GYl-gzGzoHsz", "lr1BRzbaYakHnv5Rm1bt25ry");
+  </script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function(results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function(object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    flOptions = {};
+
+    flOptions.iconStyle = "box";
+
+    flOptions.boxForm = "horizontal";
+
+    flOptions.position = "middleRight";
+
+    flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+
+    new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+
+
+<script>!function(o){var i=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function c(t,e){var n=new Image,o=t.getAttribute("data-original");n.onload=function(){t.src=o,e&&e()},n.src=o}function n(){for(var t=0;t<i.length;t++)e=i[t],void 0,0<=(n=e.getBoundingClientRect()).top&&0<=n.left&&n.top<=(o.innerHeight||document.documentElement.clientHeight)&&c(i[t],function(){i.splice(t,t)});var e,n;console.log("trigger")}n(),o.addEventListener("scroll",function(){var t,e;t=n,e=o,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
+</html>

@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="HolidayPenguin" />
+  <meta name="keywords" content="vary,内容协商,HTTP," />
 
 
 
@@ -87,14 +87,18 @@
 
 
 
+  <meta name="keywords" content="vary,内容协商,HTTP">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Vary与内容协商">
   <meta property="og:url" content="https://www.holidaypenguin.com/blob/2019-07-03-vary-and-content-negotiation/index.html">
   <meta property="og:site_name" content="HolidayPenguin">
   <meta property="og:locale" content="zh-Hans">
+  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==">
+  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==">
   <meta property="og:updated_time" content="2019-07-03T12:14:32.000Z">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Vary与内容协商">
+  <meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==">
 
 
 
@@ -365,6 +369,28 @@
                       </span>
 
 
+                      <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                      </a>
+                      </span>
+
+
+
+
+                      </span>
+
 
 
 
@@ -397,7 +423,7 @@
                         <span class="post-meta-item-text">字数统计&#58;</span>
 
                         <span title="字数统计">
-                  0 字
+                  1,235 字
                 </span>
 
 
@@ -413,7 +439,7 @@
                         <span class="post-meta-item-text">阅读时长 &asymp;</span>
 
                         <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
 
                       </div>
@@ -438,7 +464,123 @@
 
 
 
-
+                    <blockquote>
+                      <p><strong>Vary</strong> 是一个HTTP响应头部信息，它决定了对于未来的一个请求头，应该用一个缓存的回复(response)还是向源服务器请求一个新的回复。它被服务器用来表明在 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation" target="_blank" rel="noopener">content negotiation</a>algorithm（内容协商算法）中选择一个资源代表的时候应该使用哪些头部信息（headers）.</p>
+                      <p>在响应状态码为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/304" target="_blank" rel="noopener"><code>304</code></a> <code>Not Modified</code> 的响应中，也要设置 Vary 首部，而且要与相应的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/200"
+                          target="_blank" rel="noopener"><code>200</code></a><code>OK</code> 响应设置得一模一样。</p>
+                    </blockquote>
+                    <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2>
+                    <figure class="highlight plain">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line">Vary: *</span><br><span class="line">Vary: &lt;header-name&gt;, &lt;header-name&gt;, ...</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <ul>
+                      <li>
+                        <p>*</p>
+                        <p>所有的请求都被视为唯一并且非缓存的，使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Cache-Control" target="_blank" rel="noopener"><code>Cache-Control</code></a><code>: private</code>,来实现则更适用，这样用于说明不存储该对象更加清晰。</p>
+                      </li>
+                      <li>
+                        <p>
+                          <header-name>
+                          </header-name>
+                        </p>
+                        <p> 逗号分隔的一系列http头部名称，用于确定缓存是否可用。</p>
+                      </li>
+                    </ul>
+                    <p>##内容协商</p>
+                    <blockquote>
+                      <p>在 <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTP" target="_blank" rel="noopener">HTTP</a> 协议中，内容协商是这样一种机制，通过为同一 URI 指向的资源提供不同的展现形式，可以使用户代理选择与用户需求相适应的最佳匹配</p>
+                    </blockquote>
+                    <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg=="
+                        data-original="/images/http/0014.png" alt="0014"></p>
+                    <p>最佳展现形式的选取可以通过两种机制实现：</p>
+                    <ul>
+                      <li>客户端设置特定的 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers" target="_blank" rel="noopener">HTTP 首部</a> （又称为服务端驱动型内容协商机制或者主动协商机制）；这是进行内容协商的标准方式；</li>
+                      <li>服务器返回 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/300" target="_blank" rel="noopener"><code>300</code></a> (Multiple Choices) 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/406" target="_blank"
+                          rel="noopener"><code>406</code></a> (Not Acceptable) <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank" rel="noopener">HTTP 状态码</a> （又称为代理驱动型协商机制或者响应式协商机制）；这种方式一般用作备选方案。</li>
+                    </ul>
+                    <h3 id="服务端驱动型内容协商机制"><a href="#服务端驱动型内容协商机制" class="headerlink" title="服务端驱动型内容协商机制"></a>服务端驱动型内容协商机制</h3>
+                    <p>HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept" target="_blank" rel="noopener"><code>Accept</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Charset"
+                        target="_blank" rel="noopener"><code>Accept-Charset</code></a>、
+                      <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Encoding" target="_blank" rel="noopener"><code>Accept-Encoding</code></a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Language"
+                        target="_blank" rel="noopener"><code>Accept-Language</code></a>）。尽管严格来说 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/User-Agent" target="_blank" rel="noopener"><code>User-Agent</code></a>并不在此列，有时候它还是会被用来确定给客户端发送的所请求资源的特定展现形式。服务器会使用
+                      <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Vary" target="_blank" rel="noopener"><code>Vary</code></a> 消息头来说明实际上哪些消息头被用作内容协商的参考依据。</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>请求头字段</th>
+                          <th>说明</th>
+                          <th>响应头字段</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Accept</td>
+                          <td>告知服务器发送何种媒体类型</td>
+                          <td>Content-Type</td>
+                        </tr>
+                        <tr>
+                          <td>Accept-Language</td>
+                          <td>告知服务器发送何种语言</td>
+                          <td>Content-Language</td>
+                        </tr>
+                        <tr>
+                          <td>Accept-Charset</td>
+                          <td>告知服务器发送何种字符集</td>
+                          <td>Content-Type</td>
+                        </tr>
+                        <tr>
+                          <td>Accept-Encoding</td>
+                          <td>告知服务器采用何种压缩方式</td>
+                          <td>Content-Encoding</td>
+                        </tr>
+                        <tr>
+                          <td>User-Agent</td>
+                          <td>告知服务器发送请求的浏览器，这是不容易的，请参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Browser_detection_using_the_user_agent" target="_blank" rel="noopener">使用用户代理字段进行浏览器检测</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>服务端驱动型内容协商机制由于一些缺点而为人诟病——它在规模化方面存在问题。在协商机制中，每一个特性需要对应一个首部。如果想要使用屏幕大小、分辨率或者其他方面的特性，就需要创建一个新的首部。而且在每一次请求中都必须发送这些首部。在首部很少的时候，这并不是问题，但是随着数量的增多，消息体的体积会导致性能的下降。带有精确信息的首部发送的越多，信息熵就会越大，也就准许了更多 HTTP 指纹识别行为，以及与此相关的隐私问题的发生。</p>
+                    <h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4>
+                    <p>对于 Nginx 来说，下面这个配置可以自动给启用了 gzip 的响应加上 Vary: Accept-Encoding：</p>
+                    <figure class="highlight bash">
+                      <table>
+                        <tr>
+                          <td class="gutter">
+                            <pre><span class="line">1</span><br></pre>
+                          </td>
+                          <td class="code">
+                            <pre><span class="line">gzip_vary on;</span><br></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </figure>
+                    <h4 id="IE"><a href="#IE" class="headerlink" title="IE"></a>IE</h4>
+                    <p>为了确保IE6～8不至于客户端cache完全失效，可用 Vary: User-Agent, Accept-Encoding 并开启压缩。 </p>
+                    <p>对于IE6，在解压后整个Vary头被丢弃，就OK。<br>对于IE7和8，解压后AE被去掉，剩下的UA则会被忽略。 </p>
+                    <p>IE下的具体问题可以查看 <a href="https://hax.iteye.com/blog/1629953" target="_blank" rel="noopener">IE与Vary头</a> 和 <a href="https://blogs.msdn.microsoft.com/ieinternals/2009/06/17/vary-with-care/" target="_blank" rel="noopener">Vary with Care</a></p>
+                    <h3 id="代理驱动型内容协商机制"><a href="#代理驱动型内容协商机制" class="headerlink" title="代理驱动型内容协商机制"></a>代理驱动型内容协商机制</h3>
+                    <p>从 HTTP 协议制定之初，该协议就准许另外一种协商机制：代理驱动型内容协商机制，或称为响应式协商机制。在这种协商机制中，当面临不明确的请求时，服务器会返回一个页面，其中包含了可供选择的资源的链接。资源呈现给用户，由用户做出选择。</p>
+                    <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg=="
+                        data-original="/images/http/0015.png" alt="0015"></p>
+                    <p>这种方法主要是通过脚本完成JavaScript 重定向，在检测了协商的条件之后，脚本会触发重定向动作。</p>
+                    <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                    <p>Vary <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Vary" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Vary</a><br>内容协商 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Content_negotiation"
+                        target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Content_negotiation</a><br>Accept 默认值 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Content_negotiation/Accept_%E9%BB%98%E8%AE%A4%E5%80%BC"
+                        target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Content_negotiation/Accept_%E9%BB%98%E8%AE%A4%E5%80%BC</a><br>使用用户代理字段进行浏览器检测
+                      <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Browser_detection_using_the_user_agent" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Browser_detection_using_the_user_agent</a><br>HTTP
+                      协议中 Vary 的一些研究 <a href="https://www.jianshu.com/p/5c601087c18e" target="_blank" rel="noopener">https://www.jianshu.com/p/5c601087c18e</a><br>IE与Vary头 <a href="https://hax.iteye.com/blog/1629953" target="_blank" rel="noopener">https://hax.iteye.com/blog/1629953</a><br>Vary
+                      with Care <a href="https://blogs.msdn.microsoft.com/ieinternals/2009/06/17/vary-with-care/" target="_blank" rel="noopener">https://blogs.msdn.microsoft.com/ieinternals/2009/06/17/vary-with-care/</a><br>http请求报文头部vary信息 <a href="https://www.cnblogs.com/engeng/articles/5981582.html"
+                        target="_blank" rel="noopener">https://www.cnblogs.com/engeng/articles/5981582.html</a><br>HTTP请求的响应头部Vary的理解
+                      <a href="https://blog.csdn.net/qq_29405933/article/details/84315254" target="_blank" rel="noopener">https://blog.csdn.net/qq_29405933/article/details/84315254</a></p>
 
                   </div>
 
@@ -452,6 +594,16 @@
 
 
                   <footer class="post-footer">
+
+                    <div class="post-tags">
+
+                      <a href="/tags/vary/" rel="tag"># vary</a>
+
+                      <a href="/tags/内容协商/" rel="tag"># 内容协商</a>
+
+                      <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+
+                    </div>
 
 
 
@@ -471,6 +623,10 @@
                       <span class="post-nav-divider"></span>
 
                       <div class="post-nav-prev post-nav-item">
+
+                        <a href="/blob/2019-07-11-transfer-encoding,-content-length,-content-encoding,-accept-encoding/" rel="prev" title="Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding">
+                Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding <i class="fa fa-chevron-right"></i>
+              </a>
 
                       </div>
                     </div>
@@ -529,8 +685,17 @@
 
 
 
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                站点概览
+              </li>
+            </ul>
 
-            <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+
+            <section class="site-overview-wrap sidebar-panel">
               <div class="site-overview">
                 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
 
@@ -545,7 +710,7 @@
 
                     <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
                   </div>
@@ -567,7 +732,7 @@
 
                   <div class="site-state-item site-state-tags">
                     <a href="/tags/index.html">
-                  <span class="site-state-item-count">135</span>
+                  <span class="site-state-item-count">142</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
                   </div>
@@ -607,6 +772,37 @@
             </section>
 
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
+
+
+
+
+
+
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#服务端驱动型内容协商机制"><span class="nav-number">1.1.</span> <span class="nav-text">服务端驱动型内容协商机制</span></a>
+                          <ol class="nav-child">
+                            <li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx"><span class="nav-number">1.1.1.</span> <span class="nav-text">Nginx</span></a></li>
+                            <li class="nav-item nav-level-4"><a class="nav-link" href="#IE"><span class="nav-number">1.1.2.</span> <span class="nav-text">IE</span></a></li>
+                          </ol>
+                        </li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#代理驱动型内容协商机制"><span class="nav-number">1.2.</span> <span class="nav-text">代理驱动型内容协商机制</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
+
+
+              </div>
+            </section>
+            <!--/noindex-->
+
 
 
 
@@ -634,7 +830,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">109.7k</span>
+          <span title="网站字数总数">115.0k</span>
 
         </div>
 

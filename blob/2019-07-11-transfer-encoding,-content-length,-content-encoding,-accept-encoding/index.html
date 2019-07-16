@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+  <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTTP,Transfer-Encoding,Content-Length,Content-Encoding,Accept-Encoding," />
+
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="HTTP,Transfer-Encoding,Content-Length,Content-Encoding,Accept-Encoding">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding">
+  <meta property="og:url" content="https://www.holidaypenguin.com/blob/2019-07-11-transfer-encoding,-content-length,-content-encoding,-accept-encoding/index.html">
+  <meta property="og:site_name" content="HolidayPenguin">
+  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:updated_time" content="2019-07-11T10:26:16.000Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding">
+
+
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      version: '5.1.4',
+      sidebar: {
+        "position": "left",
+        "display": "always",
+        "offset": 12,
+        "b2t": false,
+        "scrollpercent": false,
+        "onmobile": false
+      },
+      fancybox: true,
+      tabs: true,
+      motion: {
+        "enable": true,
+        "async": true,
+        "transition": {
+          "post_block": "fadeIn",
+          "post_header": "slideDownIn",
+          "post_body": "slideDownIn",
+          "coll_header": "slideLeftIn",
+          "sidebar": "slideUpIn"
+        }
+      },
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
+  </script>
+
+
+
+  <link rel="canonical" href="https://www.holidaypenguin.com/blob/2019-07-11-transfer-encoding,-content-length,-content-encoding,-accept-encoding/" />
+
+
+
+
+
+  <title>Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding | HolidayPenguin</title>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+
+
+
+
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
+
+
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HolidayPenguin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+            </div>
+
+            <h1 class="site-subtitle" itemprop="description"></h1>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+
+
+          <ul id="menu" class="menu">
+
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+            </li>
+
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+            </li>
+
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+            </li>
+
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+            </li>
+
+
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+            </li>
+
+          </ul>
+
+
+
+          <div class="site-search">
+
+            <div class="popup search-popup local-search-popup">
+              <div class="local-search-header clearfix">
+                <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+                <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+                <div class="local-search-input-wrapper">
+                  <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+                </div>
+              </div>
+              <div id="local-search-result"></div>
+            </div>
+
+
+
+          </div>
+
+        </nav>
+
+
+
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+
+            <div id="posts" class="posts-expand">
+
+
+
+
+
+
+
+
+              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+
+                <div class="post-block">
+                  <link itemprop="mainEntityOfPage" href="https://www.holidaypenguin.com/blob/2019-07-11-transfer-encoding,-content-length,-content-encoding,-accept-encoding/">
+
+                  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="holidaypenguin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+                  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HolidayPenguin">
+    </span>
+
+
+                  <header class="post-header">
+
+
+
+                    <h2 class="post-title" itemprop="name headline">Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding</h2>
+
+
+                    <div class="post-meta">
+                      <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T18:26:16+08:00">
+                2019-07-11
+              </time>
+
+
+
+                      <span class="post-meta-divider">|</span>
+
+
+
+                      <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+
+                      <span class="post-meta-item-text">更新于&#58;</span>
+
+                      <time title="更新于" itemprop="dateModified" datetime="2019-07-11T18:26:16+08:00">
+                2019-07-11
+              </time>
+
+                      </span>
+
+
+                      <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                      </a>
+                      </span>
+
+
+
+
+                      </span>
+
+
+
+
+
+
+
+
+                      <span id="/blob/2019-07-11-transfer-encoding,-content-length,-content-encoding,-accept-encoding/" class="leancloud_visitors" data-flag-title="Transfer-Encoding、Content-Length、Content-Encoding、Accept-Encoding">
+               <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+
+                      <span class="post-meta-item-text">阅读次数&#58;</span>
+
+                      <span class="leancloud-visitors-count"></span>
+                      </span>
+
+
+
+
+
+                      <div class="post-wordcount">
+
+
+                        <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+
+                        <span class="post-meta-item-text">字数统计&#58;</span>
+
+                        <span title="字数统计">
+                  1,489 字
+                </span>
+
+
+
+                        <span class="post-meta-divider">|</span>
+
+
+
+                        <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+
+                        <span class="post-meta-item-text">阅读时长 &asymp;</span>
+
+                        <span title="阅读时长">
+                  5 分钟
+                </span>
+
+                      </div>
+
+
+
+                      <div class="post-description">
+                        <!-- more -->
+                      </div>
+
+
+                    </div>
+                  </header>
+
+
+
+
+
+                  <div class="post-body" itemprop="articleBody">
+
+
+
+
+
+                    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2>
+                    <p>我们在日常进行HTTP请求的时候，会遇到请求头或者响应头中有<code>Transfer-Encoding</code>、<code>Content-Length</code>、<code>Content-Encoding</code>、<code>Accept-Encoding</code>这几个，难免会不知道各自的含义及使用场景，也可能会搞混，我们今天就简单的捋一下这几个Header。</p>
+                    <h2 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h2>
+                    <p>在讲解上面几个头之前，我们必须先了解一下<code>Persistent Connection</code>（持久连接或者长连接），<code>HTTP</code>持久连接这个机制，很大程度上提高了<code>HTTP</code>的性能，我们看下在引入持久连接之前，<code>HTTP连</code>接是什么样子：</p>
+                    <p>先进行<code>TCP</code>握手，然后进行数据传输，完成数据传输之后，释放连接。当网络内容复杂时候，会出现多次数据传输，那么就会造成多次频繁的创建<code>Socket</code>和释放，频繁的握手，就会出现延时，这个问题在引入持久连接得以解决。</p>
+                    <p>通过设置设置 <code>Connection</code>头部为<code>keep-alive</code>实现持久连接：</p>
+                    <p><code>keepalive connections</code>机制可以在数据传输完成之后仍然保持<code>TCP</code>连接，以备后用，当用户需要再次获取数据时，直接使用刚刚空闲下来的连接，无需再次握手，这样就解决了延时问题，提高了<code>HTTP</code>的性能。持久连接是<code>HTTP1.0</code>后来才引进的，到了<code>HTTP1.1</code>规定所有连接都必须是持久的，在<code>Header</code>上添加了<code>Connection</code>为<code>close</code>。在现代浏览器中，一般同时开启6～8个<code>keepalive connections</code>的<code>socket</code>连接，并保持一定的链路生命，当不需要时再关闭；而在服务器中，一般是由软件根据负载情况进行配置。</p>
+                    <h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2>
+                    <h3 id="Content-Length"><a href="#Content-Length" class="headerlink" title="Content-Length"></a>Content-Length</h3>
+                    <p>我们通过给<code>HTTP</code>请求添加<code>Content-Length</code>头部表示请求体的实际长度，也可以由服务器端添加<code>Content-Length</code>返回给客户端，表示响应体内容的实际长度。在实际应用中，<code>Content-Length</code>有时候不好获取，比如实体来自于网络文件或者是有数据库动态产生的，就很难获取它的准确长度。这时候倒是可以开一个足够大的buffer，等内容全部生成完毕在准确计算<code>buffer</code>的总长度，然而这样会导致内存消耗太大，也会让客户端等待时间过长。</p>
+                    <p>当<code>HTTP</code>请求时短连接的时候，数据传输完成会根据连接是否关闭判断请求体或者响应体的边界，所以不需要标明请求体或者响应体的实际长度，请求就可以顺利完成；而当<code>HTTP</code>为长连接的时候，很显然不可以，必须要拥有判断请求或者响应体的边界，才能完成网络请求，如果<code>Content-Length</code>的值小于实际长度，则数据将会被截断，如果<code>Content-Length</code>的值大于实际长度则会导致网络请求处于停滞状态；如果没有<code>Content-Length</code>或者其他可以判定实体边界，则网络请求还是会被停滞。</p>
+                    <h3 id="Transfer-Encoding"><a href="#Transfer-Encoding" class="headerlink" title="Transfer-Encoding"></a>Transfer-Encoding</h3>
+                    <p>使用<code>Transfer-Encoding</code>可以解决我们上面所提到的问题，<code>Transfer-Encoding</code>可以代替<code>Content-Length</code>。<code>Transfer-Encoding</code>表示传输编码，之前文当中给它定义了<code>gzip/compress/deflate/identity/chunked</code>等几种不区分大小写的多种取值，在最新的文档中传输编码之定义了一种编码值：<code>chunked</code>（分块编码）。当我们给请求或者响应的头部添加了<code>Transfer-Encoding:chunked</code>的时候，表示实体在传输的过程中采用的是分块编码的方式，实体被改为一系列的分块，每一个部分分块上面都有数据内容和长度，当分块内容为空长度为0时，意味着实体的边界，数据传输结束。所以，在HTTP网络请求中，如果无法确定实体的<code>Content-Length</code>的大小或者没有添加<code>Content-Length</code>作为头部信息的一部分，会导致网络请求发生问题，此时添加头<code>Transfer-Encoding:chunked</code>（分块编码）可以解决长度问题。</p>
+                    <h3 id="Accept-Encoding和Content-Encoding"><a href="#Accept-Encoding和Content-Encoding" class="headerlink" title="Accept-Encoding和Content-Encoding"></a>Accept-Encoding和Content-Encoding</h3>
+                    <p><code>Accept-Encoding</code>添加在请求头中，向服务器端表明客户端支持的编码格式，<code>Content-Encoding</code>存在于响应头中，由服务器端返回，表示响应体内容的编码格式，常见的编码格式有<code>gzip/compress/deflate/identity</code>。可以结合<code>Transfer-Encoding</code>使用。</p>
+                    <h2 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h2>
+                    <p>再一次<code>HTTP</code>长连接中，无法判断请求体的长度和响应体的长度，我们就会做如下的流程：</p>
+                    <p>客户端将请求内容加入到请求体中，添加请求头<code>Transfer-Encoding:chunked</code>表明分块编码，同时添加<code>Accept-Encoding:gzip</code>表明客户端支持<code>gzip</code>的编码格式；</p>
+                    <p>服务器端接收到客户端的网络请求，根据客户端传来的<code>Transfer-Encoding:chunked</code>可知请求体位分块编码，紧接着开始接收请求体数据，当接收到的分块的内容为空长度为0时，说明到了请求体的边界，服务器端完成了数据接收。</p>
+                    <p>经过一系列的操作，服务器端完了业务处理，给客户端返回数据，由于要返回的数据长度无法获取到，所以服务器端在返回数据中添加了头<code>Transfer-Encoding:chunked</code>表明分块编码，然后将每一块数据内容采用gzip进行编码，同时添加<code>Content-Encoding:gzip</code>表明服务器对返回的数据采用了<code>gzip</code>编码。</p>
+                    <p>客户端收到服务器端的响应，因为响应头包含了<code>Transfer-Encoding:chunked</code>，所以一直到响应数据的分块长度为0内容为空，才算是数据传输完成，此时客户端会解析服务端发来的<code>Content-Encoding:gzip</code>，并且采用<code>gzip</code>方法解码数据，完成一次数据请求。</p>
+                    <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                    <p><a href="https://blog.csdn.net/qq_29405933/article/details/84247999" target="_blank" rel="noopener">https://blog.csdn.net/qq_29405933/article/details/84247999</a></p>
+
+                  </div>
+
+
+
+
+
+
+
+
+
+
+                  <footer class="post-footer">
+
+                    <div class="post-tags">
+
+                      <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+
+                      <a href="/tags/Transfer-Encoding/" rel="tag"># Transfer-Encoding</a>
+
+                      <a href="/tags/Content-Length/" rel="tag"># Content-Length</a>
+
+                      <a href="/tags/Content-Encoding/" rel="tag"># Content-Encoding</a>
+
+                      <a href="/tags/Accept-Encoding/" rel="tag"># Accept-Encoding</a>
+
+                    </div>
+
+
+
+
+
+
+
+                    <div class="post-nav">
+                      <div class="post-nav-next post-nav-item">
+
+                        <a href="/blob/2019-07-03-vary-and-content-negotiation/" rel="next" title="Vary与内容协商">
+                <i class="fa fa-chevron-left"></i> Vary与内容协商
+              </a>
+
+                      </div>
+
+                      <span class="post-nav-divider"></span>
+
+                      <div class="post-nav-prev post-nav-item">
+
+                        <a href="/blob/2019-07-16-vue-2.6-was-released/" rel="prev" title="Vue 2.6 发布了">
+                Vue 2.6 发布了 <i class="fa fa-chevron-right"></i>
+              </a>
+
+                      </div>
+                    </div>
+
+
+
+
+                  </footer>
+                </div>
+
+
+
+              </article>
+
+
+
+              <div class="post-spread">
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+          <div class="comments" id="comments">
+
+            <div id="gitment-container"></div>
+
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+
+          <div class="sidebar-inner">
+
+
+
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                站点概览
+              </li>
+            </ul>
+
+
+            <section class="site-overview-wrap sidebar-panel">
+              <div class="site-overview">
+                <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                  <p class="site-author-name" itemprop="name">holidaypenguin</p>
+                  <p class="site-description motion-element" itemprop="description"></p>
+                </div>
+
+                <nav class="site-state motion-element">
+
+
+                  <div class="site-state-item site-state-posts">
+
+                    <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+                  </div>
+
+
+
+
+
+                  <div class="site-state-item site-state-categories">
+                    <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+                  </div>
+
+
+
+
+
+                  <div class="site-state-item site-state-tags">
+                    <a href="/tags/index.html">
+                  <span class="site-state-item-count">142</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+                  </div>
+
+
+                </nav>
+
+
+
+
+                <div class="links-of-author motion-element">
+
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/holidaypenguin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+
+                  <span class="links-of-author-item">
+                    <a href="mailto:songshipeng2016@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </section>
+
+
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
+
+
+
+
+
+
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#keep-alive"><span class="nav-number">2.</span> <span class="nav-text">keep-alive</span></a></li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#主要内容"><span class="nav-number">3.</span> <span class="nav-text">主要内容</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Length"><span class="nav-number">3.1.</span> <span class="nav-text">Content-Length</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#Transfer-Encoding"><span class="nav-number">3.2.</span> <span class="nav-text">Transfer-Encoding</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#Accept-Encoding和Content-Encoding"><span class="nav-number">3.3.</span> <span class="nav-text">Accept-Encoding和Content-Encoding</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#举例说明"><span class="nav-number">4.</span> <span class="nav-text">举例说明</span></a></li>
+                  </ol>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></div>
+
+
+              </div>
+            </section>
+            <!--/noindex-->
+
+
+
+
+          </div>
+        </aside>
+
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+          <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+          <span class="author" itemprop="copyrightHolder">ss</span>
+
+
+          <span class="post-meta-divider">|</span>
+          <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+
+          <span class="post-meta-item-text">网站字数总数&#58;</span>
+
+          <span title="网站字数总数">115.0k</span>
+
+        </div>
+
+
+        <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
+
+
+
+    <div id="needsharebutton-float">
+      <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+    </div>
+
+
+  </div>
+
+
+
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/love.js"></script>
+
+
+
+
+  <script type="text/javascript" src="/lib/development.js"></script>
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- LOCAL: You can save these files to your site and update links -->
+
+
+  <link rel="stylesheet" href="https://www.holidaypenguin.com/plugins/common/lib/Gitment/gitment.css">
+  <script src="https://www.holidaypenguin.com/plugins/common/lib/Gitment/gitment.js"></script>
+  <script src="https://www.holidaypenguin.com/plugins/common/lib/MD5/MD5.js"></script>
+
+  <!-- END LOCAL -->
+
+
+
+
+  <script type="text/javascript">
+    function renderGitment() {
+      var gitment = new Gitment({
+        // id: window.location.pathname,
+        id: MD5.hexMD5(window.location.pathname), // 防止重复和超长
+        owner: 'holidaypenguin',
+        repo: 'holidaypenguin.github.io',
+
+        oauth: {
+
+
+          client_secret: 'e61bf276aa2dfa200c98ee3684c7997622e0b8ae',
+
+          client_id: 'b5124f471fd0b349342f'
+        }
+      });
+      gitment.render('gitment-container');
+    }
+
+
+    renderGitment();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function(e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if (title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0,
+                        position = [],
+                        index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({
+                          position: position,
+                          word: word
+                        });
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function(index) {
+                    index.sort(function(itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({
+                        position: position,
+                        length: word.length
+                      });
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if (start < 0) {
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if (end > content.length) {
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function(sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function(hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function(slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function(resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function(result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function(event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function(event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>
+    AV.initialize("gPPYW5Ov7fB6qIfQfLIN8GYl-gzGzoHsz", "lr1BRzbaYakHnv5Rm1bt25ry");
+  </script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function(results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function(object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    flOptions = {};
+
+    flOptions.iconStyle = "box";
+
+    flOptions.boxForm = "horizontal";
+
+    flOptions.position = "middleRight";
+
+    flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+
+    new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+
+
+<script>!function(o){var i=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function c(t,e){var n=new Image,o=t.getAttribute("data-original");n.onload=function(){t.src=o,e&&e()},n.src=o}function n(){for(var t=0;t<i.length;t++)e=i[t],void 0,0<=(n=e.getBoundingClientRect()).top&&0<=n.left&&n.top<=(o.innerHeight||document.documentElement.clientHeight)&&c(i[t],function(){i.splice(t,t)});var e,n;console.log("trigger")}n(),o.addEventListener("scroll",function(){var t,e;t=n,e=o,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
+</html>
