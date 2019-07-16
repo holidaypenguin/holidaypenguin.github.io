@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.holidaypenguin.com/tags/index.html</loc>
+    
+    <lastmod>2019-07-16T12:15:19.879Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.holidaypenguin.com/sitemap/index.html</loc>
+    
+    <lastmod>2019-07-16T12:15:19.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.holidaypenguin.com/categories/index.html</loc>
+    
+    <lastmod>2019-07-16T12:15:19.515Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.holidaypenguin.com/blob/2019-07-16-vue-2.6-was-released/</loc>
     
-    <lastmod>2019-07-16T12:05:53.947Z</lastmod>
+    <lastmod>2019-07-16T12:15:19.459Z</lastmod>
     
   </url>
   
@@ -12,27 +33,6 @@
     <loc>https://www.holidaypenguin.com/blob/2019-07-11-transfer-encoding,-content-length,-content-encoding,-accept-encoding/</loc>
     
     <lastmod>2019-07-11T10:26:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.holidaypenguin.com/tags/index.html</loc>
-    
-    <lastmod>2019-07-11T06:24:10.867Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.holidaypenguin.com/sitemap/index.html</loc>
-    
-    <lastmod>2019-07-04T06:19:09.882Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.holidaypenguin.com/categories/index.html</loc>
-    
-    <lastmod>2019-07-04T06:19:09.881Z</lastmod>
     
   </url>
   
@@ -586,6 +586,13 @@
     <loc>https://www.holidaypenguin.com/blob/2017-03-03-ide-sublime-add-mouse-right-click-open/</loc>
     
     <lastmod>2017-03-03T05:55:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.holidaypenguin.com/blob/2017-01-16-vue-1-to-vue-2/</loc>
+    
+    <lastmod>2017-01-16T12:17:41.000Z</lastmod>
     
   </url>
   
