@@ -18,11 +18,11 @@ categories:
 
 写在前面的话标准非实际情况。
 
-ECMAScript 2019，ECMA-262 标准版本的第10版（通常称为ES2019或ES10）。
+ECMAScript 2019，ECMA-262 标准版本的第19版（通常称为ES2019或ES10），于 2019 年 6 月完成。
 
-> This specification, the 10th edition, introduces a few new built-in functions: flat and flatMap on Array.prototype for flattening arrays, Object.fromEntries for directly turning the return value of Object.entries into a new Object, and trimStart and trimEnd on String.prototype as better-named alternatives to the widely implemented but non-standard String.prototype.trimLeft and trimRight built-ins. In addition, this specification includes a few minor updates to syntax and semantics. Updated syntax includes optional catch binding parameters and allowing U+2028 (LINE SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) in string literals to align with JSON. Other updates include requiring that Array.prototype.sort be a stable sort, requiring that JSON.stringify return well-formed UTF-8 regardless of input, and clarifying  Function.prototype.toString by requiring that it either return the corresponding original source text or a standard placeholder.
+> This specification, the 10th edition, introduces a few new built-in functions: `flat` and `flatMap` on `Array.prototype` for flattening arrays, `Object.fromEntries` for directly turning the return value of `Object.entries` into a new Object, and `trimStart` and `trimEnd` on `String.prototype` as better-named alternatives to the widely implemented but non-standard `String.prototype.trimLeft` and `trimRight` built-ins. In addition, this specification includes a few minor updates to syntax and semantics. Updated syntax includes optional catch binding parameters and allowing U+2028 (LINE SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) in string literals to align with JSON. Other updates include requiring that `Array.prototype.sort` be a stable sort, requiring that JSON.stringify return well-formed UTF-8 regardless of input, and clarifying  `Function.prototype.toString` by requiring that it either return the corresponding original source text or a standard placeholder.
 
-`ES10`仍然只是一个草案。但是除了 `Object.fromEntries`大多数功能已经在 `Chrome`中实现，所以你为什么不尽早开始探索它呢？当所有浏览器开始支持它时，你已经获得了领先优势，这只是时间问题。对于有兴趣探索ES10的人来说，这是一份 **非外星人**指南。
+`ES10`中除了 `Object.fromEntries`大多数功能已经在 `Chrome`中实现，所以你为什么不尽早开始探索它呢？当所有浏览器开始支持它时，你已经获得了领先优势，这只是时间问题。对于有兴趣探索ES10的人来说，这是一份 **非外星人**指南。
 
 **ES10在新语言功能方面没有ES6那么重要，但它确实添加了一些有趣的东西（其中一些在目前版本的浏览器中还不起作用：02/20/2019）**
 
@@ -591,5 +591,6 @@ ES10是一套尚未有机会在生产环境中进行全面探索的新功能。�
 
 # 参考
 
+[ecma-262-10.0](http://www.ecma-international.org/ecma-262/10.0/index.html)
 [【译】ES10功能完全指南](https://mp.weixin.qq.com/s/b3oHxsidGHtnv0U1lYashg)
 (https://juejin.im/post/5c7c8e125188256365101c34)
