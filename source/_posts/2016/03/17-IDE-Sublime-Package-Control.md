@@ -192,5 +192,21 @@ npm install -g less-plugin-clean-css
 npm install -g less-plugin-autoprefix
 
 
+## emmet 插件
+
+emmet 插件 安装 
+Ctrl + Shift + P、pcip、emmet
+Ctrl + Shift + P、pcip、emmet css snippets
+
+| - | - | - |
+| ------- | ------- | ------------ |
+| 快速生成简单页面 | !，Ctrl + E | 该方法是emmet快捷键，分两步完成|
+| ![0007](/images/FrontEnd/0007.png) | ul>.item$*10 > | ：子元素选择符.item：<br>子元素是item开头$：<br>代表序号*10：<br>输入10个带有class="item123....10" |
+|   | 扩展，很酷 | div#s.d>div#e.s>span.em*5>span.im$*5 |
+
+http://emmet.io/
+https://github.com/sergeche/emmet-sublime
+https://github.com/sergeche/emmet-sublime#tab-key-handler
+
 
 
