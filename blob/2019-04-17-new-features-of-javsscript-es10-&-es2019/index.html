@@ -428,7 +428,7 @@
                         <span class="post-meta-item-text">字数统计&#58;</span>
 
                         <span title="字数统计">
-                  3,851 字
+                  3,853 字
                 </span>
 
 
@@ -471,15 +471,16 @@
 
                     <p>本文系转载</p>
                     <p>写在前面的话标准非实际情况。</p>
-                    <p>ECMAScript 2019，ECMA-262 标准版本的第10版（通常称为ES2019或ES10）。</p>
+                    <p>ECMAScript 2019，ECMA-262 标准版本的第19版（通常称为ES2019或ES10），于 2019 年 6 月完成。</p>
                     <blockquote>
-                      <p>This specification, the 10th edition, introduces a few new built-in functions: flat and flatMap on Array.prototype for flattening arrays, Object.fromEntries for directly turning the return value of Object.entries into a new Object,
-                        and trimStart and trimEnd on String.prototype as better-named alternatives to the widely implemented but non-standard String.prototype.trimLeft and trimRight built-ins. In addition, this specification includes a few minor updates
-                        to syntax and semantics. Updated syntax includes optional catch binding parameters and allowing U+2028 (LINE SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) in string literals to align with JSON. Other updates include requiring that
-                        Array.prototype.sort be a stable sort, requiring that JSON.stringify return well-formed UTF-8 regardless of input, and clarifying Function.prototype.toString by requiring that it either return the corresponding original source
-                        text or a standard placeholder.</p>
+                      <p>This specification, the 10th edition, introduces a few new built-in functions: <code>flat</code> and <code>flatMap</code> on <code>Array.prototype</code> for flattening arrays, <code>Object.fromEntries</code> for directly turning
+                        the return value of
+                        <code>Object.entries</code> into a new Object, and <code>trimStart</code> and <code>trimEnd</code> on <code>String.prototype</code> as better-named alternatives to the widely implemented but non-standard <code>String.prototype.trimLeft</code>                        and
+                        <code>trimRight</code> built-ins. In addition, this specification includes a few minor updates to syntax and semantics. Updated syntax includes optional catch binding parameters and allowing U+2028 (LINE SEPARATOR) and U+2029 (PARAGRAPH
+                        SEPARATOR) in string literals to align with JSON. Other updates include requiring that <code>Array.prototype.sort</code> be a stable sort, requiring that JSON.stringify return well-formed UTF-8 regardless of input, and clarifying
+                        <code>Function.prototype.toString</code> by requiring that it either return the corresponding original source text or a standard placeholder.</p>
                     </blockquote>
-                    <p><code>ES10</code>仍然只是一个草案。但是除了 <code>Object.fromEntries</code>大多数功能已经在 <code>Chrome</code>中实现，所以你为什么不尽早开始探索它呢？当所有浏览器开始支持它时，你已经获得了领先优势，这只是时间问题。对于有兴趣探索ES10的人来说，这是一份 <strong>非外星人</strong>指南。</p>
+                    <p><code>ES10</code>中除了 <code>Object.fromEntries</code>大多数功能已经在 <code>Chrome</code>中实现，所以你为什么不尽早开始探索它呢？当所有浏览器开始支持它时，你已经获得了领先优势，这只是时间问题。对于有兴趣探索ES10的人来说，这是一份 <strong>非外星人</strong>指南。</p>
                     <p><strong>ES10在新语言功能方面没有ES6那么重要，但它确实添加了一些有趣的东西（其中一些在目前版本的浏览器中还不起作用：02/20/2019）</strong></p>
                     <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg=="
                         data-original="/images/es/0001.webp" alt="0001"></p>
@@ -1166,7 +1167,9 @@
                     <p>感谢Sergey Podgornyy写了这篇<a href="https://link.juejin.im?target=https%3A%2F%2Fblog.larapulse.com%2Fes-2015%2Fecmascript-10" target="_blank" rel="noopener">ES10教程</a>。 感谢 Selvaganesh写了这篇<a href="https://link.juejin.im?target=https%3A%2F%2Fmedium.com%2F%40selvaganesh93%2Fjavascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b"
                         target="_blank" rel="noopener">ES10教程</a>。</p>
                     <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
-                    <p><a href="https://mp.weixin.qq.com/s/b3oHxsidGHtnv0U1lYashg" target="_blank" rel="noopener">【译】ES10功能完全指南</a><br>(<a href="https://juejin.im/post/5c7c8e125188256365101c34" target="_blank" rel="noopener">https://juejin.im/post/5c7c8e125188256365101c34</a>)</p>
+                    <p><a href="http://www.ecma-international.org/ecma-262/10.0/index.html" target="_blank" rel="noopener">ecma-262-10.0</a><br><a href="https://mp.weixin.qq.com/s/b3oHxsidGHtnv0U1lYashg" target="_blank" rel="noopener">【译】ES10功能完全指南</a><br>(
+                      <a
+                        href="https://juejin.im/post/5c7c8e125188256365101c34" target="_blank" rel="noopener">https://juejin.im/post/5c7c8e125188256365101c34</a>)</p>
 
                   </div>
 
@@ -1302,7 +1305,7 @@
 
                     <a href="/archives/">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">96</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
                   </div>
@@ -1313,7 +1316,7 @@
 
                   <div class="site-state-item site-state-categories">
                     <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
                   </div>
@@ -1324,7 +1327,7 @@
 
                   <div class="site-state-item site-state-tags">
                     <a href="/tags/index.html">
-                  <span class="site-state-item-count">144</span>
+                  <span class="site-state-item-count">151</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
                   </div>
@@ -1438,7 +1441,7 @@
 
           <span class="post-meta-item-text">网站字数总数&#58;</span>
 
-          <span title="网站字数总数">116.0k</span>
+          <span title="网站字数总数">121.9k</span>
 
         </div>
 
