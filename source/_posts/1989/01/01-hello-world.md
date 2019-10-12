@@ -246,11 +246,22 @@ to：
 to：
 ***
 
-
-# 参考
+## gitment无法登陆1
 解决gitment无法登陆评论问题（Object ProgressEvent）
 https://blog.csdn.net/wardseptember/article/details/82828391
 
+## gitment无法登陆2
+
+服务不可用了
+https://blog.csdn.net/yolo0927/article/details/79315824
+
+https://github.com/holidaypenguin/github-OAuth-demo
+
+现在代码有了，重点是如何免费部署一个node服务。
+
+
+
+# 参考
 Gitment：使用 GitHub Issues 搭建评论系统
 https://imsun.net/posts/gitment-introduction/
 https://github.com/settings/applications/new
