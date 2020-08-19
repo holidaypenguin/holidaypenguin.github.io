@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://www.holidaypenguin.com
+url: https://holidaypenguin-4guklajid3425225-1259573149.tcloudbaseapp.com
 root: /
 permalink: blob/:year-:month-:day-:translate_title/
 # permalink: blob/:year-:month-:day-:title/
